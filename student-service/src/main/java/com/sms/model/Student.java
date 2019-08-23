@@ -24,6 +24,7 @@ import javax.validation.constraints.Size;
 import org.hibernate.annotations.NaturalId;
 
 import com.sms.model.audit.DateAudit;
+import com.sms.model.audit.UserDateAudit;
 
 @Entity
 @Table(name="student", uniqueConstraints = {
@@ -38,7 +39,7 @@ import com.sms.model.audit.DateAudit;
                 })
     })
 @SequenceGenerator(name="seq", initialValue=2000, allocationSize=100)
-public class Student extends DateAudit {
+public class Student extends UserDateAudit {
 	
 	/**
 	 * 
@@ -88,7 +89,7 @@ public class Student extends DateAudit {
 
 	public Student(String firstName, String lastName, String doa, 
 			String academicSessions,@Size(max = 40) @Email String studentEmail,
-			@NotBlank @Size(max = 40) @Email String parentEmail, @NotBlank @Size(max = 100) String uuid) {
+			@NotBlank @Size(max = 40) @Email String parentEmail, @NotBlank @Size(max = 100) String uuid, Boolean enabled) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -97,6 +98,7 @@ public class Student extends DateAudit {
 		this.studentEmail = studentEmail;
 		this.parentEmail = parentEmail;
 		this.uuid = uuid;
+		this.enabled=enabled;
 	}
 
 	

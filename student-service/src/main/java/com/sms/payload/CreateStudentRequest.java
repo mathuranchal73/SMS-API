@@ -12,7 +12,7 @@ public class CreateStudentRequest {
 	
 	private String lastName;
 	
-	private String dateOfAdmission;
+	private String doa;
 	
 	private String academicSessions;
 	
@@ -20,7 +20,17 @@ public class CreateStudentRequest {
 	
 	private String parentEmail;
 	
+	private boolean enabled;
 	
+	
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
 
 	public String getFirstName() {
 		return firstName;
@@ -38,12 +48,13 @@ public class CreateStudentRequest {
 		this.lastName = lastName;
 	}
 
-	public String getDateOfAdmission() {
-		return dateOfAdmission;
+
+	public String getDoa() {
+		return doa;
 	}
 
-	public void setDateOfAdmission(String dateOfAdmission) {
-		this.dateOfAdmission = dateOfAdmission;
+	public void setDoa(String doa) {
+		this.doa = doa;
 	}
 
 	public String getAcademicSessions() {

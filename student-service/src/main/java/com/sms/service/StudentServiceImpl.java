@@ -46,6 +46,7 @@ import com.sms.payload.ApiResponse;
 import com.sms.payload.CreateStudentRequest;
 import com.sms.payload.UpdateStudentRequest;
 import com.sms.payload.UploadBulkFileResponse;
+import com.sms.security.UserPrincipal;
 import com.sms.repository.StudentRepository;
 import com.sms.controller.StudentController;
 import com.sms.exception.ResourceNotFoundException;
@@ -117,7 +118,7 @@ public class StudentServiceImpl implements IStudentService {
 	                () -> new ResourceNotFoundException("Student", "firstName", firstName));
 	 }
 	 
-	 public ResponseEntity updateStudent(Long studentId,UpdateStudentRequest updateStudentRequest){
+	 public ResponseEntity updateStudent(UserPrincipal currentUser,Long studentId,UpdateStudentRequest updateStudentRequest){
 		 
 		 if(studentRepository.existsById(studentId))
 		 {
@@ -127,7 +128,6 @@ public class StudentServiceImpl implements IStudentService {
 					 .orElseThrow(() -> new ResourceNotFoundException("Student", "id", studentId));
 			 student.setFirstName(updateStudentRequest.getFirstName());
 			 student.setLastName(updateStudentRequest.getLastName());
-			 student.setUpdatedAt(date.toInstant());
 			 student.setAcademicSessions(updateStudentRequest.getAcademicSessions());
 			 student.setDoa(updateStudentRequest.getDoa());
 			 student.setEnabled(updateStudentRequest.isEnabled());
@@ -144,7 +144,8 @@ public class StudentServiceImpl implements IStudentService {
 	 
 	 public ResponseEntity createStudent(CreateStudentRequest createStudentRequest) {
 		 
-		 Student student= new Student(createStudentRequest.getFirstName(),createStudentRequest.getLastName(),createStudentRequest.getDateOfAdmission(),createStudentRequest.getAcademicSessions(),createStudentRequest.getStudentEmail(),createStudentRequest.getParentEmail(),UUID.randomUUID().toString());
+		 Date date = new Date();
+		 Student student= new Student(createStudentRequest.getFirstName(),createStudentRequest.getLastName(),createStudentRequest.getDoa(),createStudentRequest.getAcademicSessions(),createStudentRequest.getStudentEmail(),createStudentRequest.getParentEmail(),UUID.randomUUID().toString(),createStudentRequest.isEnabled());
 		 student.setRegistrationNo(generateRegistrationNo());
 		 student.setRollNo(generateRollNo());
 		 if(studentRepository.existsByregistrationNo(student.getRegistrationNo())) {
@@ -219,14 +220,11 @@ public class StudentServiceImpl implements IStudentService {
 		 
 		 Random generator= new Random();
 		 //generator.setSeed(System.currentTimeMillis());
-		 int i = generator.nextInt(1000000)%1000000;
+		 int i = Math.abs(generator.nextInt(1000000)%1000000);
 		 java.text.DecimalFormat f = new java.text.DecimalFormat("000000");
 		 Calendar cal= Calendar.getInstance();
-		 int year= cal.get(Calendar.YEAR);
-		 int month= cal.get(Calendar.MONTH);
-		 int dayOfMonth= cal.get(Calendar.MONTH);
 		 
-		 String registrationNo= Integer.toString(cal.get(Calendar.YEAR))+'\\'+Integer.toString(cal.get(Calendar.MONTH))+'\\'+Integer.toString(cal.get(Calendar.DAY_OF_MONTH))+'\\'+Integer.toString(i);
+		 String registrationNo= Integer.toString(cal.get(Calendar.YEAR))+'\\'+Integer.toString((cal.get(Calendar.MONTH))+1)+'\\'+Integer.toString(cal.get(Calendar.DAY_OF_MONTH))+'\\'+Integer.toString(i);
 				 
 		 return registrationNo;
 	 }
@@ -235,7 +233,7 @@ public class StudentServiceImpl implements IStudentService {
 	  		public String generateRollNo() {
 			 
 			 Random generator= new Random();			 
-			 return Integer.toString(generator.nextInt());
+			 return Integer.toString(Math.abs(generator.nextInt(1000000)%1000000));
 		 }
 
 

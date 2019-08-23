@@ -41,11 +41,13 @@ import com.sms.model.Session;
 import com.sms.model.Student;
 import com.sms.payload.ApiResponse;
 import com.sms.payload.CreateStudentRequest;
+import com.sms.payload.StudentIdentityAvailability;
 import com.sms.payload.UpdateStudentRequest;
 import com.sms.repository.AcademicSessionRepository;
 import com.sms.repository.StudentRepository;
 import com.sms.service.StudentServiceImpl;
-
+import com.sms.security.CurrentUser;
+import com.sms.security.UserPrincipal;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -100,6 +102,12 @@ public class StudentController {
 		 	return studentService.getTotalActiveStudentsByAcademicSession(dateOfAdmission);
 	 	}
 	 
+	 @GetMapping("/checkStudentEmailAvailability")
+	 @ApiOperation(value="Check if Student Email already present in System", notes="Check if Student Email already present in System",produces = "application/json", nickname="checkStudentEmailAvailability")
+	    public StudentIdentityAvailability checkEmailAvailability(@RequestParam(value = "studentEmail") String email) {
+	        Boolean isAvailable = !studentRepository.existsBystudentEmail(email);
+	        return new StudentIdentityAvailability(isAvailable);
+	    }
 	 	
 	 @PostMapping("/bulkUpload")
 		@ApiOperation(value="Upload the file", notes="Uploads a Multipart File and returns the download URI",produces = "application/json", nickname="uploadFile")
@@ -125,9 +133,9 @@ public class StudentController {
 	 
 	 @RequestMapping(value="/update/{id}",method=RequestMethod.PUT)
 	 @ApiOperation(value="Update", notes="Update a Student Record", nickname="updateStudent")
-	 public ResponseEntity<?> updateStudent(@PathVariable(value="id") Long studentId,@Valid @RequestBody UpdateStudentRequest updateStudentRequest, WebRequest request) throws Exception
+	 public ResponseEntity<?> updateStudent(@CurrentUser UserPrincipal currentUser,@PathVariable(value="id") Long studentId,@Valid @RequestBody UpdateStudentRequest updateStudentRequest, WebRequest request) throws Exception
 	 {
-		 return studentService.updateStudent(studentId,updateStudentRequest);
+		 return studentService.updateStudent(currentUser,studentId,updateStudentRequest);
 	 }
 	 
 	 @DeleteMapping("/{studentId}")
