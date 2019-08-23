@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.7.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.sms</groupId>
+	<artifactId>student-service</artifactId>
+	<packaging>jar</packaging>
+	<version>0.0.1</version>
+	<name>student-service</name>
+	<description>Student Service</description>
+
+<properties>
+		<java.version>1.8</java.version>
+		<spring-cloud.version>Greenwich.SR2</spring-cloud.version>
+		<start-class>com.sms.StudentServiceApplication</start-class>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+		    <groupId>com.fasterxml.jackson.dataformat</groupId>
+		    <artifactId>jackson-dataformat-csv</artifactId>       
+		    <version>2.5.3</version>
+		</dependency>
+		<dependency>
+		    <groupId>io.jsonwebtoken</groupId>
+		    <artifactId>jjwt</artifactId>
+		    <version>0.9.0</version>
+		</dependency>
+		    <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-simple</artifactId>
+		</dependency>
+		<dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.4.0</version>
+        </dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	
+	<dependencyManagement>
+			<dependencies>
+				<dependency>
+					<groupId>org.springframework.cloud</groupId>
+					<artifactId>spring-cloud-dependencies</artifactId>
+					<version>${spring-cloud.version}</version>
+					<type>pom</type>
+					<scope>import</scope>
+				</dependency>
+			</dependencies>
+		</dependencyManagement>	
+	
+	<profiles>
+	<profile>
+	 <id>default</id>
+      <activation>
+         <property>
+         <name>spring.profiles.active</name>
+                <value>default</value>
+         </property>
+      </activation>
+	<build>
+		<plugins>
+			<plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <fork>true</fork>
+                <executable>C:\java\bin</executable>
+            </configuration>
+        </plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+                <fork>true</fork>
+                <executable>C:\java\bin</executable>
+            </configuration>
+			</plugin>
+			
+		</plugins>
+	</build>
+	</profile>
+	
+   <profile>
+    <id>docker</id>
+      <activation>
+         <property>
+         <name>spring.profiles.active</name>
+                <value>docker</value>
+         </property>
+      </activation>
+      <build>
+         <plugins>
+            <plugin>
+               <groupId>io.fabric8</groupId>
+               <artifactId>docker-maven-plugin</artifactId>
+               <version>0.26.0</version>
+               <extensions>true</extensions>
+               <configuration>
+               <fork>true</fork>
+                <executable>C:\java\bin</executable>
+                  <verbose>true</verbose>
+                  <images>
+                     <image>
+                        <name>${project.artifactId}</name>
+                        <build>
+                           <from>java:8-jdk-alpine</from>
+                           <entryPoint>
+                              <exec>
+                                 <args>java</args>
+                                 <args>-jar</args>
+                                 <args>/maven/${project.artifactId}-${project.version}.jar</args>
+                              </exec>
+                           </entryPoint>
+                           <assembly>
+                              <descriptorRef>artifact</descriptorRef>
+                           </assembly>
+                        </build>
+                     </image>
+                  </images>
+               </configuration>
+               <executions>
+                  <execution>
+                     <id>build</id>
+                     <phase>post-integration-test</phase>
+                     <goals>
+                        <goal>build</goal>
+                     </goals>
+                  </execution>
+               </executions>
+            </plugin>
+         </plugins>
+      </build>
+   </profile>
+</profiles>
+
+</project>
