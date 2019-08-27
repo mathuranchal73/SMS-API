@@ -12,14 +12,13 @@ import com.sms.model.Choice;
 import com.sms.model.Exam;
 import com.sms.model.Question;
 import com.sms.payload.ExamRequest;
-import com.sms.payload.QuestionRequest;
 import com.sms.repository.ExamRepository;
 
 @Service
 public class ExamService {
 
 	@Autowired
-	private ExamRepository questionRepository;
+	private ExamRepository examRepository;
 	
 	private static final Logger logger = LoggerFactory.getLogger(ExamService.class);
 	
@@ -34,13 +33,13 @@ public class ExamService {
 
         exam.setExpirationDateTime(expirationDateTime);
 
-        examRequest.getQuestions().forEach(questionRequest -> {
+        /**examRequest.getQuestions().forEach(questionRequest -> {
             exam.addQuestion(new Choice(choiceRequest.getText(),choiceRequest.isCorrect(),choiceRequest.getScore()));
         });
         
-        question.setAllowedTime(questionRequest.getAllowedTime());
+        question.setAllowedTime(questionRequest.getAllowedTime());**/
 
-        return questionRepository.save(question);
+        return examRepository.save(exam);
     }
 	
 }
