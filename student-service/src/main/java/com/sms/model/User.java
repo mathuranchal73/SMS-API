@@ -11,19 +11,9 @@ import javax.validation.constraints.Size;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
-@Table(name = "users", uniqueConstraints = {
-        @UniqueConstraint(columnNames = {
-                "username"
-            }),
-            @UniqueConstraint(columnNames = {
-                "email"
-            })
-    })
+
 public class User extends DateAudit {
 
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank

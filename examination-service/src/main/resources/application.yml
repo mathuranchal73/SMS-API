@@ -1,0 +1,33 @@
+app:
+  TOKEN_EXPIRATION: 10
+  jwtExpirationInMs: 604800000
+  jwtSecret: JWTSuperSecretKey
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+server:
+  port: 8193
+spring:
+  application:
+    name: examination-service
+  datasource:
+    password: anchal29
+    url: jdbc:mysql://localhost:3306/sms?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+    username: root
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+    time-zone: UTC
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  
