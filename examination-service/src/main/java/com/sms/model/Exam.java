@@ -19,10 +19,12 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.sms.model.audit.UserDateAudit;
+
 
 @Entity
 @Table(name="exams")
-public class Exam {
+public class Exam extends UserDateAudit {
 
 	    @Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,6 +44,16 @@ public class Exam {
 	    private List<Question> questions = new ArrayList<>();
 	    
 	    private String instructions;
+	    
+	    private int totalMarks=0;
+
+		public int getTotalMarks() {
+			return totalMarks;
+		}
+
+		public void setTotalMarks(int totalMarks) {
+			this.totalMarks = totalMarks;
+		}
 
 		public Long getId() {
 			return id;
@@ -83,6 +95,16 @@ public class Exam {
 			this.instructions = instructions;
 		}
 	    
+		public void addQuestion(Question question) {
+	        questions.add(question);
+	        this.setTotalMarks(this.totalMarks+question.getScore());
+	        question.setExam(this);
+	    }
+
+	    public void removeQuestion(Question question) {
+	        questions.remove(question);
+	        question.setExam(null);
+	    }
 	    
 
 }

@@ -1,6 +1,5 @@
 package com.sms.model;
 
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,9 +9,10 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -21,72 +21,102 @@ import org.hibernate.annotations.BatchSize;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
+import com.sms.model.audit.UserDateAudit;
 
 
+@Entity
+@Table(name = "questions")
 public class Question {
-	
-    private Long id;
-	
-    private String questionText;
-	
-    private List<Choice> choices = new ArrayList<>();
-    
-    private int allowedTime;
-    
-    private int score;
-    
-    
 
-	
+		@Id
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	 	private Long id;
+		
+		@NotBlank
+	    @Size(max = 140)
+	    private String questionText;
+		
+		@OneToMany(
+	            mappedBy = "question",
+	            cascade = CascadeType.ALL,
+	            fetch = FetchType.EAGER,
+	            orphanRemoval = true
+	    )
+	    @Size(min = 2, max = 6)
+	    @Fetch(FetchMode.SELECT)
+	    @BatchSize(size = 30)
+	    private List<Choice> choices = new ArrayList<>();
+		
+		@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	    @JoinColumn(name = "exam_id", nullable = false)
+	    private Exam exam;
+	    
+		public Exam getExam() {
+			return exam;
+		}
 
-	public Question(Long id, String questionText, List<com.sms.model.Choice> choices, int allowedTime, int score) {
-		super();
-		this.id = id;
-		this.questionText = questionText;
-		this.choices = choices;
-		this.allowedTime = allowedTime;
-		this.score=score;
-	}
+		public void setExam(Exam exam) {
+			this.exam = exam;
+		}
 
-	public Long getId() {
-		return id;
-	}
+		@NotNull
+	    private int allowedTime;
+	    
+		@NotNull
+	    private int score=0;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+		public Long getId() {
+			return id;
+		}
 
-	public String getQuestionText() {
-		return questionText;
-	}
+		public void setId(Long id) {
+			this.id = id;
+		}
 
-	public void setQuestionText(String questionText) {
-		this.questionText = questionText;
-	}
+		public String getQuestionText() {
+			return questionText;
+		}
 
-	public List<Choice> getChoices() {
-		return choices;
-	}
+		public void setQuestionText(String questionText) {
+			this.questionText = questionText;
+		}
 
-	public void setChoices(List<Choice> choices) {
-		this.choices = choices;
-	}
-    
-	public int getAllowedTime() {
-		return allowedTime;
-	}
+		public List<Choice> getChoices() {
+			return choices;
+		}
 
-	public void setAllowedTime(int allowedTime) {
-		this.allowedTime = allowedTime;
-	}
+		public void setChoices(List<Choice> choices) {
+			this.choices = choices;
+		}
+		
+		public void addChoice(Choice choice) {
+	        choices.add(choice);
+	        this.setScore(this.score+choice.getScore());
+	        choice.setQuestion(this);
+	    }
 
-	public int getScore() {
-		return score;
-	}
+	    public void removeChoice(Choice choice) {
+	        choices.remove(choice);
+	        choice.setQuestion(null);
+	    }
 
-	public void setScore(int score) {
-		this.score = score;
-	}
-    
+		public int getAllowedTime() {
+			return allowedTime;
+		}
 
+		public void setAllowedTime(int allowedTime) {
+			this.allowedTime = allowedTime;
+		}
+
+		public int getScore() {
+			return score;
+		}
+
+		public void setScore(int score) {
+			this.score = score;
+		}
+
+		
+		
+		
 }

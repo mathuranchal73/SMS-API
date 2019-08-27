@@ -10,49 +10,90 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
+
+@Entity
+@Table(name = "choice")
 public class Choice {
 	
-	    private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-	    private String text;
 
-	    private Question question;
-	    
-	    private int score;
+    @NotBlank
+    @Size(max = 40)
+    private String text;
 
-		public Long getId() {
-			return id;
-		}
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "question_id", nullable = false)
+    private Question question;
+    
+    private boolean correct;
+    
+    
+	private int score;
+    
+	
 
-		public void setId(Long id) {
-			this.id = id;
-		}
+	public Choice(@NotBlank @Size(max = 40) String text,boolean correct, int score) {
+		super();
+		this.text = text;
+		this.correct = correct;
+		this.score = score;
+	}
 
-		public String getText() {
-			return text;
-		}
+	public Long getId() {
+		return id;
+	}
 
-		public void setText(String text) {
-			this.text = text;
-		}
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-		public Question getQuestion() {
-			return question;
-		}
+	public String getText() {
+		return text;
+	}
 
-		public void setQuestion(Question question) {
-			this.question = question;
-		}
+	public void setText(String text) {
+		this.text = text;
+	}
 
-		public int getScore() {
-			return score;
-		}
+	public Question getQuestion() {
+		return question;
+	}
 
-		public void setScore(int score) {
-			this.score = score;
-		}
-	    
-	    
+	public void setQuestion(Question question) {
+		this.question = question;
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+
+	public boolean isCorrect() {
+		return correct;
+	}
+
+	public void setCorrect(boolean correct) {
+		this.correct = correct;
+	}
+    
+	
 
 
 }
