@@ -91,9 +91,9 @@ public class ExamService {
 	        Application application = eurekaClient.getApplication(questionServiceServiceId);
 			InstanceInfo instanceInfo = application.getInstances().get(0);
 			String url = "http://"+instanceInfo.getIPAddr()+ ":"+instanceInfo.getPort()+"/"+"api/questions";
-		    QuestionResponse response=restTemplate.postForObject(url,questionRequest, QuestionResponse.class);
+			QuestionResponse response= restTemplate.postForObject(url,questionRequest, QuestionResponse.class);
 		    
-		    return ModelMapper.mapQuestionResponseToQuestion(response);
+		   return ModelMapper.mapQuestionResponseToQuestion(response);
 	}
 
 

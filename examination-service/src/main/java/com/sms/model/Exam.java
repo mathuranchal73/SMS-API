@@ -98,12 +98,11 @@ public class Exam extends UserDateAudit {
 		public void addQuestion(Question question) {
 	        questions.add(question);
 	        this.setTotalMarks(this.totalMarks+question.getScore());
-	        question.setExam(this);
+	       
 	    }
 
 	    public void removeQuestion(Question question) {
 	        questions.remove(question);
-	        question.setExam(null);
 	    }
 	    
 
