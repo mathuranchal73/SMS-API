@@ -1,5 +1,7 @@
 package com.sms.model;
 
+import java.util.Objects;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -10,6 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+
 
 
 @Entity
@@ -35,6 +38,19 @@ public class Choice {
 	private int score;
     
 	
+
+	public Choice() {
+		
+	}
+
+	public Choice(Long id, @NotBlank @Size(max = 40) String text, Question question, boolean correct, int score) {
+		super();
+		this.id = id;
+		this.text = text;
+		this.question = question;
+		this.correct = correct;
+		this.score = score;
+	}
 
 	public Choice(@NotBlank @Size(max = 40) String text,boolean correct, int score) {
 		super();
@@ -83,7 +99,18 @@ public class Choice {
 		this.correct = correct;
 	}
     
-	
+	 @Override
+	    public boolean equals(Object o) {
+	        if (this == o) return true;
+	        if (o == null || getClass() != o.getClass()) return false;
+	        Choice choice = (Choice) o;
+	        return Objects.equals(id, choice.id);
+	    }
+
+	    @Override
+	    public int hashCode() {
+	        return Objects.hash(id);
+	    }
 
 
 }

@@ -11,8 +11,13 @@ logging:
     org:
       hibernate:
         SQL: DEBUG
+        
+service:
+  question-service:
+    serviceId: question-service
+    
 server:
-  port: 8193
+  port: 8196
 spring:
   application:
     name: examination-service

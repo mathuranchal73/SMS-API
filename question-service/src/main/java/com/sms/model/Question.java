@@ -54,6 +54,10 @@ public class Question {
 	    
 		@NotNull
 	    private int score=0;
+		
+		
+		
+		
 
 		public Long getId() {
 			return id;

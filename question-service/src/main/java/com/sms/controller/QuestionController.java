@@ -8,6 +8,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +19,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.sms.model.Question;
 import com.sms.payload.ApiResponse;
 import com.sms.payload.QuestionRequest;
+import com.sms.payload.QuestionResponse;
 import com.sms.repository.QuestionRepository;
 import com.sms.service.QuestionService;
 
@@ -48,6 +51,13 @@ public class QuestionController {
         return ResponseEntity.created(location)
                 .body(new ApiResponse(true, "Question Created Successfully"));
     }
+	
+	
+	 @GetMapping("/{questionId}")
+	    @ApiOperation(value="Gets the Question by Id", notes="Gets the Question by Id",produces = "application/json", nickname="getQuestionById")
+	    public QuestionResponse getPollById(@PathVariable Long questionId) {
+	        return questionService.getQuestionByID(questionId);
+	    }
 
 	
 }

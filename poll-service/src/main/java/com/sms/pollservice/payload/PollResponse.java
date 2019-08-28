@@ -1,3 +1,4 @@
+
 package com.sms.pollservice.payload;
 
 import com.fasterxml.jackson.annotation.JsonInclude;

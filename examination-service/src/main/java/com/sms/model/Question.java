@@ -47,10 +47,27 @@ public class Question {
 	    @BatchSize(size = 30)
 	    private List<Choice> choices = new ArrayList<>();
 		
-		@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	    @JoinColumn(name = "exam_id", nullable = false)
+		@ManyToOne(fetch = FetchType.LAZY, optional = true)
+	    @JoinColumn(name = "question_id", nullable = true)
 	    private Exam exam;
+		
+		
 	    
+		
+
+		public Question() {
+			super();
+		}
+
+		public Question(@NotBlank @Size(max = 140) String questionText, @Size(min = 2, max = 6) List<Choice> choices,
+				@NotNull int allowedTime, @NotNull int score) {
+			super();
+			this.questionText = questionText;
+			this.choices = choices;
+			this.allowedTime = allowedTime;
+			this.score = score;
+		}
+
 		public Exam getExam() {
 			return exam;
 		}

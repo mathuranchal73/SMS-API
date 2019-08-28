@@ -45,6 +45,11 @@ public class Choice {
 	private int score;
     
 	
+	
+
+	public Choice() {
+		super();
+	}
 
 	public Choice(@NotBlank @Size(max = 40) String text,boolean correct, int score) {
 		super();

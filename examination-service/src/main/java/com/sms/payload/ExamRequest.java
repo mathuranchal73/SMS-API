@@ -17,17 +17,19 @@ public class ExamRequest {
     @Size(max = 140)
 	private String examName;
 	
+	
 	@NotNull
-	private Instant expirationDateTime;
-	
-	
-	private List<Question> questions = new ArrayList<>();
+    @Size(min = 2, max = 20)
+    @Valid
+	private List<QuestionRequest> questions = new ArrayList<>();
 	
 	private String instructions;
 	
 	 @NotNull
 	 @Valid
 	 private ExamDuration examDuration;
+	 
+	  private int totalMarks=0;
 
 	public String getExamName() {
 		return examName;
@@ -37,19 +39,12 @@ public class ExamRequest {
 		this.examName = examName;
 	}
 
-	public Instant getExpirationDateTime() {
-		return expirationDateTime;
-	}
 
-	public void setExpirationDateTime(Instant expirationDateTime) {
-		this.expirationDateTime = expirationDateTime;
-	}
-
-	public List<Question> getQuestions() {
+	public List<QuestionRequest> getQuestions() {
 		return questions;
 	}
 
-	public void setQuestions(List<Question> questions) {
+	public void setQuestions(List<QuestionRequest> questions) {
 		this.questions = questions;
 	}
 
@@ -68,4 +63,12 @@ public class ExamRequest {
 	public void setExamDuration(ExamDuration examDuration) {
         this.examDuration = examDuration;
     }
+	
+	public int getTotalMarks() {
+		return totalMarks;
+	}
+
+	public void setTotalMarks(int totalMarks) {
+		this.totalMarks = totalMarks;
+	}
 }
