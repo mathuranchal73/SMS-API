@@ -19,6 +19,7 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
+import com.google.gson.Gson;
 import com.netflix.appinfo.InstanceInfo;
 import com.netflix.discovery.EurekaClient;
 import com.netflix.discovery.shared.Application;
@@ -30,8 +31,11 @@ import com.sms.payload.ChoiceRequest;
 import com.sms.payload.ExamRequest;
 import com.sms.payload.QuestionRequest;
 import com.sms.payload.QuestionResponse;
+
 import com.sms.repository.ExamRepository;
 import com.sms.util.ModelMapper;
+
+
 
 @Service
 public class ExamService {
@@ -91,9 +95,11 @@ public class ExamService {
 	        Application application = eurekaClient.getApplication(questionServiceServiceId);
 			InstanceInfo instanceInfo = application.getInstances().get(0);
 			String url = "http://"+instanceInfo.getIPAddr()+ ":"+instanceInfo.getPort()+"/"+"api/questions";
-			QuestionResponse response= restTemplate.postForObject(url,questionRequest, QuestionResponse.class);
+			  String json=restTemplate.postForObject(url,questionRequest, String.class);
+			  Question response = new Gson().fromJson(json, Question.class);
+			
 		    
-		   return ModelMapper.mapQuestionResponseToQuestion(response);
+		   return response;
 	}
 
 

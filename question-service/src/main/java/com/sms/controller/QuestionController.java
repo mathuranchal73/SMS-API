@@ -49,7 +49,7 @@ public class QuestionController {
                 .buildAndExpand(question.getId()).toUri();
 
         return ResponseEntity.created(location)
-                .body(new ApiResponse(true, "Question Created Successfully"));
+                .body(question);
     }
 	
 	
