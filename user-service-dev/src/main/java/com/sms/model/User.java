@@ -63,6 +63,10 @@ public class User extends DateAudit {
     @Size(max = 100)
     private String password;
 	
+	 private Integer active=1;
+	    private boolean isLocked=false;
+	    private boolean isExpired=false;
+	
 	private boolean enabled;
 	
 	@NotBlank
@@ -151,6 +155,30 @@ public class User extends DateAudit {
 
 	public void setUuid(String uuid) {
 		this.uuid = uuid;
+	}
+
+	public Integer getActive() {
+		return active;
+	}
+
+	public void setActive(Integer active) {
+		this.active = active;
+	}
+
+	public boolean isLocked() {
+		return isLocked;
+	}
+
+	public void setLocked(boolean isLocked) {
+		this.isLocked = isLocked;
+	}
+
+	public boolean isExpired() {
+		return isExpired;
+	}
+
+	public void setExpired(boolean isExpired) {
+		this.isExpired = isExpired;
 	}
 
 	

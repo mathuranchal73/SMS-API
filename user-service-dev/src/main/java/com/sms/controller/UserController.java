@@ -174,7 +174,10 @@ public class UserController {
 		                .orElseThrow(() -> new AppException("User Role not set."));
 
 		        user.setRoles(Collections.singleton(userRole));
-
+		        user.setActive(1);
+		        user.setLocked(false);
+		        user.setExpired(false);
+		        user.setEnabled(true);
 		        try {
 		        	
 		        	User result = userRepository.save(user);

@@ -29,7 +29,10 @@ import com.sms.zuulgateway.bean.auth.Role;
         }),
         @UniqueConstraint(columnNames = {
             "email"
-        })
+        }),
+        @UniqueConstraint(columnNames = {
+                "uuid"
+            })
 })
 public class User extends DateAudit {
     @Id
@@ -57,7 +60,12 @@ public class User extends DateAudit {
     private Integer active=1;
     private boolean isLocked=false;
     private boolean isExpired=false;
-    private boolean isEnabled=true;
+    private boolean enabled=true;
+    
+
+	@NotBlank
+    @Size(max = 100)
+    private String uuid;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "user_roles",
@@ -69,11 +77,13 @@ public class User extends DateAudit {
 
     }
 
-    public User(String name, String username, String email, String password) {
+    public User(String name, String username, String email, String password,boolean enabled,String uuid ) {
         this.name = name;
         this.username = username;
         this.email = email;
         this.password = password;
+        this.enabled = enabled;
+		this.uuid=uuid;
     }
 
     public Long getId() {
@@ -141,11 +151,11 @@ public class User extends DateAudit {
 	}
 
 	public boolean isEnabled() {
-		return isEnabled;
+		return enabled;
 	}
 
-	public void setEnabled(boolean isEnabled) {
-		this.isEnabled = isEnabled;
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 
 	public Set<Role> getRoles() {
@@ -155,4 +165,12 @@ public class User extends DateAudit {
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
+    
+    public String getUuid() {
+		return uuid;
+	}
+
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+	}
 }

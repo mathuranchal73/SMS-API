@@ -23,6 +23,9 @@ public class SignUpRequest {
     private String password;
     
     private boolean enabled;
+    private Integer active;
+    private boolean isLocked=false;
+    private boolean isExpired=false;
     
     
 
@@ -59,11 +62,34 @@ public class SignUpRequest {
     }
 
 	public boolean isEnabled() {
-		return false;
+		return enabled;
 	}
 
 	public void setEnabled(boolean enabled) {
-		this.enabled = enabled;
+	}
+
+	public Integer getActive() {
+		return active;
+	}
+
+	public void setActive(Integer active) {
+		this.active = active;
+	}
+
+	public boolean isLocked() {
+		return isLocked;
+	}
+
+	public void setLocked(boolean isLocked) {
+		this.isLocked = isLocked;
+	}
+
+	public boolean isExpired() {
+		return isExpired;
+	}
+
+	public void setExpired(boolean isExpired) {
+		this.isExpired = isExpired;
 	}
     
     
