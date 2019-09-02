@@ -37,11 +37,6 @@ public class Exam extends UserDateAudit {
 	    @NotNull
 	    private Instant expirationDateTime;
 	    
-	    @ManyToMany(fetch = FetchType.EAGER)
-	    @JoinTable(name = "exam_questions",
-	            joinColumns = @JoinColumn(name = "exam_id"),
-	            inverseJoinColumns = @JoinColumn(name = "question_id"))
-	    private List<Question> questions = new ArrayList<>();
 	    
 	    private String instructions;
 	    
@@ -79,13 +74,6 @@ public class Exam extends UserDateAudit {
 			this.expirationDateTime = expirationDateTime;
 		}
 
-		public List<Question> getQuestions() {
-			return questions;
-		}
-
-		public void setQuestions(List<Question> questions) {
-			this.questions = questions;
-		}
 
 		public String getInstructions() {
 			return instructions;
@@ -94,16 +82,13 @@ public class Exam extends UserDateAudit {
 		public void setInstructions(String instructions) {
 			this.instructions = instructions;
 		}
-	    
-		public void addQuestion(Question question) {
-	        questions.add(question);
-	        this.setTotalMarks(this.totalMarks+question.getScore());
-	       
+
+		public void addQuestionMarks(int questionScore) {
+	        this.setTotalMarks(this.totalMarks+questionScore);
+
 	    }
 
-	    public void removeQuestion(Question question) {
-	        questions.remove(question);
+	    public void removeQuestionMarks(int questionScore) {
+	        this.setTotalMarks(this.totalMarks-questionScore);
 	    }
-	    
-
 }
