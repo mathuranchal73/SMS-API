@@ -18,6 +18,7 @@ import com.sms.zuulgateway.filters.pre.SimpleFilter;
 
 @EnableZuulProxy
 @EnableEurekaClient
+@EnableDiscoveryClient
 @SpringBootApplication
 @EntityScan(basePackageClasses = { 
 		ZuulGatewayApplication.class,
