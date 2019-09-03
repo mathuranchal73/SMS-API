@@ -19,8 +19,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 import com.google.gson.Gson;
@@ -29,6 +27,8 @@ import com.netflix.discovery.EurekaClient;
 import com.netflix.discovery.shared.Application;
 import com.sms.exception.ResourceNotFoundException;
 import com.sms.model.Exam;
+import com.sms.model.ExamQuestionMap;
+import com.sms.model.Question;
 import com.sms.model.QuestionPaper;
 import com.sms.model.User;
 import com.sms.payload.AddQuestionRequest;
@@ -102,7 +102,7 @@ public class ExamService {
 	}
 	
 	//public ExamResponse addQuestionAndGetUpdatedExam(Long examId, AddQuestionRequest addQuestionRequest, UserPrincipal currentUser) {
-	public ResponseEntity<?> addQuestionAndGetUpdatedExam(Long examId, AddQuestionRequest addQuestionRequest, UserPrincipal currentUser) {
+	public ExamQuestionMap addQuestionAndGetUpdatedExam(Long examId, AddQuestionRequest addQuestionRequest, UserPrincipal currentUser) {
 		
 		Exam exam= examRepository.findById(examId)
 				.orElseThrow(() -> new ResourceNotFoundException("Exam", "id", examId));
@@ -117,21 +117,39 @@ public class ExamService {
 		 try {
 			 if(questionPaperRepository.existsByQuestionId(questionPaper.getQuestion().getId()))
 			 {
-				 return new ResponseEntity(new ApiResponse(false, "Sorry! You have already added the question in this exam"),
-		                 HttpStatus.BAD_REQUEST);
+				 return null;
+				// return new ResponseEntity(new ApiResponse(false, "Sorry! You have already added the question in this exam"),
+		          //       HttpStatus.BAD_REQUEST);
 			 }
 			 else
 			 {
-				 questionPaperRepository.save(questionPaper);
-		            return new ResponseEntity(new ApiResponse(true, "Question Added to Exam Successfully!"),
-		                    HttpStatus.OK);
+				 QuestionPaper qp=questionPaperRepository.save(questionPaper);
+				 ExamQuestionMap eqm= new ExamQuestionMap();
+				 eqm.setExam(examRepository.findById(qp.getExam().getId())
+						 .orElseThrow(() -> new ResourceNotFoundException("Exam", "id", qp.getExam().getId())));
+				 List<Long> questionIdList=questionPaperRepository.findAllQuestionIdsByExamIdIn(qp.getExam().getId());
+				 List<Question> temp= new ArrayList<>();
+				 //temp.add(questionIdList.forEach(Question->{getQuestion(Question.getId())});));
+				 for(Long q:questionIdList)
+				 {
+					 temp.add(getQuestion(q));
+				 }
+				 
+				 eqm.setQuestionList(temp);
+					  return eqm;
 			 }
 	            
 	        } catch (Exception ex) {
+	        	
+	        	System.out.println(ex.getMessage());
 	           // logger.info("QuestionPaper {} has already been added in Exam {}", currentUser.getId(), examId);
-	        	 return new ResponseEntity(new ApiResponse(false, ex.getMessage()),
-		                 HttpStatus.INTERNAL_SERVER_ERROR);
+	        	// return new ResponseEntity(null,
+		          //       HttpStatus.INTERNAL_SERVER_ERROR);
+	        	
+	        	return null;
 	        }
+		 
+		 
 
 		 /**
 	        //-- Question Saved, Return the updated Exam Response now --
@@ -147,8 +165,20 @@ public class ExamService {
 	                .orElseThrow(() -> new ResourceNotFoundException("User", "id", poll.getCreatedBy()));
 
 	        return ModelMapper.mapPollToPollResponse(poll, choiceVotesMap, creator, vote.getChoice().getId());  **/
-	}		
+	}
+
 		
+	private Question getQuestion(Long questionId) {
+		 Application application = eurekaClient.getApplication(zuulGatewayServiceId);
+			InstanceInfo instanceInfo = application.getInstances().get(0);
+			String url = "http://"+instanceInfo.getIPAddr()+ ":"+instanceInfo.getPort()+"/question-api/"+"api/questions/"+questionId;
+			  //String json=restTemplate.postForObject(url,questionId, String.class);
+				String json=restTemplate.getForObject(url, String.class); 
+			Question response = new Gson().fromJson(json, Question.class);
+			  
+			  return response;
+		
+	}		
 	
 
 		

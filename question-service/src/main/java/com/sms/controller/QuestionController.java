@@ -1,6 +1,7 @@
 package com.sms.controller;
 
 import java.net.URI;
+import java.util.List;
 
 import javax.validation.Valid;
 
@@ -39,7 +40,7 @@ public class QuestionController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(QuestionController.class);
 	
-	@PostMapping
+	@PostMapping("/createQuestion")
     @ApiOperation(value="Creates the Question", notes="Creates a Question",produces = "application/json", nickname="createQuestion")
     public ResponseEntity<?> createQuestion(@Valid @RequestBody QuestionRequest questionRequest) {
         Question question = questionService.createQuestion(questionRequest);
@@ -53,11 +54,18 @@ public class QuestionController {
     }
 	
 	
-	 @GetMapping("/{questionId}")
+	 	@GetMapping("/{questionId}")
 	    @ApiOperation(value="Gets the Question by Id", notes="Gets the Question by Id",produces = "application/json", nickname="getQuestionById")
-	    public QuestionResponse getPollById(@PathVariable Long questionId) {
+	    public QuestionResponse getQuestionById(@PathVariable Long questionId) {
 	        return questionService.getQuestionByID(questionId);
 	    }
-
+	 	
+	 	@GetMapping("/getAll/")
+	 	@ApiOperation(value="Gets All the Questions by provided Ids", notes="Gets all the Questions by provided Ids",produces = "application/json", nickname="getAllQuestionByIds")
+	 	public List<Question> getAllQuestionByIds(@RequestBody List<Long> questionIds)
+	 	{
+	 		
+	 		return questionService.getAllQuestionByIds(questionIds);
+	 	}
 	
 }

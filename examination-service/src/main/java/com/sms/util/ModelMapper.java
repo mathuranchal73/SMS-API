@@ -3,13 +3,14 @@ package com.sms.util;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
+import com.sms.model.Choice;
+import com.sms.model.Question;
 import com.sms.payload.QuestionRequest;
 import com.sms.payload.QuestionResponse;
 
 public class ModelMapper {
 	
-	/**public static Question mapQuestionResponseToQuestion(QuestionResponse questionResponse) {
+	public static Question mapQuestionResponseToQuestion(QuestionResponse questionResponse) {
 		
 		Question question= new Question();
 		question.setId(questionResponse.getId());
@@ -41,7 +42,7 @@ public class ModelMapper {
 		qr.setScore(questionRequest.getScore());
 		// TODO Auto-generated method stub
 		return qr;
-	}**/
+	}
 
 
 }

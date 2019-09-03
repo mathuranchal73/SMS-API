@@ -18,6 +18,4 @@ public interface QuestionRepository extends JpaRepository<Question,Long> {
 
     List<Question> findByIdIn(List<Long> questionIds);
 
-    List<Question> findByIdIn(List<Long> questionIds, Sort sort);
-
 }

@@ -26,6 +26,7 @@ import com.netflix.appinfo.InstanceInfo;
 import com.netflix.discovery.EurekaClient;
 import com.netflix.discovery.shared.Application;
 import com.sms.model.Exam;
+import com.sms.model.ExamQuestionMap;
 import com.sms.payload.ApiResponse;
 import com.sms.payload.ExamRequest;
 import com.sms.payload.QuestionRequest;
@@ -65,7 +66,7 @@ public class ExamController {
 	
 	@PostMapping("/{examId}/addQuestions")
     @ApiOperation(value="Adds the questions for the provided Exam Id and current User", notes="Adds the questions for the provided Exam Id and current User",produces = "application/json", nickname="addQuestions")
-    public ResponseEntity<?> addQuestion(@CurrentUser UserPrincipal currentUser,
+    public ExamQuestionMap addQuestion(@CurrentUser UserPrincipal currentUser,
                          @PathVariable Long examId,
                          @Valid @RequestBody AddQuestionRequest addQuestionRequest) {
          return examService.addQuestionAndGetUpdatedExam(examId, addQuestionRequest, currentUser);
