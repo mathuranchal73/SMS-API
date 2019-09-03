@@ -60,12 +60,5 @@ public class QuestionController {
 	        return questionService.getQuestionByID(questionId);
 	    }
 	 	
-	 	@GetMapping("/getAll/")
-	 	@ApiOperation(value="Gets All the Questions by provided Ids", notes="Gets all the Questions by provided Ids",produces = "application/json", nickname="getAllQuestionByIds")
-	 	public List<Question> getAllQuestionByIds(@RequestBody List<Long> questionIds)
-	 	{
-	 		
-	 		return questionService.getAllQuestionByIds(questionIds);
-	 	}
 	
 }

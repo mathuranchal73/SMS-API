@@ -53,13 +53,6 @@ public class QuestionService {
 
 		 return ModelMapper.mapQuestionToQuestionResponse(question);
 	    }
-
-
-	public List<Question> getAllQuestionByIds(List<Long> questionIds) {
-		List<Question> questionList=questionRepository.findAllById(questionIds);
-		
-		return questionList;
-	}
 	
 
 
