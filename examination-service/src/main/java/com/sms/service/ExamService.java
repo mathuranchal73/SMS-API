@@ -1,5 +1,6 @@
 package com.sms.service;
 
+import java.net.URI;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.google.gson.Gson;
 import com.netflix.appinfo.InstanceInfo;
@@ -79,7 +81,7 @@ public class ExamService extends UserDateAudit {
     
 	
 	
-	public Exam createExam(ExamRequest examRequest) {
+	public ResponseEntity<?> createExam(ExamRequest examRequest) {
 		
 		 Exam exam = new Exam();
 		 
@@ -98,13 +100,20 @@ public class ExamService extends UserDateAudit {
 	        exam.setInstructions(examRequest.getInstructions());
 	        exam.setTotalMarks(examRequest.getTotalMarks());
 	        
-	        return examRepository.save(exam);
+	        examRepository.save(exam);
+	        
+	        URI location = ServletUriComponentsBuilder
+	                .fromCurrentRequest().path("/{examId}")
+	                .buildAndExpand(exam.getId()).toUri();
+
+	        return ResponseEntity.created(location)
+	                .body(new ApiResponse(true, "Exam Created Successfully"));
 
 	
 	}
 	
 	//public ExamResponse addQuestionAndGetUpdatedExam(Long examId, AddQuestionRequest addQuestionRequest, UserPrincipal currentUser) {
-	public ExamQuestionMap addQuestionAndGetUpdatedExam(Long examId, AddQuestionRequest addQuestionRequest, UserPrincipal currentUser) {
+	public ResponseEntity<?> addQuestionAndGetUpdatedExam(Long examId, AddQuestionRequest addQuestionRequest, UserPrincipal currentUser) {
 		
 		Exam exam= examRepository.findById(examId)
 				.orElseThrow(() -> new ResourceNotFoundException("Exam", "id", examId));
@@ -119,9 +128,7 @@ public class ExamService extends UserDateAudit {
 		 try {
 			 if(questionPaperRepository.existsByQuestionId(questionPaper.getQuestion().getId()))
 			 {
-				 return null;
-				// return new ResponseEntity(new ApiResponse(false, "Sorry! You have already added the question in this exam"),
-		          //       HttpStatus.BAD_REQUEST);
+				 return new ResponseEntity<>(new ExamResponse(null,false,"Sorry! You have already added the question in this exam"),HttpStatus.BAD_REQUEST);
 			 }
 			 else
 			 {
@@ -139,17 +146,13 @@ public class ExamService extends UserDateAudit {
 				 
 				 Collections.sort(temp);
 				 eqm.setQuestionList(temp);
-					  return eqm;
+				 return new ResponseEntity<>(new ExamResponse(eqm,true,"Question Added Successfully and Exam updated"),HttpStatus.OK);
 			 }
 	            
 	        } catch (Exception ex) {
 	        	
-	        	System.out.println(ex.getMessage());
-	           // logger.info("QuestionPaper {} has already been added in Exam {}", currentUser.getId(), examId);
-	        	// return new ResponseEntity(null,
-		          //       HttpStatus.INTERNAL_SERVER_ERROR);
-	        	
-	        	return null;
+	        	 return new ResponseEntity<>(new ExamResponse(null,false,"Exception Encountered in Adding Question to Exam"+ex.getMessage()),HttpStatus.INTERNAL_SERVER_ERROR);
+
 	        }
 		 
 		 
@@ -184,7 +187,7 @@ public class ExamService extends UserDateAudit {
 	}
 
 		
-	public ExamQuestionMap getExam(Long examId) {
+	public ResponseEntity<?> getExam(Long examId) {
 		ExamQuestionMap examQuestionMap= new ExamQuestionMap();
 		examQuestionMap.setExam(examRepository.findById(examId)
 						.orElseThrow(() -> new ResourceNotFoundException("Exam", "id", examId)));
@@ -198,7 +201,8 @@ public class ExamService extends UserDateAudit {
 		 }
 		 
 		 examQuestionMap.setQuestionList(temp);
-			  return examQuestionMap;
+		 
+		 return new ResponseEntity<>(new ExamResponse(examQuestionMap,true,"Found Exam Record"),HttpStatus.FOUND);
 	 
 		
 	}

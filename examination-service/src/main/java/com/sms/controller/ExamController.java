@@ -55,19 +55,14 @@ public class ExamController {
 	@PostMapping("/createExam")
     @ApiOperation(value="Creates the Exam", notes="Creates a Exam",produces = "application/json", nickname="createExam")
     public ResponseEntity<?> createExam(@Valid @RequestBody ExamRequest examRequest) {
-        Exam exam = examService.createExam(examRequest);
-
-        URI location = ServletUriComponentsBuilder
-                .fromCurrentRequest().path("/{examId}")
-                .buildAndExpand(exam.getId()).toUri();
-
-        return ResponseEntity.created(location)
-                .body(new ApiResponse(true, "Exam Created Successfully"));
+        
+		return examService.createExam(examRequest);    
     }
+	
 	
 	@PostMapping("/{examId}/addQuestions")
     @ApiOperation(value="Adds the questions for the provided Exam Id and current User", notes="Adds the questions for the provided Exam Id and current User",produces = "application/json", nickname="addQuestions")
-    public ExamQuestionMap addQuestion(@CurrentUser UserPrincipal currentUser,
+    public ResponseEntity<?> addQuestion(@CurrentUser UserPrincipal currentUser,
                          @PathVariable Long examId,
                          @Valid @RequestBody AddQuestionRequest addQuestionRequest) {
          return examService.addQuestionAndGetUpdatedExam(examId, addQuestionRequest, currentUser);
@@ -82,7 +77,7 @@ public class ExamController {
 	
 	@GetMapping("/{examId}")
 	@ApiOperation(value="Gets the Exam details and questions for the provided Exam Id", notes="Gets teh Exam details and questions for the provided Exam id", produces="application/json", nickname="getExam")
-	public ExamQuestionMap getExam(@CurrentUser UserPrincipal currentUser, @PathVariable Long examId) {
+	public ResponseEntity<?> getExam(@CurrentUser UserPrincipal currentUser, @PathVariable Long examId) {
 		return examService.getExam(examId);
 	}
 	
