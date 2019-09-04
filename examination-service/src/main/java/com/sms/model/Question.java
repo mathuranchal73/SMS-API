@@ -27,7 +27,7 @@ import com.sms.model.audit.UserDateAudit;
 
 @Entity
 @Table(name = "questions")
-public class Question {
+public class Question implements Comparable<Question> {
 
 		@Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -108,6 +108,12 @@ public class Question {
 
 		public void setScore(int score) {
 			this.score = score;
+		}
+
+		@Override
+		public int compareTo(Question q) {
+			return (int) (this.id-q.id);
+
 		}
 
 		

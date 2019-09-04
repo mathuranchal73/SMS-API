@@ -3,7 +3,10 @@ package com.sms.repository;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -29,6 +32,11 @@ public interface QuestionPaperRepository extends JpaRepository<QuestionPaper,Lon
 	
 	@Query("SELECT question.id from QuestionPaper where exam.id=:examId")
 	List<Long> findAllQuestionIdsByExamIdIn(@Param("examId") Long examId);
+	
+	@Transactional
+	@Modifying
+	@Query("DELETE from QuestionPaper where exam.id=:examId")
+	void deleteByExamId(Long examId);
 	
 
 

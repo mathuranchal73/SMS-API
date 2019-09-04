@@ -3,6 +3,7 @@ package com.sms.service;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -136,6 +137,7 @@ public class ExamService extends UserDateAudit {
 					 temp.add(getQuestion(q));
 				 }
 				 
+				 Collections.sort(temp);
 				 eqm.setQuestionList(temp);
 					  return eqm;
 			 }
@@ -199,6 +201,23 @@ public class ExamService extends UserDateAudit {
 			  return examQuestionMap;
 	 
 		
+	}
+
+	public ResponseEntity<?> deleteExamById(Long examId) {
+		if(examRepository.existsById(examId))
+		{
+			try {
+				questionPaperRepository.deleteByExamId(examId);
+				examRepository.deleteById(examId);
+				return new ResponseEntity(new ApiResponse(true, "Exam Record Deleted Successfully!"),
+		                 HttpStatus.OK);
+			} catch (Exception e) {
+				logger.error(e.getMessage());
+				return new ResponseEntity(new ApiResponse(false, "Exception Encountered in deleting Student"),
+		                 HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		}
+		return new ResponseEntity<>(new ApiResponse(false,"Exam not found with ID"+examId),HttpStatus.NOT_FOUND);
 	}	
 
 		
