@@ -33,6 +33,7 @@ import com.sms.payload.ExamRequest;
 import com.sms.payload.QuestionRequest;
 import com.sms.payload.ExamResponse;
 import com.sms.payload.AddQuestionRequest;
+import com.sms.payload.AnswerRequest;
 import com.sms.security.CurrentUser;
 import com.sms.security.UserPrincipal;
 import com.sms.service.ExamService;
@@ -80,6 +81,17 @@ public class ExamController {
 	public ResponseEntity<?> getExam(@CurrentUser UserPrincipal currentUser, @PathVariable Long examId) {
 		return examService.getExam(examId);
 	}
+	
+
+    @PostMapping("/{examId}/submitAnswer")
+    @ApiOperation(value="Submits the Answer Model for the provided Exam Id and current User", notes="Submits the Answer Model for the provided Exam Id and current User",produces = "application/json", nickname="submitAnswer")
+    public ResponseEntity<?> submitAnswer(@CurrentUser UserPrincipal currentUser,
+                         @PathVariable Long examId,
+                         @Valid @RequestBody AnswerRequest answerRequest) {
+    	
+    	return examService.submitAnswer(currentUser,examId,answerRequest);
+        
+    }
 	
 	 @DeleteMapping("/{examId}")
 	 @ApiOperation(value="Delete", notes="Delete the Exam Record", nickname="deleteExam")

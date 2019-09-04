@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import javax.validation.Valid;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,13 +31,16 @@ import com.netflix.appinfo.InstanceInfo;
 import com.netflix.discovery.EurekaClient;
 import com.netflix.discovery.shared.Application;
 import com.sms.exception.ResourceNotFoundException;
+import com.sms.model.Choice;
 import com.sms.model.Exam;
 import com.sms.model.ExamQuestionMap;
 import com.sms.model.Question;
 import com.sms.model.QuestionPaper;
+import com.sms.model.Result;
 import com.sms.model.User;
 import com.sms.model.audit.UserDateAudit;
 import com.sms.payload.AddQuestionRequest;
+import com.sms.payload.AnswerRequest;
 import com.sms.payload.ApiResponse;
 import com.sms.payload.ChoiceRequest;
 import com.sms.payload.ExamRequest;
@@ -45,6 +50,7 @@ import com.sms.payload.QuestionResponse;
 import com.sms.exception.BadRequestException;
 import com.sms.repository.ExamRepository;
 import com.sms.repository.QuestionPaperRepository;
+import com.sms.repository.ResultRepository;
 import com.sms.repository.UserRepository;
 import com.sms.security.UserPrincipal;
 import com.sms.util.ModelMapper;
@@ -62,6 +68,9 @@ public class ExamService extends UserDateAudit {
 	
 	@Autowired
 	private QuestionPaperRepository questionPaperRepository;
+	
+	@Autowired
+	private ResultRepository resultRepository;
 	
 	
 	private static final Logger logger = LoggerFactory.getLogger(ExamService.class);
@@ -223,6 +232,9 @@ public class ExamService extends UserDateAudit {
 		}
 		return new ResponseEntity<>(new ApiResponse(false,"Exam not found with ID"+examId),HttpStatus.NOT_FOUND);
 	}
+	
+	
+	
 
 	public ResponseEntity<?> removeQuestionAndGetUpdatedExam(Long examId,Long questionId, UserPrincipal currentUser) {
 		
@@ -261,6 +273,44 @@ public class ExamService extends UserDateAudit {
 			 return new ResponseEntity<>(new ApiResponse(false,"Error occured in deletion of Question from Exam"+examId+ e.getMessage()),HttpStatus.INTERNAL_SERVER_ERROR);
 	        }
 			
+	}
+
+	public ResponseEntity<?> submitAnswer(UserPrincipal currentUser, Long examId, @Valid AnswerRequest answerRequest) {
+	
+		try {
+			if(userRepository.existsById(currentUser.getId()))
+			{
+				List<Choice> temp= answerRequest.getSelectedChoice();
+				if(!temp.isEmpty())
+				{
+					int totalCorrectAnswers=0;
+					int totalScore=0;
+					Result result= new Result();
+					for(Choice c:temp)
+					{
+						if(c.isCorrect())
+						{
+							totalCorrectAnswers=totalCorrectAnswers+1;
+							totalScore=totalScore+c.getScore();
+						}
+					}
+					result.setExam(examRepository.findById(examId)
+							.orElseThrow(() -> new ResourceNotFoundException("Exam", "id", examId)));
+					result.setUser(userRepository.findById(currentUser.getId())
+							.orElseThrow(() -> new ResourceNotFoundException("User", "id", currentUser.getId())));
+					result.setScore(totalScore);
+					result.setTotalCorrectAns(totalCorrectAnswers);
+					resultRepository.save(result);
+				}
+				 return new ResponseEntity<>(new ApiResponse(false,"Empty Answer Request"),HttpStatus.BAD_REQUEST);
+			}
+			return new ResponseEntity<>(new ApiResponse(false,"User is not Available"),HttpStatus.NOT_FOUND);
+		
+		}catch(Exception ex) {
+			return new ResponseEntity<>(new ApiResponse(false,"Error occured in deletion of Question from Exam"),HttpStatus.INTERNAL_SERVER_ERROR);
+			
+		}
+		
 	}	
 
 		
