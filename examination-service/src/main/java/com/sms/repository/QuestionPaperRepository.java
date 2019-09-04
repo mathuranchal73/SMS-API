@@ -22,6 +22,7 @@ public interface QuestionPaperRepository extends JpaRepository<QuestionPaper,Lon
 	Optional<QuestionPaper> findById(Long examId);
 
 	boolean existsByQuestionId(Long id);
+	boolean existsByExamId(Long examId);
 	
 	//@Query("SELECT NEW com.sms.model.ExamQuestionCount(v.question.id, count(v.id)) FROM Question v WHERE v.exam.id in :examIds GROUP BY v.question.id")
     //List<ExamQuestionCount> countByExamIdInGroupByExamId(@Param("examIds") List<Long> examIds);
@@ -37,6 +38,13 @@ public interface QuestionPaperRepository extends JpaRepository<QuestionPaper,Lon
 	@Modifying
 	@Query("DELETE from QuestionPaper where exam.id=:examId")
 	void deleteByExamId(Long examId);
+	
+	@Transactional
+	@Modifying
+	@Query("DELETE from QuestionPaper where question.id=:questionId and exam.id=:examId")
+	void deleteByExamIdAndQuestionId(Long questionId, Long examId);
+
+
 	
 
 

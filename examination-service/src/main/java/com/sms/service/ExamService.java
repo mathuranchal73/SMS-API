@@ -218,6 +218,45 @@ public class ExamService extends UserDateAudit {
 		}
 		}
 		return new ResponseEntity<>(new ApiResponse(false,"Exam not found with ID"+examId),HttpStatus.NOT_FOUND);
+	}
+
+	public ResponseEntity<?> removeQuestionAndGetUpdatedExam(Long examId,Long questionId, UserPrincipal currentUser) {
+		
+		 try {
+			 if(questionPaperRepository.existsByExamId(examId))
+			 {
+				 if(questionPaperRepository.existsByQuestionId(questionId))
+				 	{
+					 questionPaperRepository.deleteByExamIdAndQuestionId(questionId, examId);
+
+					 	ExamQuestionMap examQuestionMap= new ExamQuestionMap();
+						examQuestionMap.setExam(examRepository.findById(examId)
+										.orElseThrow(() -> new ResourceNotFoundException("Exam", "id", examId)));
+						
+						 List<Long> questionIdList=questionPaperRepository.findAllQuestionIdsByExamIdIn(examId);
+						 List<Question> temp= new ArrayList<>();
+						 //temp.add(questionIdList.forEach(Question->{getQuestion(Question.getId())});));
+							 for(Long q:questionIdList)
+							 {
+								 temp.add(this.getQuestion(q));
+							 }
+							 
+							 examQuestionMap.setQuestionList(temp);
+						 
+							 return new ResponseEntity<>(new ExamResponse(examQuestionMap,true,"Question Deleted Successfully"),HttpStatus.OK);
+				 	}
+					
+				 return new ResponseEntity<>(new ApiResponse(false,"Question not found with ID :"+questionId+"in Exam :"+examId),HttpStatus.NOT_FOUND);
+				 	}
+				 
+			  return new ResponseEntity<>(new ApiResponse(false,"Exam not found with ID"+examId),HttpStatus.NOT_FOUND);
+			 }
+		 catch(Exception e)
+		 {
+	        	logger.error("Error occured in deletion of Question from Exam");
+			 return new ResponseEntity<>(new ApiResponse(false,"Error occured in deletion of Question from Exam"+examId+ e.getMessage()),HttpStatus.INTERNAL_SERVER_ERROR);
+	        }
+			
 	}	
 
 		

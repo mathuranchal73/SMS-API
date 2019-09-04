@@ -73,6 +73,13 @@ public class ExamController {
          return examService.addQuestionAndGetUpdatedExam(examId, addQuestionRequest, currentUser);
     }
 	
+	@DeleteMapping("/{examId}/removeQuestion/{questionId}")
+    @ApiOperation(value="Adds the questions for the provided Exam Id and current User", notes="Adds the questions for the provided Exam Id and current User",produces = "application/json", nickname="addQuestions")
+    public ResponseEntity<?> removeQuestionAndGetUpdatedExam(@CurrentUser UserPrincipal currentUser,@PathVariable Long examId,
+                         @PathVariable Long questionId) {
+         return examService.removeQuestionAndGetUpdatedExam(examId,questionId,currentUser);
+    }
+	
 	@GetMapping("/{examId}")
 	@ApiOperation(value="Gets the Exam details and questions for the provided Exam Id", notes="Gets teh Exam details and questions for the provided Exam id", produces="application/json", nickname="getExam")
 	public ExamQuestionMap getExam(@CurrentUser UserPrincipal currentUser, @PathVariable Long examId) {

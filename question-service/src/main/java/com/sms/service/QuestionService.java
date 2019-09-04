@@ -57,6 +57,25 @@ public class QuestionService {
 
 		 return ModelMapper.mapQuestionToQuestionResponse(question);
 	    }
+
+
+	public ResponseEntity<?> deleteQuestionById(Long questionId) {
+		if(questionRepository.existsById(questionId))
+		{
+			try {
+				questionRepository.deleteById(questionId);
+				return new ResponseEntity(new ApiResponse(true, "Question Record Deleted Successfully!"),
+		                 HttpStatus.OK);
+			} catch (Exception e) 
+			{
+				logger.error(e.getMessage());
+				return new ResponseEntity(new ApiResponse(false, "Exception Encountered in deleting Question"),
+		                 HttpStatus.INTERNAL_SERVER_ERROR);
+			}
+		}
+		return new ResponseEntity<>(new ApiResponse(false,"Question not found with ID :"+questionId),HttpStatus.NOT_FOUND);
+
+	}
 	
 
 
