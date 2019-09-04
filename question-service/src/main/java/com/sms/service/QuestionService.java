@@ -12,10 +12,13 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.sms.model.Choice;
 import com.sms.model.Question;
+import com.sms.payload.ApiResponse;
 import com.sms.payload.QuestionRequest;
 import com.sms.payload.QuestionResponse;
 import com.sms.util.ModelMapper;
@@ -31,7 +34,7 @@ public class QuestionService {
 	
 	private static final Logger logger = LoggerFactory.getLogger(QuestionService.class);
 	
-	public Question createQuestion(QuestionRequest questionRequest) {
+	public ResponseEntity<ApiResponse> createQuestion(QuestionRequest questionRequest) {
         Question question = new Question();
 
         question.setQuestionText(questionRequest.getQuestionText());
@@ -41,8 +44,9 @@ public class QuestionService {
         
         question.setAllowedTime(questionRequest.getAllowedTime());
 
-
-        return questionRepository.save(question);
+        questionRepository.save(question);
+        return new ResponseEntity(new ApiResponse(true, "Question Added Successfully"),
+		               HttpStatus.OK);
     }
 	
 	

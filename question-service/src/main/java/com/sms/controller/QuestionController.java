@@ -43,14 +43,8 @@ public class QuestionController {
 	@PostMapping("/createQuestion")
     @ApiOperation(value="Creates the Question", notes="Creates a Question",produces = "application/json", nickname="createQuestion")
     public ResponseEntity<?> createQuestion(@Valid @RequestBody QuestionRequest questionRequest) {
-        Question question = questionService.createQuestion(questionRequest);
-
-        URI location = ServletUriComponentsBuilder
-                .fromCurrentRequest().path("/{questionId}")
-                .buildAndExpand(question.getId()).toUri();
-
-        return ResponseEntity.created(location)
-                .body(question);
+  
+        return questionService.createQuestion(questionRequest);
     }
 	
 	

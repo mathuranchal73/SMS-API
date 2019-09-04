@@ -31,6 +31,7 @@ import com.sms.model.ExamQuestionMap;
 import com.sms.model.Question;
 import com.sms.model.QuestionPaper;
 import com.sms.model.User;
+import com.sms.model.audit.UserDateAudit;
 import com.sms.payload.AddQuestionRequest;
 import com.sms.payload.ApiResponse;
 import com.sms.payload.ChoiceRequest;
@@ -48,7 +49,7 @@ import com.sms.util.ModelMapper;
 
 
 @Service
-public class ExamService {
+public class ExamService extends UserDateAudit {
 
 	@Autowired
 	private ExamRepository examRepository;
@@ -178,8 +179,27 @@ public class ExamService {
 			  
 			  return response;
 		
-	}		
-	
+	}
+
+		
+	public ExamQuestionMap getExam(Long examId) {
+		ExamQuestionMap examQuestionMap= new ExamQuestionMap();
+		examQuestionMap.setExam(examRepository.findById(examId)
+						.orElseThrow(() -> new ResourceNotFoundException("Exam", "id", examId)));
+		
+		 List<Long> questionIdList=questionPaperRepository.findAllQuestionIdsByExamIdIn(examId);
+		 List<Question> temp= new ArrayList<>();
+		 //temp.add(questionIdList.forEach(Question->{getQuestion(Question.getId())});));
+		 for(Long q:questionIdList)
+		 {
+			 temp.add(this.getQuestion(q));
+		 }
+		 
+		 examQuestionMap.setQuestionList(temp);
+			  return examQuestionMap;
+	 
+		
+	}	
 
 		
         

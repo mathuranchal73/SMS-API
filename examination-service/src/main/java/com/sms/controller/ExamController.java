@@ -72,5 +72,12 @@ public class ExamController {
          return examService.addQuestionAndGetUpdatedExam(examId, addQuestionRequest, currentUser);
     }
 	
+	@GetMapping("/{examId}")
+	@ApiOperation(value="Gets the Exam details and questions for the provided Exam Id", notes="Gets teh Exam details and questions for the provided Exam id", produces="application/json", nickname="getExam")
+	public ExamQuestionMap getExam(@CurrentUser UserPrincipal currentUser, @PathVariable Long examId) {
+		return examService.getExam(examId);
+	}
+	
+	
 
 }
