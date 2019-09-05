@@ -51,7 +51,7 @@ public class LoginService implements ILoginService {
                      .map((Role role)-> "ROLE_"+role.getRole()).filter(Objects::nonNull).collect(Collectors.toList()));
              return token;
         } catch (AuthenticationException e) {
-            throw new CustomException(e.getMessage(), HttpStatus.UNAUTHORIZED);
+            throw new CustomException("Invalid username or password.", HttpStatus.UNAUTHORIZED);
         }
         }
     

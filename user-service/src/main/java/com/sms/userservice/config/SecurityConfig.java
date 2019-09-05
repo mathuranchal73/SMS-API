@@ -83,11 +83,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/**/*.css",
                         "/**/*.js")
                         .permitAll()                        
-                        .antMatchers("/api/user/checkUsernameAvailability", "/api/user/checkEmailAvailability")
+                        .antMatchers("/v1/user/checkUsernameAvailability", "/v1/user/checkEmailAvailability")
                         .permitAll()
-                        .antMatchers(HttpMethod.GET, "/api/user/**")
-                        .permitAll()
-                        .antMatchers("/api/user/signup","/api/eureka/**")
+                        //.antMatchers(HttpMethod.GET, "/v1/user/**")
+                        //.permitAll()
+                        .antMatchers("/v1/user/signup","/api/eureka/**")
                         .permitAll()
         .anyRequest()
         .authenticated();
