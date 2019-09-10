@@ -48,6 +48,8 @@ public class CustomUserDetailsService implements UserDetailsService {
 	        DbUserDetails userDetails = new DbUserDetails(user.getId(),user.getName(),user.getEmail(),user.getUsername(),user.getPassword(),user.getActive(),
 	                user.isLocked(), user.isExpired(),user.isEnabled(),authorities);
 	        return userDetails;
+	        
+	        
 
 	    }
 
