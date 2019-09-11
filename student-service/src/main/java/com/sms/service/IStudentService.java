@@ -10,4 +10,6 @@ import com.sms.model.Student;
 public interface IStudentService {
 
 	 List<Student> readStudentsFromCSV(MultipartFile File) throws IOException;
+
+	void cacheStudentsDetails(boolean checkFlag) throws Exception;
 }

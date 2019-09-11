@@ -46,6 +46,7 @@ import com.sms.payload.ApiResponse;
 import com.sms.payload.CreateStudentRequest;
 import com.sms.payload.UpdateStudentRequest;
 import com.sms.payload.UploadBulkFileResponse;
+import com.sms.redis.StudentCacheManager;
 import com.sms.security.UserPrincipal;
 import com.sms.repository.StudentRepository;
 import com.sms.controller.StudentController;
@@ -56,6 +57,8 @@ import com.sms.exception.ResourceNotFoundException;
 public class StudentServiceImpl implements IStudentService {
 	
 	 private static Logger logger = LoggerFactory.getLogger(StudentServiceImpl.class);
+	 
+	 	private StudentCacheManager studentCacheManager;
 	
 	 	@Autowired
 	    private EurekaClient eurekaClient;
@@ -71,6 +74,19 @@ public class StudentServiceImpl implements IStudentService {
 	    
 	    @Autowired
 		 ObjectMapper objectMapper;
+	    
+	    @Autowired
+	    public StudentServiceImpl(StudentCacheManager redisCacheManager)    {
+	        this.studentCacheManager = studentCacheManager;
+	    }
+	    
+	    @Override
+	    public void cacheStudentsDetails(boolean checkFlag) throws Exception {
+	        if(studentCacheManager.checkEmpty()) {// If cache is empty the put the data
+	          List<Student> students= studentRepository.findAll();
+	          students.forEach(stud->studentCacheManager.cacheStudentDetails(stud));
+	        }
+	    }
 	    
 	 public Student getStudentById(Long studentId) {
 	        return studentRepository.findById(studentId).orElseThrow(
