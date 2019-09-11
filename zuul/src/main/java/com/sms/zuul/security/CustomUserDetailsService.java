@@ -35,7 +35,7 @@ public class CustomUserDetailsService implements UserDetailsService{
                   new UsernameNotFoundException("User not found with username or email : " + usernameOrEmail)
         				  );
 
-        if (user == null || user.getRoles() == null || user.getRoles().isEmpty()) {
+        if (user == null ) {
             throw new CustomZuulException("Invalid username or password.", HttpStatus.UNAUTHORIZED);
         }
         

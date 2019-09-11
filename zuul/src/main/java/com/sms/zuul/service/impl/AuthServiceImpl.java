@@ -42,23 +42,16 @@ public class AuthServiceImpl implements IAuthService {
 		
 		        
 		try {
-			/**Authentication authentication = authenticationManager.authenticate(
+			Authentication authentication = authenticationManager.authenticate(
 	                 new UsernamePasswordAuthenticationToken(
 	                         loginRequest.getUsernameOrEmail(),
 	                         loginRequest.getPassword()
 	                 )
 	         );
-        	 SecurityContextHolder.getContext().setAuthentication(authentication);**/
-        	  User user = userRepository.findByUsername(loginRequest.getUsernameOrEmail())
-        			  .orElseThrow(() ->
-              new UsernameNotFoundException("User not found with username or email : " + loginRequest.getUsernameOrEmail())
-    				  );
-        	 if (user == null || user.getRoles() == null || user.getRoles().isEmpty()) {
-                 throw new CustomZuulException("Invalid username or password.", HttpStatus.UNAUTHORIZED);
-             }
-        	 //String jwt = jwtTokenProvider.generateToken(authentication);
-             //return new JwtAuthenticationResponse(jwt);
-             return null;
+        	 SecurityContextHolder.getContext().setAuthentication(authentication);
+        	  
+        	 String jwt = jwtTokenProvider.generateToken(authentication);
+             return new JwtAuthenticationResponse(jwt);
              
 		} catch (AuthenticationException e) {
             throw new CustomZuulException("Invalid username or password.", HttpStatus.UNAUTHORIZED);
