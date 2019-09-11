@@ -36,11 +36,15 @@ public class UserPrincipal implements UserDetails {
 
     private Collection<? extends GrantedAuthority> authorities;
 
- 
+    private String uuid;
 
     
+	public UserPrincipal() {
+		super();
+	}
+
 	public UserPrincipal(Long id, String name, String email, String username, String password, Integer active,
-			boolean isLocked, boolean isExpired, boolean isEnabled,  Collection<? extends GrantedAuthority> authorities) {
+			boolean isLocked, boolean isExpired, boolean isEnabled,  Collection<? extends GrantedAuthority> authorities,String uuid) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -52,6 +56,7 @@ public class UserPrincipal implements UserDetails {
 		this.isExpired = isExpired;
 		this.isEnabled = isEnabled;
 		this.authorities = authorities;
+		this.uuid=uuid;
 	}
 	
 	 public static UserPrincipal create(User user) {
@@ -69,7 +74,8 @@ public class UserPrincipal implements UserDetails {
 	                user.isLocked(),
 	                user.isExpired(),
 	                user.isEnabled(),
-	                authorities
+	                authorities,
+	                user.getUuid()
 	        );
 	    }
 

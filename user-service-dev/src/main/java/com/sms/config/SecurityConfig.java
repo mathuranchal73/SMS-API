@@ -9,6 +9,7 @@ import org.springframework.security.config.BeanIds;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -96,5 +97,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
 
 	}
+	
+	 @Override
+	    public void configure(WebSecurity web) throws Exception {
+	    	// Allow eureka client and Swagger to be accessed without authentication
+	        web.ignoring().antMatchers("/*/","/eureka/**","/v2/api-docs",
+	                                   "/configuration/ui",
+	                                   "/swagger-resources",
+	                                   "/configuration/security",
+	                                   "/swagger-ui.html",
+	                                   "/webjars/**")
+	        .antMatchers(HttpMethod.OPTIONS, "/**"); // Request type options should be allowed.
+	    }
 
 }

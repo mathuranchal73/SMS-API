@@ -21,6 +21,7 @@ import com.sms.zuul.service.IAuthService;
 import com.sms.zuul.exception.CustomZuulException;
 import com.sms.zuul.repository.JwtTokenRepository;
 import com.sms.zuul.repository.UserRepository;
+import com.sms.zuul.security.CustomAuthenticationProvider;
 import com.sms.zuul.security.JwtTokenProvider;
 
 @Service
@@ -36,13 +37,16 @@ public class AuthServiceImpl implements IAuthService {
     private UserRepository userRepository;
     @Autowired
     private JwtTokenRepository jwtTokenRepository;
+    
+    @Autowired
+    private CustomAuthenticationProvider customAuthenticationProvider;
 	
 	@Override
 	public JwtAuthenticationResponse authenticateUser(LoginRequest loginRequest) {
 		
 		        
 		try {
-			Authentication authentication = authenticationManager.authenticate(
+			Authentication authentication = customAuthenticationProvider.authenticate(
 	                 new UsernamePasswordAuthenticationToken(
 	                         loginRequest.getUsernameOrEmail(),
 	                         loginRequest.getPassword()

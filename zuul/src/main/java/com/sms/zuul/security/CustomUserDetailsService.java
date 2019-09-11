@@ -5,6 +5,7 @@ import java.util.Collection;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.convert.converter.Converter;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -21,7 +22,9 @@ import com.sms.zuul.exception.CustomZuulException;
 
 
 @Service
-public class CustomUserDetailsService implements UserDetailsService{
+public class CustomUserDetailsService  implements UserDetailsService {
+	
+	private Converter<User, UserDetails> userUserDetailsConverter;
 	
 	@Autowired
 	private UserRepository userRepository;
@@ -39,7 +42,7 @@ public class CustomUserDetailsService implements UserDetailsService{
             throw new CustomZuulException("Invalid username or password.", HttpStatus.UNAUTHORIZED);
         }
         
-        return UserPrincipal.create(user);
+        return userUserDetailsConverter.convert(user);
 	}
 
 	 @Transactional
@@ -50,4 +53,6 @@ public class CustomUserDetailsService implements UserDetailsService{
 
 	        return UserPrincipal.create(user);
 	    }
+
+	
 }
