@@ -17,6 +17,10 @@ public class JwtToken extends DateAudit {
 	 
 	 
 
+	public JwtToken() {
+		super();
+	}
+
 	public JwtToken(String token, Long userId) {
 		super();
 		this.token = token;

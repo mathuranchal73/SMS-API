@@ -22,37 +22,31 @@ import com.sms.zuul.exception.CustomZuulException;
 
 
 @Service
-public class CustomUserDetailsService  implements UserDetailsService {
-	
-	private Converter<User, UserDetails> userUserDetailsConverter;
-	
+public class CustomUserDetailsService implements UserDetailsService {
+
 	@Autowired
-	private UserRepository userRepository;
+    UserRepository userRepository;
 
-	@Override
+    @Override
     @Transactional
-	public UserDetails loadUserByUsername(String usernameOrEmail) throws UsernameNotFoundException {
-		  // Let people login with either username or email
-        User user = userRepository.findByUsername(usernameOrEmail)
-        		  .orElseThrow(() ->
-                  new UsernameNotFoundException("User not found with username or email : " + usernameOrEmail)
-        				  );
+    public UserDetails loadUserByUsername(String usernameOrEmail)
+            throws UsernameNotFoundException {
+        // Let people login with either username or email
+        User user = userRepository.findByUsernameOrEmail(usernameOrEmail, usernameOrEmail)
+                .orElseThrow(() ->
+                        new UsernameNotFoundException("User not found with username or email : " + usernameOrEmail)
+        );
 
-        if (user == null ) {
-            throw new CustomZuulException("Invalid username or password.", HttpStatus.UNAUTHORIZED);
-        }
-        
-        return userUserDetailsConverter.convert(user);
-	}
+        return UserPrincipal.create(user);
+    }
 
-	 @Transactional
-	    public UserDetails loadUserById(Long id) {
-	        User user = userRepository.findById(id).orElseThrow(
-	            () -> new ResourceNotFoundException("User", "id", id)
-	        );
+    @Transactional
+    public UserDetails loadUserById(Long id) {
+        User user = userRepository.findById(id).orElseThrow(
+            () -> new ResourceNotFoundException("User", "id", id)
+        );
 
-	        return UserPrincipal.create(user);
-	    }
+        return UserPrincipal.create(user);
+    }
 
-	
 }

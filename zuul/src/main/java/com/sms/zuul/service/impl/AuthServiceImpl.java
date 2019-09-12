@@ -1,16 +1,13 @@
 package com.sms.zuul.service.impl;
 
-import java.util.Objects;
-import java.util.stream.Collectors;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -21,14 +18,12 @@ import com.sms.zuul.service.IAuthService;
 import com.sms.zuul.exception.CustomZuulException;
 import com.sms.zuul.repository.JwtTokenRepository;
 import com.sms.zuul.repository.UserRepository;
-import com.sms.zuul.security.CustomAuthenticationProvider;
 import com.sms.zuul.security.JwtTokenProvider;
+import com.sms.zuul.security.UserPrincipal;
 
 @Service
 public class AuthServiceImpl implements IAuthService {
 	
-	@Autowired
-    private PasswordEncoder passwordEncoder;
     @Autowired
     private JwtTokenProvider jwtTokenProvider;
     @Autowired
@@ -38,24 +33,24 @@ public class AuthServiceImpl implements IAuthService {
     @Autowired
     private JwtTokenRepository jwtTokenRepository;
     
-    @Autowired
-    private CustomAuthenticationProvider customAuthenticationProvider;
+
 	
 	@Override
 	public JwtAuthenticationResponse authenticateUser(LoginRequest loginRequest) {
 		
 		        
 		try {
-			Authentication authentication = customAuthenticationProvider.authenticate(
+			Authentication authentication = authenticationManager.authenticate(
 	                 new UsernamePasswordAuthenticationToken(
 	                         loginRequest.getUsernameOrEmail(),
 	                         loginRequest.getPassword()
 	                 )
 	         );
         	 SecurityContextHolder.getContext().setAuthentication(authentication);
-        	  
         	 String jwt = jwtTokenProvider.generateToken(authentication);
-             return new JwtAuthenticationResponse(jwt);
+        	
+        		 return(new JwtAuthenticationResponse(jwt));
+        	 
              
 		} catch (AuthenticationException e) {
             throw new CustomZuulException("Invalid username or password.", HttpStatus.UNAUTHORIZED);
@@ -64,21 +59,21 @@ public class AuthServiceImpl implements IAuthService {
 
 
 	@Override
-	public User saveUser(User user) {
+	public Boolean logoutUser(String token) {
 		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean logout(String token) {
-		// TODO Auto-generated method stub
+		if(isValidToken(token))
+		{
+			return jwtTokenProvider.logoutToken(token);
+		}
+		
 		return false;
 	}
 
 	@Override
 	public Boolean isValidToken(String token) {
-		// TODO Auto-generated method stub
-		return null;
+		 
+		return jwtTokenProvider.validateToken(token);
+    	
 	}
 
 	@Override
@@ -86,5 +81,6 @@ public class AuthServiceImpl implements IAuthService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 
 }

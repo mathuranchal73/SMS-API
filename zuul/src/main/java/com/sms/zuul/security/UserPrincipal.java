@@ -15,51 +15,32 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.sms.zuul.model.User;
 import com.sms.zuul.security.UserPrincipal;
 
-@JsonDeserialize(as = UserPrincipal.class)
 public class UserPrincipal implements UserDetails {
 	
-	
-	private Long id;
-	
-    private String name;
+	 private Long id;
 
-    @JsonIgnore
-    private String email;
+	    private String name;
 
-    private String username;
-    @JsonIgnore
-    private String password;
-    private Integer active;
-    private boolean isLocked;
-    private boolean isExpired;
-    private boolean isEnabled;
+	    private String username;
 
-    private Collection<? extends GrantedAuthority> authorities;
+	    @JsonIgnore
+	    private String email;
 
-    private String uuid;
+	    @JsonIgnore
+	    private String password;
 
-    
-	public UserPrincipal() {
-		super();
-	}
+	    private Collection<? extends GrantedAuthority> authorities;
 
-	public UserPrincipal(Long id, String name, String email, String username, String password, Integer active,
-			boolean isLocked, boolean isExpired, boolean isEnabled,  Collection<? extends GrantedAuthority> authorities,String uuid) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.email = email;
-		this.username = username;
-		this.password = password;
-		this.active = active;
-		this.isLocked = isLocked;
-		this.isExpired = isExpired;
-		this.isEnabled = isEnabled;
-		this.authorities = authorities;
-		this.uuid=uuid;
-	}
-	
-	 public static UserPrincipal create(User user) {
+	    public UserPrincipal(Long id, String name, String username, String email, String password, Collection<? extends GrantedAuthority> authorities) {
+	        this.id = id;
+	        this.name = name;
+	        this.username = username;
+	        this.email = email;
+	        this.password = password;
+	        this.authorities = authorities;
+	    }
+
+	    public static UserPrincipal create(User user) {
 	        List<GrantedAuthority> authorities = user.getRoles().stream().map(role ->
 	                new SimpleGrantedAuthority(role.getName().name())
 	        ).collect(Collectors.toList());
@@ -67,125 +48,59 @@ public class UserPrincipal implements UserDetails {
 	        return new UserPrincipal(
 	                user.getId(),
 	                user.getName(),
-	                user.getEmail(),
 	                user.getUsername(),
+	                user.getEmail(),
 	                user.getPassword(),
-	                user.getActive(),
-	                user.isLocked(),
-	                user.isExpired(),
-	                user.isEnabled(),
-	                authorities,
-	                user.getUuid()
+	                authorities
 	        );
 	    }
 
-	 
-	 
+	    public Long getId() {
+	        return id;
+	    }
 
-	public Long getId() {
-		return id;
-	}
+	    public String getName() {
+	        return name;
+	    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+	    public String getEmail() {
+	        return email;
+	    }
 
-	public String getName() {
-		return name;
-	}
+	    @Override
+	    public String getUsername() {
+	        return username;
+	    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+	    @Override
+	    public String getPassword() {
+	        return password;
+	    }
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public Integer getActive() {
-		return active;
-	}
-
-	public void setActive(Integer active) {
-		this.active = active;
-	}
-
-	public boolean isLocked() {
-		return isLocked;
-	}
-
-	public void setLocked(boolean isLocked) {
-		this.isLocked = isLocked;
-	}
-
-	public boolean isExpired() {
-		return isExpired;
-	}
-
-	public void setExpired(boolean isExpired) {
-		this.isExpired = isExpired;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public void setEnabled(boolean isEnabled) {
-		this.isEnabled = isEnabled;
-	}
-
-	public void setAuthorities(Collection<? extends GrantedAuthority> authorities) {
-		this.authorities = authorities;
-	}
-
-	@Override
-	public String getPassword() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getUsername() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean isAccountNonExpired() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean isAccountNonLocked() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean isCredentialsNonExpired() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean isEnabled() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	 @Override
+	    @Override
 	    public Collection<? extends GrantedAuthority> getAuthorities() {
 	        return authorities;
 	    }
 
+	    @Override
+	    public boolean isAccountNonExpired() {
+	        return true;
+	    }
+
+	    @Override
+	    public boolean isAccountNonLocked() {
+	        return true;
+	    }
+
+	    @Override
+	    public boolean isCredentialsNonExpired() {
+	        return true;
+	    }
+
+	    @Override
+	    public boolean isEnabled() {
+	        return true;
+	    }
 
 	    @Override
 	    public boolean equals(Object o) {

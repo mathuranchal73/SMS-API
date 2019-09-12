@@ -1,6 +1,10 @@
 package com.sms.zuul.security;
 
+import java.util.Base64;
 import java.util.Date;
+import java.util.LinkedHashMap;
+
+import javax.annotation.PostConstruct;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,8 +15,10 @@ import org.springframework.stereotype.Component;
 
 import com.sms.zuul.security.JwtTokenProvider;
 import com.sms.zuul.security.UserPrincipal;
+import com.sms.zuul.util.RedisUtil;
 import com.sms.zuul.model.JwtToken;
 import com.sms.zuul.model.RoleName;
+import com.sms.zuul.model.User;
 import com.sms.zuul.repository.JwtTokenRepository;
 
 import io.jsonwebtoken.Claims;
@@ -30,6 +36,8 @@ private static final Logger logger = LoggerFactory.getLogger(JwtTokenProvider.cl
 
 private static final String AUTH="auth";
 private static final String AUTHORIZATION="Authorization";
+
+private static final String REDIS_SET_ACTIVE_SUBJECTS = "active-subjects";
 	
 	@Value("${app.jwtSecret}")
     private String jwtSecret;
@@ -40,6 +48,11 @@ private static final String AUTHORIZATION="Authorization";
 
     @Autowired
     private JwtTokenRepository jwtTokenRepository;
+    
+    @PostConstruct
+    protected void init() {
+        jwtSecret = Base64.getEncoder().encodeToString(jwtSecret.getBytes());
+    }
 
     
     public String generateToken(Authentication authentication) {
@@ -57,7 +70,9 @@ private static final String AUTHORIZATION="Authorization";
                 .setExpiration(expiryDate)
                 .signWith(SignatureAlgorithm.HS512, jwtSecret)
                 .compact();
-        jwtTokenRepository.save(new JwtToken(token,userPrincipal.getId()));
+        
+        RedisUtil.INSTANCE.sadd(REDIS_SET_ACTIVE_SUBJECTS, userPrincipal.getId().toString());
+       // jwtTokenRepository.save(new JwtToken(token,userPrincipal.getId()));
         
         return token;
     }
@@ -74,8 +89,16 @@ private static final String AUTHORIZATION="Authorization";
     
     public boolean validateToken(String authToken) {
         try {
-            Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(authToken);
-            return true;
+        	Claims claims =Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(authToken).getBody();
+        	 if (RedisUtil.INSTANCE.sismember(REDIS_SET_ACTIVE_SUBJECTS, claims.getSubject())) {
+                 return true;
+             }
+        	 else
+        	 {
+        		 logger.error("JWT Token not present in Redis Cache");
+        		  return false;
+        	 }
+
         } catch (SignatureException ex) {
             logger.error("Invalid JWT signature");
         } catch (MalformedJwtException ex) {
@@ -89,5 +112,22 @@ private static final String AUTHORIZATION="Authorization";
         }
         return false;
     }
+
+
+	public boolean logoutToken(String token) {
+		Claims claims =Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(token).getBody();
+		try{
+			
+			RedisUtil.INSTANCE.srem(REDIS_SET_ACTIVE_SUBJECTS, claims.getSubject());
+			return true;
+		}catch(Exception ex)
+		{
+			logger.error("REDIS REMOVE EXCEPTION"+ ex.getMessage());
+			return false;
+		}
+			
+		
+	}
+    
 
 }

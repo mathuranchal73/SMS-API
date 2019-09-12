@@ -41,35 +41,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private JwtAuthenticationEntryPoint unauthorizedHandler;
-    
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
-    
-    
 
     @Bean
     public JWTAuthenticationFilter jwtAuthenticationFilter() {
         return new JWTAuthenticationFilter();
     }
     
-    @Bean
-    public DaoAuthenticationProvider daoAuthenticationProvider(PasswordEncoder passwordEncoder,
-    		CustomUserDetailsService customUserDetailsService){
-
-        DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
-        daoAuthenticationProvider.setPasswordEncoder(passwordEncoder);
-        daoAuthenticationProvider.setUserDetailsService(customUserDetailsService);
-        return daoAuthenticationProvider;
-    }
-    
-   @Override
+    @Override
     public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
-	   
-	   DaoAuthenticationProvider daoAuth = new DaoAuthenticationProvider();
         authenticationManagerBuilder
-        .authenticationProvider(daoAuth);
+                .userDetailsService(customUserDetailsService)
+                .passwordEncoder(passwordEncoder());
     }
     
     @Bean(BeanIds.AUTHENTICATION_MANAGER)
@@ -78,7 +60,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManagerBean();
     }
     
-   
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
     
     @Override
     protected void configure(HttpSecurity http) throws Exception {
