@@ -118,11 +118,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .antMatchers(HttpMethod.OPTIONS, "/**"); // Request type options should be allowed.
     }
     
-    @Autowired
-	public void configureGlobal(AuthenticationManagerBuilder auth)throws Exception
-	{
-		auth.inMemoryAuthentication()
-		.passwordEncoder(NoOpPasswordEncoder.getInstance())
-		.withUser("user").password("anchal29").roles("USER");
-	}
+    
 }
