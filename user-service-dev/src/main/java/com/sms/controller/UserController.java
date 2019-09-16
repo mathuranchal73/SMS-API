@@ -127,7 +127,7 @@ public class UserController {
 	    
 	    
 	    
-	    @PostMapping("/getToken")
+	  /**  @PostMapping("/getToken")
 	    @ApiOperation(value="Get the JWT Token", notes="Generates a random JWT token based on Credentials Provided",produces = "application/json", nickname="getToken")
 	    public ResponseEntity<?> getToken(@Valid @RequestBody TokenRequest tokenRequest) {
 
@@ -141,6 +141,7 @@ public class UserController {
 	        String jwt = tokenProvider.generateToken(authentication);
 	        return ResponseEntity.ok(new JwtAuthenticationResponse(jwt));
 	    }
+	    **/
 	    
 	    @GetMapping("/me")
 	    @PreAuthorize("hasRole('USER')")

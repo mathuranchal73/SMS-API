@@ -16,6 +16,10 @@ server:
 spring:
   application:
     name: question-service
+  redis:
+    host: localhost
+    password: password
+    port: 6379
   datasource:
     password: anchal29
     url: jdbc:mysql://localhost:3306/oes?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
@@ -30,4 +34,4 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-  
+     

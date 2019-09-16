@@ -54,6 +54,7 @@ public class ExamController {
 	
 
 	@PostMapping("/createExam")
+	@PreAuthorize("hasRole('TEACHER')")
     @ApiOperation(value="Creates the Exam", notes="Creates a Exam",produces = "application/json", nickname="createExam")
     public ResponseEntity<?> createExam(@Valid @RequestBody ExamRequest examRequest) {
         

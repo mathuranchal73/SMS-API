@@ -1,5 +1,5 @@
 app:
-  TOKEN_EXPIRATION: 10
+  TOKEN_EXPIRATION: 100
   jwtExpirationInMs: 604800000
   jwtSecret: JWTSuperSecretKey
 eureka:
