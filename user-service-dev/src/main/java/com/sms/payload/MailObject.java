@@ -3,7 +3,6 @@ package com.sms.payload;
 import java.net.URI;
 import java.util.Date;
 
-import javax.persistence.Id;
 
 public class MailObject {
 	

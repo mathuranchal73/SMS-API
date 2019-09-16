@@ -24,7 +24,6 @@ import com.sms.model.audit.DateAudit;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-
 @Entity
 @Table(name = "users", uniqueConstraints = {
         @UniqueConstraint(columnNames = {
@@ -40,6 +39,11 @@ import io.swagger.annotations.ApiModelProperty;
 @ApiModel
 public class User extends DateAudit {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@ApiModelProperty(notes = "The database generated product ID")
@@ -180,11 +184,5 @@ public class User extends DateAudit {
 	public void setExpired(boolean isExpired) {
 		this.isExpired = isExpired;
 	}
-
-	
-
-	
-	
-
 	 
 }

@@ -19,6 +19,11 @@ import com.sms.model.audit.UserDateAudit;
 @Table(name = "user_profile")
 public class UserProfile  extends UserDateAudit {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

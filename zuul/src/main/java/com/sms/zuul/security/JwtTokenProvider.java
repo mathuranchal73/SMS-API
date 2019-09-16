@@ -77,6 +77,7 @@ private static final String REDIS_SET_ACTIVE_SUBJECTS = "active-subjects";
         return token;
     }
     
+    
     public Long getUserIdFromJWT(String token) {
         Claims claims = Jwts.parser()
                 .setSigningKey(jwtSecret)

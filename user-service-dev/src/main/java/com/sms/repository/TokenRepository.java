@@ -3,7 +3,6 @@ package com.sms.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.sms.model.Role;
 import com.sms.model.User;
 import com.sms.model.VerificationToken;
 

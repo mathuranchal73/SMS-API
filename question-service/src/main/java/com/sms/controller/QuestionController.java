@@ -43,7 +43,7 @@ public class QuestionController {
 	private static final Logger logger = LoggerFactory.getLogger(QuestionController.class);
 	
 	@PostMapping("/createQuestion")
-   // @PreAuthorize("hasRole('TEACHER')")
+	@PreAuthorize("hasRole('TEACHER')")
     @ApiOperation(value="Creates the Question", notes="Creates a Question",produces = "application/json", nickname="createQuestion")
     public ResponseEntity<?> createQuestion(@Valid @RequestBody QuestionRequest questionRequest) {
   

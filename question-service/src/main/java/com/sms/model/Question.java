@@ -27,7 +27,12 @@ import com.sms.model.audit.UserDateAudit;
 
 @Entity
 @Table(name = "questions")
-public class Question {
+public class Question extends UserDateAudit {
+
+		/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 		@Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)

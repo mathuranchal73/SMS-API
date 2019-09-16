@@ -1,5 +1,7 @@
 package com.sms.zuul.filters.pre;
 
+import java.util.Set;
+
 import javax.servlet.http.HttpServletRequest;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.ZuulFilter;
@@ -32,6 +34,10 @@ public class SimpleFilter extends ZuulFilter {
     HttpServletRequest request = ctx.getRequest();
 
     log.info(String.format("%s request to %s", request.getMethod(), request.getRequestURL().toString()));
+    
+    Set<String> headers = (Set<String>) ctx.get("ignoredHeaders");
+    // We need our JWT tokens relayed to resource servers
+    headers.remove("Authorization");
 
     return null;
   }
