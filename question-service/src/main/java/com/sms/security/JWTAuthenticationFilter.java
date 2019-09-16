@@ -32,11 +32,7 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
 			throws ServletException, IOException {
 	
 		try {
-			//String jwt= getJwtFromRequest(request);
-			
-			String jwt=request.getHeader("Authorization");
-			
-			logger.info(jwt);
+			String jwt= getJwtFromRequest(request);
 			
 			if (StringUtils.hasText(jwt) && tokenProvider.validateToken(jwt)) {
 				Long userId = tokenProvider.getUserIdFromJWT(jwt);
@@ -57,13 +53,11 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
 	
 	private String getJwtFromRequest(HttpServletRequest request) {
         String bearerToken = request.getHeader("Authorization");
-       // if (StringUtils.hasText(bearerToken) && bearerToken.startsWith("Bearer ")) {
-            //return bearerToken.substring(7, bearerToken.length());
-        if (StringUtils.hasText(bearerToken)) {
-        	logger.info(bearerToken);
-        	return bearerToken;
+        if (StringUtils.hasText(bearerToken) && bearerToken.startsWith("Bearer ")) {
+        	logger.info("Bearer Token Passed:"+bearerToken);
+            return bearerToken.substring(7, bearerToken.length());
         }
-        logger.error("Invalid Bearer TOken");
+        logger.error("Could Not extract bearer token from request");
         return null;
     }
 
