@@ -40,7 +40,7 @@ public class JwtTokenProvider {
                 .setSigningKey(jwtSecret)
                 .parseClaimsJws(token)
                 .getBody();
-
+        logger.info("Parsed UserId:"+claims.getSubject());
         return Long.parseLong(claims.getSubject());
     }
     

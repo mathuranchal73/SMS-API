@@ -27,7 +27,7 @@ import com.sms.model.audit.UserDateAudit;
 
 @Entity
 @Table(name = "questions")
-public class Question implements Comparable<Question> {
+public class Question extends UserDateAudit implements Comparable<Question> {
 
 		@Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)

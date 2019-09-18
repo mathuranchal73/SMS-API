@@ -56,7 +56,7 @@ public class PollController {
     }
 
     @PostMapping
-    @PreAuthorize("hasRole('USER')")
+    @PreAuthorize("hasRole('TEACHER')")
     @ApiOperation(value="Creates the Poll", notes="Creates a Poll",produces = "application/json", nickname="createPoll")
     public ResponseEntity<?> createPoll(@Valid @RequestBody PollRequest pollRequest) {
         Poll poll = pollService.createPoll(pollRequest);
@@ -78,7 +78,7 @@ public class PollController {
     }
 
     @PostMapping("/{pollId}/votes")
-    @PreAuthorize("hasRole('USER')")
+    @PreAuthorize("hasRole('TEACHER')")
     @ApiOperation(value="Casts the vote for the provided Poll Id and current User", notes="Casts the vote for the provided Poll Id and current User",produces = "application/json", nickname="castVote")
     public PollResponse castVote(@CurrentUser UserPrincipal currentUser,
                          @PathVariable Long pollId,

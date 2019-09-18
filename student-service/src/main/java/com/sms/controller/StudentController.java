@@ -20,6 +20,8 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -70,15 +72,19 @@ public class StudentController {
 	 StudentServiceImpl studentService;
 	 
 	 @GetMapping("/")
-	    public ArrayList<Student> getAllStudents() {
+	 @PreAuthorize("hasRole('TEACHER')")
+	 public ArrayList<Student> getAllStudents() {
 
 	        return studentRepository.findAll();
 	    }
 	 @GetMapping("/{studentId}")
+	 @PreAuthorize("hasRole('TEACHER')")
 	 public Student getStudentById(@PathVariable Long studentId) {
 		 	return studentService.getStudentById(studentId);
 	 	}
+	 
 	 @GetMapping("/getStudentCount")
+	 @PreAuthorize("hasRole('TEACHER')")
 	 @ApiOperation(value="Gets the total count of Student Records", notes="Gets the total count of Student Records",produces = "application/json", nickname="getStudentCount")
 	 public Long getStudentCount() {
 		 	return studentService.getStudentCount();

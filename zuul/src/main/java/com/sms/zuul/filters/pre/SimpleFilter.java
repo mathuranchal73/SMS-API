@@ -8,6 +8,7 @@ import com.netflix.zuul.ZuulFilter;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 public class SimpleFilter extends ZuulFilter {
 
@@ -20,7 +21,7 @@ public class SimpleFilter extends ZuulFilter {
 
   @Override
   public int filterOrder() {
-    return 1;
+    return 1000;
   }
 
   @Override
@@ -32,12 +33,11 @@ public class SimpleFilter extends ZuulFilter {
   public Object run() {
     RequestContext ctx = RequestContext.getCurrentContext();
     HttpServletRequest request = ctx.getRequest();
+   // Set<String> headers = (Set<String>) ctx.get("ignoredHeaders");
+    // We need our JWT tokens relayed to resource servers
+   // headers.remove("Authorization");
 
     log.info(String.format("%s request to %s", request.getMethod(), request.getRequestURL().toString()));
-    
-    Set<String> headers = (Set<String>) ctx.get("ignoredHeaders");
-    // We need our JWT tokens relayed to resource servers
-    headers.remove("Authorization");
 
     return null;
   }

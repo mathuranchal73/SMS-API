@@ -12,11 +12,13 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -64,23 +66,23 @@ public class ExamController {
 	
 	@PostMapping("/{examId}/addQuestions")
     @ApiOperation(value="Adds the questions for the provided Exam Id and current User", notes="Adds the questions for the provided Exam Id and current User",produces = "application/json", nickname="addQuestions")
-    public ResponseEntity<?> addQuestion(@CurrentUser UserPrincipal currentUser,
+    public ResponseEntity<?> addQuestion(@RequestHeader("Authorization") String token,@CurrentUser UserPrincipal currentUser,
                          @PathVariable Long examId,
                          @Valid @RequestBody AddQuestionRequest addQuestionRequest) {
-         return examService.addQuestionAndGetUpdatedExam(examId, addQuestionRequest, currentUser);
+         return examService.addQuestionAndGetUpdatedExam(token,examId, addQuestionRequest, currentUser);
     }
 	
 	@DeleteMapping("/{examId}/removeQuestion/{questionId}")
     @ApiOperation(value="Adds the questions for the provided Exam Id and current User", notes="Adds the questions for the provided Exam Id and current User",produces = "application/json", nickname="addQuestions")
-    public ResponseEntity<?> removeQuestionAndGetUpdatedExam(@CurrentUser UserPrincipal currentUser,@PathVariable Long examId,
+    public ResponseEntity<?> removeQuestionAndGetUpdatedExam(@RequestHeader("Authorization") String token,@CurrentUser UserPrincipal currentUser,@PathVariable Long examId,
                          @PathVariable Long questionId) {
-         return examService.removeQuestionAndGetUpdatedExam(examId,questionId,currentUser);
+         return examService.removeQuestionAndGetUpdatedExam(token,examId,questionId,currentUser);
     }
 	
 	@GetMapping("/{examId}")
 	@ApiOperation(value="Gets the Exam details and questions for the provided Exam Id", notes="Gets teh Exam details and questions for the provided Exam id", produces="application/json", nickname="getExam")
-	public ResponseEntity<?> getExam(@CurrentUser UserPrincipal currentUser, @PathVariable Long examId) {
-		return examService.getExam(examId);
+	public ResponseEntity<?> getExam(@RequestHeader("Authorization") String token,@CurrentUser UserPrincipal currentUser, @PathVariable Long examId) {
+		return examService.getExam(token,examId);
 	}
 	
 

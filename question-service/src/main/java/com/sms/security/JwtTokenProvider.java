@@ -1,26 +1,21 @@
 package com.sms.security;
 
 import java.util.Base64;
-import java.util.Date;
 
 import javax.annotation.PostConstruct;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
 import com.sms.security.JwtTokenProvider;
-import com.sms.security.UserPrincipal;
 import com.sms.util.RedisUtil;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.MalformedJwtException;
-import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.SignatureException;
 import io.jsonwebtoken.UnsupportedJwtException;
 
@@ -47,34 +42,12 @@ private static final String REDIS_SET_ACTIVE_SUBJECTS = "active-subjects";
     }
 
     
-    public String generateToken(Authentication authentication) {
-
-        UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
-
-        Date now = new Date();
-        Date expiryDate = new Date(now.getTime() + jwtExpirationInMs);
-        Claims claims = Jwts.claims().setSubject(userPrincipal.getId().toString());
-        claims.put(AUTH,userPrincipal);
-        
-        String token = Jwts.builder()
-                .setClaims(claims)//
-                .setIssuedAt(new Date())
-                .setExpiration(expiryDate)
-                .signWith(SignatureAlgorithm.HS512, jwtSecret)
-                .compact();
-        
-        RedisUtil.INSTANCE.sadd(REDIS_SET_ACTIVE_SUBJECTS, userPrincipal.getId().toString());
-       // jwtTokenRepository.save(new JwtToken(token,userPrincipal.getId()));
-        
-        return token;
-    }
-    
     public Long getUserIdFromJWT(String token) {
         Claims claims = Jwts.parser()
                 .setSigningKey(jwtSecret)
                 .parseClaimsJws(token)
                 .getBody();
-
+        logger.info("Parsed UserId:"+claims.getSubject());
         return Long.parseLong(claims.getSubject());
     }
     

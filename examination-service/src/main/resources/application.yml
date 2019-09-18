@@ -16,7 +16,7 @@ service:
   question-service:
     serviceId: question-service
   zuul-gateway:
-    serviceId: zuul-gateway
+    serviceId: zuul
     
 server:
   port: 8196
@@ -37,4 +37,8 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  redis:
+    host: localhost
+    password: password
+    port: 6379
   

@@ -1,0 +1,92 @@
+app:
+  jwtExpirationInMs: 604800000
+  jwtSecret: JWTSuperSecretKey
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    instance:
+      prefer-ip-address: true
+ribbon:
+    eureka:
+        enabled: true
+    ConnectTimeout: 60000
+    ReadTimeout: 60000
+logging:
+  level:
+    ROOT: INFO
+    com:
+      sms:
+        zuul: DEBUG
+    org:
+      hibernate:
+        SQL: DEBUG
+management:
+  security:
+    enabled: true
+security:
+  basic:
+    enable: true
+server:
+  port: 8086
+spring:
+  application:
+    name: zuul
+  datasource:
+    initialization-mode: always
+    password: anchal29
+    url: jdbc:mysql://localhost:3306/oes?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+    username: root
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+    time-zone: UTC
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  redis:
+    host: localhost
+    password: password
+    port: 6379
+zuul:
+  sensitiveHeaders: Cookie,Set-Cookie
+  routes:
+    email-service:
+      path: /email-api/**
+      serviceId: email-service
+    exam-service:
+      path: /exam-api/**
+      serviceId: examination-service
+    notification-service:
+      path: /notification-api/**
+      serviceId: notification-service
+    poll-service:
+      path: /poll-api/**
+      serviceId: poll-service
+    question-service:
+      path: /question-api/**
+      serviceId: question-service
+    student-service:
+      path: /student-api/**
+      serviceId: student-service
+    upload-service:
+      path: /upload-api/**
+      serviceId: upload-service
+    user-service:
+      path: /user-api/**
+      serviceId: user-service
+      
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 250000
+            

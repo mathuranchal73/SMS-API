@@ -80,8 +80,8 @@ public class ExamService extends UserDateAudit {
     @Autowired
     private EurekaClient eurekaClient;
    
-    @Value("${service.zuul-gateway.serviceId}")
-    private String zuulGatewayServiceId;
+    @Value("${service.question-service.serviceId}")
+    private String questionServiceServiceId;
     
     @Autowired
 	 private RestTemplate restTemplate;
@@ -122,7 +122,7 @@ public class ExamService extends UserDateAudit {
 	}
 	
 	//public ExamResponse addQuestionAndGetUpdatedExam(Long examId, AddQuestionRequest addQuestionRequest, UserPrincipal currentUser) {
-	public ResponseEntity<?> addQuestionAndGetUpdatedExam(Long examId, AddQuestionRequest addQuestionRequest, UserPrincipal currentUser) {
+	public ResponseEntity<?> addQuestionAndGetUpdatedExam(String token,Long examId, AddQuestionRequest addQuestionRequest, UserPrincipal currentUser) {
 		
 		Exam exam= examRepository.findById(examId)
 				.orElseThrow(() -> new ResourceNotFoundException("Exam", "id", examId));
@@ -150,7 +150,7 @@ public class ExamService extends UserDateAudit {
 				 //temp.add(questionIdList.forEach(Question->{getQuestion(Question.getId())});));
 				 for(Long q:questionIdList)
 				 {
-					 temp.add(getQuestion(q));
+					 temp.add(getQuestion(token,q));
 				 }
 				 
 				 Collections.sort(temp);
@@ -183,20 +183,34 @@ public class ExamService extends UserDateAudit {
 	}
 
 		
-	private Question getQuestion(Long questionId) {
-		 Application application = eurekaClient.getApplication(zuulGatewayServiceId);
+	private Question getQuestion(String token,Long questionId) {
+			HttpHeaders headers = new HttpHeaders();
+			headers.setContentType(MediaType.APPLICATION_JSON);
+			headers.set("Authorization", token);
+			HttpEntity<Long> entity = new HttpEntity<Long>(questionId,headers);
+		 Application application = eurekaClient.getApplication(questionServiceServiceId);
 			InstanceInfo instanceInfo = application.getInstances().get(0);
-			String url = "http://"+instanceInfo.getIPAddr()+ ":"+instanceInfo.getPort()+"/question-api/"+"api/questions/"+questionId;
+			String url = "http://"+instanceInfo.getIPAddr()+ ":"+instanceInfo.getPort()+"/api/questions/"+questionId;
 			  //String json=restTemplate.postForObject(url,questionId, String.class);
-				String json=restTemplate.getForObject(url, String.class); 
-			Question response = new Gson().fromJson(json, Question.class);
+				//String json=restTemplate.getForObject(url, String.class); 
+			//String json=restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
+			//String json=restTemplate.getForEntity(url, String.class, entity)
+			 //ResponseEntity<Question> json = restTemplate.exchange(url,
+		                //HttpMethod.GET, entity, Question.class);
+			//String json=restTemplate.postForObject(url,entity,String.class);
+			//Question response = new Gson().fromJson(json, Question.class);
+			
+			ResponseEntity<Question> json = restTemplate.exchange(url,
+	                HttpMethod.GET, entity, Question.class);
+			
+			
 			  
-			  return response;
+			  return json.getBody();
 		
 	}
 
 		
-	public ResponseEntity<?> getExam(Long examId) {
+	public ResponseEntity<?> getExam(String token,Long examId) {
 		ExamQuestionMap examQuestionMap= new ExamQuestionMap();
 		examQuestionMap.setExam(examRepository.findById(examId)
 						.orElseThrow(() -> new ResourceNotFoundException("Exam", "id", examId)));
@@ -206,7 +220,7 @@ public class ExamService extends UserDateAudit {
 		 //temp.add(questionIdList.forEach(Question->{getQuestion(Question.getId())});));
 		 for(Long q:questionIdList)
 		 {
-			 temp.add(this.getQuestion(q));
+			 temp.add(this.getQuestion(token,q));
 		 }
 		 
 		 examQuestionMap.setQuestionList(temp);
@@ -236,7 +250,7 @@ public class ExamService extends UserDateAudit {
 	
 	
 
-	public ResponseEntity<?> removeQuestionAndGetUpdatedExam(Long examId,Long questionId, UserPrincipal currentUser) {
+	public ResponseEntity<?> removeQuestionAndGetUpdatedExam(String token,Long examId,Long questionId, UserPrincipal currentUser) {
 		
 		 try {
 			 if(questionPaperRepository.existsByExamId(examId))
@@ -254,7 +268,7 @@ public class ExamService extends UserDateAudit {
 						 //temp.add(questionIdList.forEach(Question->{getQuestion(Question.getId())});));
 							 for(Long q:questionIdList)
 							 {
-								 temp.add(this.getQuestion(q));
+								 temp.add(this.getQuestion(token,q));
 							 }
 							 
 							 examQuestionMap.setQuestionList(temp);

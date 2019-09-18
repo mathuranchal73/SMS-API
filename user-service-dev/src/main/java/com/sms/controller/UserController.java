@@ -25,6 +25,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -139,7 +140,7 @@ public class UserController {
 	    **/
 	    
 	    @GetMapping("/me")
-	    @PreAuthorize("hasRole('USER')")
+	    @PreAuthorize("hasRole('TEACHER')")
 	    public UserSummary getCurrentUser(@CurrentUser UserPrincipal currentUser) {	
 	    	
 	        UserSummary userSummary = new UserSummary(currentUser.getId(), currentUser.getUsername(), currentUser.getName());
@@ -166,7 +167,7 @@ public class UserController {
 		                    HttpStatus.BAD_REQUEST);
 		        }
 
-		        Role userRole = roleRepository.findByName(RoleName.ROLE_USER)
+		        Role userRole = roleRepository.findByName(RoleName.ROLE_TEACHER)
 		                .orElseThrow(() -> new AppException("User Role not set."));
 
 		        user.setRoles(Collections.singleton(userRole));
@@ -299,7 +300,7 @@ public class UserController {
 	    }
 	    
 	    @DeleteMapping("/UserProfile/{username}")
-	    @PreAuthorize("hasRole('USER')")
+	    @PreAuthorize("hasRole('TEACHER')")
 	    @ApiOperation(value="deleteUserProfile", notes="Deletes the User Profile Details from the System based on the Username provided", nickname="deleteUserProfile")
 	    public ResponseEntity<?> deleteUserProfile(@CurrentUser UserPrincipal currentUser,@PathVariable(value = "username") String username) {
 	    	User user = userRepository.findByUsername(username)
@@ -310,7 +311,7 @@ public class UserController {
 	    }
 	    
 	    @PostMapping("/UserProfile/{username}")
-	    @PreAuthorize("hasRole('USER')")
+	    @PreAuthorize("hasRole('TEACHER')")
 	    @ApiOperation(value="createUserProfile", notes="Creates a User Profile Details in the System for the Username provided", nickname="createUserProfile")
 	    public ResponseEntity<?> createUserProfile(@CurrentUser UserPrincipal currentUser,@PathVariable(value = "username") String username,@Valid @RequestBody UserProfileRequest userProfileRequest) {
 	        User user = userRepository.findByUsername(username)
@@ -328,7 +329,7 @@ public class UserController {
 	    
 	    
 	    @PostMapping("/UserProfile/upload")
-	    @PreAuthorize("hasRole('USER')")
+	    @PreAuthorize("hasRole('TEACHER')")
 	    @ApiOperation(value="upload", notes="Upload the Image file", nickname="upload")
 	    public ResponseEntity<?>  saveImage(@CurrentUser UserPrincipal currentUser,@RequestParam(value = "username") String username,@RequestParam("file") MultipartFile File) throws Exception {
 			
@@ -373,7 +374,7 @@ public class UserController {
 		    }
 	    
 	    @GetMapping("/UserProfile/download/{username}")
-	    //@PreAuthorize("hasRole('USER')")
+	    @PreAuthorize("hasRole('TEACHER')")
 	    @ApiOperation(value="download", notes="Download the Image file", nickname="download")
 	    public ResponseEntity<?>  getImage(@CurrentUser UserPrincipal currentUser,@PathVariable(value = "username") String username) throws Exception {
 			

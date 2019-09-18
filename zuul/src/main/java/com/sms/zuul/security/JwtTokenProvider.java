@@ -83,7 +83,7 @@ private static final String REDIS_SET_ACTIVE_SUBJECTS = "active-subjects";
                 .setSigningKey(jwtSecret)
                 .parseClaimsJws(token)
                 .getBody();
-
+        logger.info("Parsed UserId:"+claims.getSubject());
         return Long.parseLong(claims.getSubject());
     }
     

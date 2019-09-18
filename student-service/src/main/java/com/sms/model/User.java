@@ -39,6 +39,11 @@ import io.swagger.annotations.ApiModelProperty;
 @ApiModel
 public class User extends DateAudit {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@ApiModelProperty(notes = "The database generated product ID")
