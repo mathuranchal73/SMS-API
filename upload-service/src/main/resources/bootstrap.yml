@@ -1,0 +1,33 @@
+server:
+  port: 8183   
+ 
+spring:   
+  application:
+    name: upload-service  
+  cloud:
+    config:
+      uri: http://localhost:8888
+  profiles:
+    active: development
+    
+    eureka:        
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 2
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 5
+      
+    
+      
+management:
+  security:
+    enabled: false 
+  
+logging:
+  level:
+    com.sms.uploadservice: DEBUG
