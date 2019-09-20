@@ -4,7 +4,7 @@ management:
       exposure:
         include: '*'
 server:
-  port: 8188
+  port: 8087
 spring:
   application:
     name: attendance-service

@@ -37,9 +37,7 @@ public class AttendanceController {
 	@PostMapping("/student/markPresent")
 	 @PreAuthorize("hasRole('TEACHER')")
 	 public ResponseEntity<?> markStudentPresent(@RequestHeader("Authorization") String token,@CurrentUser UserPrincipal currentUser,
-             @PathVariable Long studentId,
              @Valid @RequestBody AttendanceRequest attendanceRequest){
-		logger.debug("Inside MarkStudentPresent Method for Student :"+studentId);
 		return attendanceService.markStudentPresent(token,currentUser,attendanceRequest);
 		
 	}

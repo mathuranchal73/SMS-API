@@ -6,13 +6,14 @@ import java.util.Date;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.sms.model.Student;
+import com.sms.model.audit.UserDateAudit;
 
 @Document(collection= "Attendance")
 public class Attendance {
 
-	 
-	  private Student student;
-	  private int date;
+	private static final long serialVersionUID = 1L;
+	private Student student;
+	  private String dateOfAttendance;
 	  private Instant timeIn;
 	  
 	  
@@ -22,13 +23,15 @@ public class Attendance {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Attendance(Student student, int date, Instant timeIn) {
+	
+	public Attendance(Student student, String dateOfAttendance, Instant timeIn) {
 		super();
 		this.student = student;
-		this.date = date;
+		this.dateOfAttendance = dateOfAttendance;
 		this.timeIn = timeIn;
 	}
-	
+
+
 	public Student getStudent() {
 		return student;
 	}
@@ -36,13 +39,17 @@ public class Attendance {
 		this.student = student;
 	}
 
-	public int getDate() {
-		return date;
+	
+
+	public String getDateOfAttendance() {
+		return dateOfAttendance;
 	}
 
-	public void setDate(int date) {
-		this.date = date;
+
+	public void setDateOfAttendance(String string) {
+		this.dateOfAttendance = string;
 	}
+
 
 	public Instant getTimeIn() {
 		return timeIn;

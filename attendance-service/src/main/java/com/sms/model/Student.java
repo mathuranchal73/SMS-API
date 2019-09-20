@@ -1,19 +1,11 @@
 package com.sms.model;
 
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
@@ -23,7 +15,6 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.NaturalId;
 
-import com.sms.model.audit.DateAudit;
 import com.sms.model.audit.UserDateAudit;
 
 @Entity
@@ -198,10 +189,6 @@ public class Student extends UserDateAudit {
 
 	public void setUuid(String uuid) {
 		this.uuid = uuid;
-	}
-	
-	
-	
-	
+	}	
 
 }

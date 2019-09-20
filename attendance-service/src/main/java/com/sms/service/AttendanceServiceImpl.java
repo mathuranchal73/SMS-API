@@ -1,5 +1,6 @@
 package com.sms.service;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -29,6 +30,7 @@ import com.sms.exception.ResourceNotFoundException;
 import com.sms.kafka.Producer;
 import com.sms.model.Student;
 import com.sms.model.User;
+import com.sms.payload.ApiResponse;
 import com.sms.payload.AttendanceRequest;
 import com.sms.repository.AttendanceRepository;
 import com.sms.repository.UserRepository;
@@ -46,6 +48,9 @@ public class AttendanceServiceImpl implements IAttendanceService {
    
     @Value("${service.student-service.serviceId}")
     private String studentServiceServiceId;
+    
+	@Value("${tbd.date.pattern")
+	private static String pattern;
     
     @Autowired
 	 private RestTemplate restTemplate;
@@ -68,19 +73,21 @@ public class AttendanceServiceImpl implements IAttendanceService {
 				.orElseThrow(() -> new ResourceNotFoundException("User", "id", currentUser.getId()));
 		Student student= getStudentbyID(token,attendanceRequest.getStudentId());
 		Attendance attendance= new Attendance();
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 		attendance.setStudent(student);
-		attendance.setDate(attendanceRequest.getTimeIn().getDate());
+		attendance.setDateOfAttendance(simpleDateFormat.format(attendanceRequest.getTimeIn()));
 		attendance.setTimeIn(attendanceRequest.getTimeIn().toInstant());
 		try {
 			attendanceRepository.save(attendance);
 			logger.debug("Attendance saved to Mongo");
 			eventPublisher.publishEvent(new MarkAttendanceEvent(user,attendance));
+			return new ResponseEntity<>(new ApiResponse(true,"Attendance Marked Successfully"),HttpStatus.CREATED);
+			
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 			return new ResponseEntity<>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		
-		return null;
 	}
 
 	private synchronized Student getStudentbyID(String token,Long studentId) {
@@ -100,7 +107,7 @@ public class AttendanceServiceImpl implements IAttendanceService {
 			 return json.getBody();
 			 
 		} catch (RestClientException e) {
-			logger.error(e.getMessage());
+			logger.error("Error returning Student Object",e.getStackTrace());
 			return null;
 		}
 		  
