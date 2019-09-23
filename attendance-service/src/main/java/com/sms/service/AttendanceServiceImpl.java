@@ -73,7 +73,7 @@ public class AttendanceServiceImpl implements IAttendanceService {
 				.orElseThrow(() -> new ResourceNotFoundException("User", "id", currentUser.getId()));
 		Student student= getStudentbyID(token,attendanceRequest.getStudentId());
 		Attendance attendance= new Attendance();
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		attendance.setStudent(student);
 		attendance.setDateOfAttendance(simpleDateFormat.format(attendanceRequest.getTimeIn()));
 		attendance.setTimeIn(attendanceRequest.getTimeIn().toInstant());

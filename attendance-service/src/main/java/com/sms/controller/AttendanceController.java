@@ -38,6 +38,7 @@ public class AttendanceController {
 	 @PreAuthorize("hasRole('TEACHER')")
 	 public ResponseEntity<?> markStudentPresent(@RequestHeader("Authorization") String token,@CurrentUser UserPrincipal currentUser,
              @Valid @RequestBody AttendanceRequest attendanceRequest){
+		
 		return attendanceService.markStudentPresent(token,currentUser,attendanceRequest);
 		
 	}

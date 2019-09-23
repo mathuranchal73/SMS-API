@@ -19,7 +19,6 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.NaturalId;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sms.model.audit.DateAudit;
 
 import io.swagger.annotations.ApiModel;
@@ -48,7 +47,6 @@ public class User extends DateAudit {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@ApiModelProperty(notes = "The database generated product ID")
-	@JsonIgnore
 	private Long id;
 	
 	@NotBlank
@@ -57,7 +55,6 @@ public class User extends DateAudit {
 	
 	@NotBlank
     @Size(max = 15)
-	@JsonIgnore
     private String username;
 	
 	@NaturalId
@@ -68,27 +65,21 @@ public class User extends DateAudit {
 	
 	@NotBlank
     @Size(max = 100)
-	@JsonIgnore
     private String password;
 	
-	@JsonIgnore
-	private Integer active=1;
-	@JsonIgnore
-	private boolean isLocked=false;
-	@JsonIgnore
-	private boolean isExpired=false;
-	@JsonIgnore
+	 private Integer active=1;
+	    private boolean isLocked=false;
+	    private boolean isExpired=false;
+	
 	private boolean enabled;
 	
 	@NotBlank
     @Size(max = 100)
-	@JsonIgnore
     private String uuid;
 	
 	
-	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name="user_roles",joinColumns=@JoinColumn(name="user_id"),inverseJoinColumns=@JoinColumn(name="role_id"))
-	@JsonIgnore
+	 @ManyToMany(fetch = FetchType.LAZY)
+	 @JoinTable(name="user_roles",joinColumns=@JoinColumn(name="user_id"),inverseJoinColumns=@JoinColumn(name="role_id"))
 	private Set<Role> roles= new HashSet<>();
 	 
 	 public User() {

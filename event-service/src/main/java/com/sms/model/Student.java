@@ -15,7 +15,6 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.NaturalId;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sms.model.audit.UserDateAudit;
 
 @Entity
@@ -40,17 +39,14 @@ public class Student extends UserDateAudit {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@JsonIgnore
 	private Long id;
 	
 	private String firstName;
 	
 	private String lastName;
 	
-	@JsonIgnore
 	private String doa;
 	
-	@JsonIgnore
 	private String registrationNo;
 	
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq")
@@ -58,7 +54,6 @@ public class Student extends UserDateAudit {
 	
 	private String academicSessions;
 	
-	@JsonIgnore
 	private boolean enabled;
 	
 	@NaturalId

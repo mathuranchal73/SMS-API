@@ -1,5 +1,9 @@
 package com.sms.kafka;
 
+import java.time.Instant;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.slf4j.Logger;
@@ -21,7 +25,7 @@ public class Producer {
 
 	
 	 @Value("${tpd.topic-name}")
-	 private static String TOPIC;
+	 private static String TOPIC="Welcome_Email";
 
 	   
 	    
@@ -31,10 +35,9 @@ public class Producer {
 	   
 	    
 
-	    public void sendMessage(String message) {
-	    	/**ObjectMapper objectMapper = new ObjectMapper();
+	    public synchronized void sendMessage(String message) {
+	
 	    	
-            JsonNode  jsonNode = objectMapper.valueToTree(user);**/
             ProducerRecord<String, String> rec = new ProducerRecord<String, String>(TOPIC,message);
 
 	        logger.info(String.format("#### -> Producing message -> %s", message));

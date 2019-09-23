@@ -1,20 +1,19 @@
-package com.sms.event;
+package com.sms.events;
 
 import org.springframework.context.ApplicationEvent;
 
-import com.sms.document.Attendance;
+import com.sms.model.Attendance;
 import com.sms.model.User;
 
-public class MarkAttendanceEvent extends ApplicationEvent {
+public class AttendanceEvent extends ApplicationEvent  {
 	
-
 	private static final long serialVersionUID = 1L;
-	
+
 	private User user;
 	private Attendance attendance;
 	
-	
-	public MarkAttendanceEvent(User user, Attendance attendance) {
+
+	public AttendanceEvent(User user, Attendance attendance) {
 		super(user);
 		this.user = user;
 		this.attendance = attendance;
@@ -40,7 +39,4 @@ public class MarkAttendanceEvent extends ApplicationEvent {
 		this.attendance = attendance;
 	}
 	
-	
-	
-
 }

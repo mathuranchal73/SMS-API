@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationListener;
+import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sms.document.Attendance;
@@ -12,6 +13,7 @@ import com.sms.kafka.Producer;
 import com.sms.model.User;
 import com.sms.payload.AttendanceEventObject;
 
+@Component
 public class AttendanceEventListener implements ApplicationListener<MarkAttendanceEvent> {
 	
 	private static final Logger logger = LoggerFactory.getLogger(AttendanceEventListener.class);

@@ -1,9 +1,6 @@
 package com.sms.model;
 
 import org.hibernate.annotations.NaturalId;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 
 @Entity
@@ -11,7 +8,6 @@ import javax.persistence.*;
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@JsonIgnore
     private Long id;
 
     @Enumerated(EnumType.STRING)
