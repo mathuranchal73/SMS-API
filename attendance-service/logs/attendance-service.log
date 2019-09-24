@@ -1,0 +1,218 @@
+2019-09-24 11:46:33.312  INFO 10952 --- [main] com.sms.AttendanceServiceApplication     : The following profiles are active: development
+2019-09-24 11:46:34.131  INFO 10952 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-09-24 11:46:34.131  INFO 10952 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-09-24 11:46:34.176  INFO 10952 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.sms.repository.AttendanceRepository.
+2019-09-24 11:46:34.217  INFO 10952 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 79ms. Found 2 repository interfaces.
+2019-09-24 11:46:34.222  INFO 10952 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-09-24 11:46:34.222  INFO 10952 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-09-24 11:46:34.231  INFO 10952 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.sms.repository.RoleRepository.
+2019-09-24 11:46:34.233  INFO 10952 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.sms.repository.UserRepository.
+2019-09-24 11:46:34.238  INFO 10952 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16ms. Found 1 repository interfaces.
+2019-09-24 11:46:34.246  INFO 10952 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-09-24 11:46:34.247  INFO 10952 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-09-24 11:46:34.260  INFO 10952 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.sms.repository.AttendanceRepository.
+2019-09-24 11:46:34.260  INFO 10952 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.sms.repository.RoleRepository.
+2019-09-24 11:46:34.261  INFO 10952 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.sms.repository.UserRepository.
+2019-09-24 11:46:34.261  INFO 10952 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8ms. Found 0 repository interfaces.
+2019-09-24 11:46:34.359  WARN 10952 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-09-24 11:46:34.598  INFO 10952 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c6399128-aef6-3acc-b801-e99afa875d38
+2019-09-24 11:46:34.659  INFO 10952 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$5d4bf654] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 11:46:34.716  INFO 10952 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8999e4d1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 11:46:34.750  INFO 10952 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$2247ad0b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 11:46:34.756  INFO 10952 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 11:46:34.758  INFO 10952 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@e5c2463' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 11:46:34.759  INFO 10952 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$471c4fbd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 11:46:34.766  INFO 10952 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.Jsr250MetadataSourceConfiguration' of type [org.springframework.security.config.annotation.method.configuration.Jsr250MetadataSourceConfiguration$$EnhancerBySpringCGLIB$$6c7167d3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 11:46:34.768  INFO 10952 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'jsr250MethodSecurityMetadataSource' of type [org.springframework.security.access.annotation.Jsr250MethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 11:46:34.770  INFO 10952 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 11:46:34.791  INFO 10952 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$a5b3e7ce] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 11:46:35.048  INFO 10952 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8087 (http)
+2019-09-24 11:46:35.067  INFO 10952 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-09-24 11:46:35.067  INFO 10952 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-09-24 11:46:35.219  INFO 10952 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-09-24 11:46:35.220  INFO 10952 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1898 ms
+2019-09-24 11:46:35.349  WARN 10952 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-09-24 11:46:35.349  INFO 10952 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-09-24 11:46:35.355  INFO 10952 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@2c48cede
+2019-09-24 11:46:35.869  INFO 10952 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-09-24 11:46:35.911  INFO 10952 --- [cluster-ClusterId{value='5d89b4c3e6418a2ac8e0c063', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:930}] to localhost:27017
+2019-09-24 11:46:35.914  INFO 10952 --- [cluster-ClusterId{value='5d89b4c3e6418a2ac8e0c063', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2061296}
+2019-09-24 11:46:36.978  INFO 10952 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-09-24 11:46:37.075  INFO 10952 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-09-24 11:46:37.119  INFO 10952 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-09-24 11:46:37.170  INFO 10952 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.11.Final}
+2019-09-24 11:46:37.173  INFO 10952 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-09-24 11:46:37.283  INFO 10952 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-09-24 11:46:37.393  INFO 10952 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-09-24 11:46:38.150  INFO 10952 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-09-24 11:46:38.415 DEBUG 10952 --- [main] c.sms.security.JWTAuthenticationFilter   : Filter 'jwtAuthenticationFilter' configured for use
+2019-09-24 11:46:38.538  INFO 10952 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String com.sms.service.AttendanceServiceImpl.pattern
+2019-09-24 11:46:38.667  INFO 10952 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String com.sms.kafka.Producer.TOPIC
+2019-09-24 11:46:38.894  WARN 10952 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-09-24 11:46:39.032  INFO 10952 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 20 endpoint(s) beneath base path '/actuator'
+2019-09-24 11:46:39.231  INFO 10952 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/*/'], []
+2019-09-24 11:46:39.232  INFO 10952 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/eureka/**'], []
+2019-09-24 11:46:39.232  INFO 10952 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/v2/api-docs'], []
+2019-09-24 11:46:39.232  INFO 10952 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/configuration/ui'], []
+2019-09-24 11:46:39.232  INFO 10952 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/swagger-resources'], []
+2019-09-24 11:46:39.232  INFO 10952 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/configuration/security'], []
+2019-09-24 11:46:39.232  INFO 10952 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/swagger-ui.html'], []
+2019-09-24 11:46:39.232  INFO 10952 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-09-24 11:46:39.232  INFO 10952 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**', OPTIONS], []
+2019-09-24 11:46:39.313  INFO 10952 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@377cc0f8, org.springframework.security.web.context.SecurityContextPersistenceFilter@638e8194, org.springframework.security.web.header.HeaderWriterFilter@1ae90cb9, org.springframework.web.filter.CorsFilter@25c98637, org.springframework.security.web.authentication.logout.LogoutFilter@178c4480, com.sms.security.JWTAuthenticationFilter@24749ad3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6b247ef6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@c7d173f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@fbdba1c, org.springframework.security.web.session.SessionManagementFilter@3fc2e100, org.springframework.security.web.access.ExceptionTranslationFilter@2be208db, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@40ed4674]
+2019-09-24 11:46:39.338  WARN 10952 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-09-24 11:46:39.339  INFO 10952 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-09-24 11:46:39.405  INFO 10952 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-24 11:46:40.136  INFO 10952 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-09-24 11:46:40.170  INFO 10952 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2019-09-24 11:46:40.224  INFO 10952 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2019-09-24 11:46:40.225  INFO 10952 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2019-09-24 11:46:40.312  INFO 10952 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2019-09-24 11:46:40.312  INFO 10952 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2019-09-24 11:46:40.439  INFO 10952 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 11:46:40.549  INFO 10952 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-09-24 11:46:40.549  INFO 10952 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-09-24 11:46:40.549  INFO 10952 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-09-24 11:46:40.549  INFO 10952 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-09-24 11:46:40.549  INFO 10952 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-09-24 11:46:40.549  INFO 10952 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2019-09-24 11:46:40.549  INFO 10952 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-09-24 11:46:40.641  INFO 10952 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2019-09-24 11:46:40.643  INFO 10952 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 5
+2019-09-24 11:46:40.645  INFO 10952 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-09-24 11:46:40.649  INFO 10952 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1569305800647 with initial instances count: 2
+2019-09-24 11:46:40.655  INFO 10952 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ATTENDANCE-SERVICE with eureka with status UP
+2019-09-24 11:46:40.657  INFO 10952 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1569305800657, current=UP, previous=STARTING]
+2019-09-24 11:46:40.658  WARN 10952 --- [main] c.n.discovery.InstanceInfoReplicator     : Ignoring onDemand update due to rate limiter
+2019-09-24 11:46:40.672  INFO 10952 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-09-24 11:46:40.678  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:931}] to localhost:27017
+2019-09-24 11:46:40.692  INFO 10952 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-09-24 11:46:40.706  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 11:46:40.709  INFO 10952 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-09-24 11:46:40.904  INFO 10952 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8087 (http) with context path ''
+2019-09-24 11:46:40.904  INFO 10952 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8087
+2019-09-24 11:46:40.906  INFO 10952 --- [main] com.sms.AttendanceServiceApplication     : Started AttendanceServiceApplication in 10.925 seconds (JVM running for 11.546)
+2019-09-24 11:46:41.672  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=467436b4c5cce533069ba7040150469e1a131bfb, state=null
+2019-09-24 11:46:41.676  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ATTENDANCE-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:attendance-service:8087: registering service...
+2019-09-24 11:46:41.710  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ATTENDANCE-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:attendance-service:8087 - registration status: 204
+2019-09-24 11:51:40.559  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 11:51:41.816  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 11:51:42.911  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=0fabecebd2b882eaa60d8a6d3e46470235750806, state=null
+2019-09-24 11:56:40.567  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 11:56:43.033  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 11:56:45.211  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=0388aa9521e2ebc012b397619c97b49b38e3ee24, state=null
+2019-09-24 12:01:40.575  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 12:01:45.300  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 12:01:47.361  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 12:06:40.583  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 12:06:47.428  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 12:06:48.558  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 12:11:40.592  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 12:11:48.658  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 12:11:49.646  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 12:16:40.608  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 12:16:49.773  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 12:16:51.017  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 12:21:40.617  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 12:21:51.129  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 12:21:52.109  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 12:26:40.625  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 12:26:52.239  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 12:26:53.447  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 12:31:40.633  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 12:31:53.524  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 12:31:54.423  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 12:36:40.640  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 12:36:54.485  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 12:36:55.527  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 12:41:40.648  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 12:41:55.652  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 12:41:56.783  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 12:46:40.653  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 12:46:56.885  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 12:46:58.028  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 12:51:40.655  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 12:51:58.118  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 12:51:59.099  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 12:56:40.662  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 12:56:59.329  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 12:57:01.213  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 13:01:40.670  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 13:02:22.020  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 13:03:05.552  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 13:06:40.835  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 13:07:53.826  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 13:08:25.119  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 13:11:40.934  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 13:12:55.197  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 13:12:56.438  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 13:16:40.940  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 13:17:56.525  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 13:17:57.598  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 13:21:40.947  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 13:22:57.712  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 13:22:58.796  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 13:26:40.957  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 13:27:58.916  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 13:28:00.005  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 13:31:40.965  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 13:33:00.097  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 13:33:01.273  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 13:36:40.973  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 13:38:01.365  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 13:38:02.311  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 13:41:40.981  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 13:43:02.419  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 13:43:03.437  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 13:46:40.988  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 13:48:03.499  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 13:48:04.485  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 13:51:40.995  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 13:53:04.543  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 13:53:05.495  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 13:56:41.006  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 13:58:05.554  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 13:58:06.412  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 14:01:41.015  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 14:03:40.214  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 14:04:38.937  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 14:06:41.086  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 14:08:53.201  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 14:08:54.242  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 14:11:41.173  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 14:13:54.340  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 14:13:55.323  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 14:16:41.180  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 14:18:55.438  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 14:18:57.646  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 14:21:41.188  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 14:23:57.739  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 14:23:59.147  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 14:26:41.195  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 14:28:59.273  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 14:29:00.332  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 14:31:41.202  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 14:34:00.443  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 14:34:01.456  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 14:36:41.209  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 14:39:01.533  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 14:39:02.532  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-24 14:41:41.216  INFO 10952 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 14:43:12.914  INFO 10952 --- [RMI TCP Connection(187)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-09-24 14:43:12.915  INFO 10952 --- [RMI TCP Connection(187)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ATTENDANCE-SERVICE with eureka with status DOWN
+2019-09-24 14:43:12.915  WARN 10952 --- [RMI TCP Connection(187)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1569316392915, current=DOWN, previous=UP]
+2019-09-24 14:43:12.919  WARN 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1569316392919, current=UP, previous=DOWN]
+2019-09-24 14:43:12.919  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ATTENDANCE-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:attendance-service:8087: registering service...
+2019-09-24 14:43:12.921  INFO 10952 --- [RMI TCP Connection(187)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-24 14:43:12.924  INFO 10952 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ATTENDANCE-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:attendance-service:8087 - registration status: 204
+2019-09-24 14:43:12.928  INFO 10952 --- [RMI TCP Connection(187)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-09-24 14:43:12.996  INFO 10952 --- [RMI TCP Connection(187)-127.0.0.1] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:2, serverValue:931}] to localhost:27017 because the pool has been closed.
+2019-09-24 14:43:13.028  INFO 10952 --- [RMI TCP Connection(187)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2019-09-24 14:43:16.029  INFO 10952 --- [RMI TCP Connection(187)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2019-09-24 14:43:16.034  INFO 10952 --- [RMI TCP Connection(187)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ATTENDANCE-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:attendance-service:8087 - deregister  status: 200
+2019-09-24 14:43:16.041  INFO 10952 --- [RMI TCP Connection(187)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2019-09-24 14:43:16.041  INFO 10952 --- [RMI TCP Connection(187)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-09-24 14:43:16.044  INFO 10952 --- [RMI TCP Connection(187)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-09-24 14:43:16.134  INFO 10952 --- [RMI TCP Connection(187)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]

@@ -1,0 +1,113 @@
+2019-09-24 11:30:52.339  INFO 14740 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-09-24 11:30:52.339  INFO 14740 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-09-24 11:30:52.379  INFO 14740 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.sms.repository.AttendanceRepository.
+2019-09-24 11:30:52.419  INFO 14740 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 73ms. Found 2 repository interfaces.
+2019-09-24 11:30:52.425  INFO 14740 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-09-24 11:30:52.425  INFO 14740 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-09-24 11:30:52.435  INFO 14740 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.sms.repository.RoleRepository.
+2019-09-24 11:30:52.437  INFO 14740 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.sms.repository.UserRepository.
+2019-09-24 11:30:52.445  INFO 14740 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20ms. Found 1 repository interfaces.
+2019-09-24 11:30:52.454  INFO 14740 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-09-24 11:30:52.455  INFO 14740 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-09-24 11:30:52.468  INFO 14740 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.sms.repository.AttendanceRepository.
+2019-09-24 11:30:52.468  INFO 14740 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.sms.repository.RoleRepository.
+2019-09-24 11:30:52.468  INFO 14740 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.sms.repository.UserRepository.
+2019-09-24 11:30:52.468  INFO 14740 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7ms. Found 0 repository interfaces.
+2019-09-24 11:30:52.585  WARN 14740 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-09-24 11:30:52.836  INFO 14740 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c6399128-aef6-3acc-b801-e99afa875d38
+2019-09-24 11:30:52.896  INFO 14740 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$ff2e63dd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 11:30:52.959  INFO 14740 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2b7c525a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 11:30:53.003  INFO 14740 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$c42a1a94] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 11:30:53.013  INFO 14740 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 11:30:53.016  INFO 14740 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@1cbc1dde' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 11:30:53.027  INFO 14740 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$e8febd46] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 11:30:53.035  INFO 14740 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.Jsr250MetadataSourceConfiguration' of type [org.springframework.security.config.annotation.method.configuration.Jsr250MetadataSourceConfiguration$$EnhancerBySpringCGLIB$$e53d55c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 11:30:53.037  INFO 14740 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'jsr250MethodSecurityMetadataSource' of type [org.springframework.security.access.annotation.Jsr250MethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 11:30:53.039  INFO 14740 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 11:30:53.063  INFO 14740 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$47965557] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 11:30:53.319  INFO 14740 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8087 (http)
+2019-09-24 11:30:53.342  INFO 14740 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-09-24 11:30:53.342  INFO 14740 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-09-24 11:30:53.506  INFO 14740 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-09-24 11:30:53.506  INFO 14740 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2040 ms
+2019-09-24 11:30:53.657  WARN 14740 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-09-24 11:30:53.657  INFO 14740 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-09-24 11:30:53.665  INFO 14740 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@216c22ce
+2019-09-24 11:30:54.307  INFO 14740 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-09-24 11:30:54.356  INFO 14740 --- [cluster-ClusterId{value='5d89b116e6418a3994a872d7', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:920}] to localhost:27017
+2019-09-24 11:30:54.359  INFO 14740 --- [cluster-ClusterId{value='5d89b116e6418a3994a872d7', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 11]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2409977}
+2019-09-24 11:30:55.571  INFO 14740 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-09-24 11:30:55.683  INFO 14740 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-09-24 11:30:55.725  INFO 14740 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-09-24 11:30:55.775  INFO 14740 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.11.Final}
+2019-09-24 11:30:55.778  INFO 14740 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-09-24 11:30:55.896  INFO 14740 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-09-24 11:30:56.016  INFO 14740 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-09-24 11:30:56.863  INFO 14740 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-09-24 11:30:57.275  INFO 14740 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String com.sms.service.AttendanceServiceImpl.pattern
+2019-09-24 11:30:57.414  INFO 14740 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String com.sms.kafka.Producer.TOPIC
+2019-09-24 11:30:57.709  WARN 14740 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-09-24 11:30:57.857  INFO 14740 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 20 endpoint(s) beneath base path '/actuator'
+2019-09-24 11:30:58.061  INFO 14740 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/*/'], []
+2019-09-24 11:30:58.061  INFO 14740 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/eureka/**'], []
+2019-09-24 11:30:58.061  INFO 14740 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/v2/api-docs'], []
+2019-09-24 11:30:58.062  INFO 14740 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/configuration/ui'], []
+2019-09-24 11:30:58.062  INFO 14740 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/swagger-resources'], []
+2019-09-24 11:30:58.062  INFO 14740 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/configuration/security'], []
+2019-09-24 11:30:58.062  INFO 14740 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/swagger-ui.html'], []
+2019-09-24 11:30:58.062  INFO 14740 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-09-24 11:30:58.062  INFO 14740 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**', OPTIONS], []
+2019-09-24 11:30:58.139  INFO 14740 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4e3c0627, org.springframework.security.web.context.SecurityContextPersistenceFilter@3b7b099b, org.springframework.security.web.header.HeaderWriterFilter@758ac46, org.springframework.web.filter.CorsFilter@57f6fc09, org.springframework.security.web.authentication.logout.LogoutFilter@1fc4b8d6, com.sms.security.JWTAuthenticationFilter@64df8422, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@30d944d8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@795949fb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@ae5d544, org.springframework.security.web.session.SessionManagementFilter@30cb489a, org.springframework.security.web.access.ExceptionTranslationFilter@4bdbfbc6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5d200dce]
+2019-09-24 11:30:58.178  WARN 14740 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-09-24 11:30:58.178  INFO 14740 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-09-24 11:30:58.327  INFO 14740 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-24 11:30:59.149  INFO 14740 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-09-24 11:30:59.194  INFO 14740 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2019-09-24 11:30:59.243  INFO 14740 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2019-09-24 11:30:59.243  INFO 14740 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2019-09-24 11:30:59.333  INFO 14740 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2019-09-24 11:30:59.333  INFO 14740 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2019-09-24 11:30:59.486  INFO 14740 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-24 11:30:59.604  INFO 14740 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-09-24 11:30:59.605  INFO 14740 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-09-24 11:30:59.605  INFO 14740 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-09-24 11:30:59.605  INFO 14740 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-09-24 11:30:59.605  INFO 14740 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-09-24 11:30:59.605  INFO 14740 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2019-09-24 11:30:59.605  INFO 14740 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-09-24 11:30:59.702  INFO 14740 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2019-09-24 11:30:59.705  INFO 14740 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 5
+2019-09-24 11:30:59.707  INFO 14740 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-09-24 11:30:59.710  INFO 14740 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1569304859710 with initial instances count: 3
+2019-09-24 11:30:59.717  INFO 14740 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ATTENDANCE-SERVICE with eureka with status UP
+2019-09-24 11:30:59.717  INFO 14740 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1569304859717, current=UP, previous=STARTING]
+2019-09-24 11:30:59.717  WARN 14740 --- [main] c.n.discovery.InstanceInfoReplicator     : Ignoring onDemand update due to rate limiter
+2019-09-24 11:30:59.730  INFO 14740 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-09-24 11:30:59.734  INFO 14740 --- [DiscoveryClient-InstanceInfoReplicator-0] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:921}] to localhost:27017
+2019-09-24 11:30:59.765  INFO 14740 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-09-24 11:30:59.776  INFO 14740 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-24 11:30:59.780  INFO 14740 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-09-24 11:30:59.906  INFO 14740 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8087 (http) with context path ''
+2019-09-24 11:30:59.907  INFO 14740 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8087
+2019-09-24 11:31:00.760  INFO 14740 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=attendance-service, profiles=[development], label=null, version=c97109429cbf11b59b30cd2c804ce4902a511c06, state=null
+2019-09-24 11:31:00.765  INFO 14740 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ATTENDANCE-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:attendance-service:8087: registering service...
+2019-09-24 11:31:00.798  INFO 14740 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ATTENDANCE-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:attendance-service:8087 - registration status: 204
+2019-09-24 11:33:59.139  INFO 14740 --- [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-09-24 11:33:59.141  INFO 14740 --- [RMI TCP Connection(11)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ATTENDANCE-SERVICE with eureka with status DOWN
+2019-09-24 11:33:59.142  WARN 14740 --- [RMI TCP Connection(11)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1569305039142, current=DOWN, previous=UP]
+2019-09-24 11:33:59.159  INFO 14740 --- [RMI TCP Connection(11)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-24 11:33:59.168  WARN 14740 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1569305039168, current=UP, previous=DOWN]
+2019-09-24 11:33:59.168  INFO 14740 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ATTENDANCE-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:attendance-service:8087: registering service...
+2019-09-24 11:33:59.187  INFO 14740 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ATTENDANCE-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:attendance-service:8087 - registration status: 204
+2019-09-24 11:33:59.189  INFO 14740 --- [RMI TCP Connection(11)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-09-24 11:33:59.226  INFO 14740 --- [RMI TCP Connection(11)-127.0.0.1] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:2, serverValue:921}] to localhost:27017 because the pool has been closed.
+2019-09-24 11:33:59.234  INFO 14740 --- [RMI TCP Connection(11)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2019-09-24 11:34:02.238  INFO 14740 --- [RMI TCP Connection(11)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2019-09-24 11:34:02.239  WARN 14740 --- [DiscoveryClient-1] c.netflix.discovery.TimedSupervisorTask  : task supervisor shutting down, can't accept the task
+2019-09-24 11:34:02.254  INFO 14740 --- [RMI TCP Connection(11)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ATTENDANCE-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:attendance-service:8087 - deregister  status: 200
+2019-09-24 11:34:02.293  INFO 14740 --- [RMI TCP Connection(11)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2019-09-24 11:34:02.294  INFO 14740 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-09-24 11:34:02.303  INFO 14740 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-09-24 11:34:02.437  INFO 14740 --- [RMI TCP Connection(11)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
