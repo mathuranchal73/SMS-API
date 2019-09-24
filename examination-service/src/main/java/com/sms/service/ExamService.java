@@ -5,6 +5,7 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -92,14 +93,10 @@ public class ExamService extends UserDateAudit {
 	
 	public ResponseEntity<?> createExam(ExamRequest examRequest) {
 		
-		 Exam exam = new Exam();
-		 
+			Exam exam = new Exam();
 
 	        exam.setExamName(examRequest.getExamName());
 	        examRequest.setTotalMarks(examRequest.getTotalMarks());
-	        
-	       // examRequest.getQuestions().forEach(questionRequest->{exam.addQuestion(postQuestion(questionRequest));
-	        //});
 	        
 	        Instant now = Instant.now();
 	        Instant expirationDateTime = now.plus(Duration.ofDays(examRequest.getExamDuration().getHours()))
@@ -109,16 +106,18 @@ public class ExamService extends UserDateAudit {
 	        exam.setInstructions(examRequest.getInstructions());
 	        exam.setTotalMarks(examRequest.getTotalMarks());
 	        
-	        examRepository.save(exam);
-	        
-	        URI location = ServletUriComponentsBuilder
-	                .fromCurrentRequest().path("/{examId}")
-	                .buildAndExpand(exam.getId()).toUri();
+	        try {
+				 examRepository.save(exam);
+			      //  URI location = ServletUriComponentsBuilder
+			             //   .fromCurrentRequest().path("/{examId}")
+			               // .buildAndExpand(exam.getId()).toUri();
+				 return new ResponseEntity<Exam>(exam,HttpStatus.OK);
+				 
+			} catch (Exception e) {
 
-	        return ResponseEntity.created(location)
-	                .body(new ApiResponse(true, "Exam Created Successfully"));
-
-	
+				return new ResponseEntity<>(new ApiResponse(false,e.getMessage()),HttpStatus.INTERNAL_SERVER_ERROR);
+			}
+	    
 	}
 	
 	//public ExamResponse addQuestionAndGetUpdatedExam(Long examId, AddQuestionRequest addQuestionRequest, UserPrincipal currentUser) {
@@ -188,7 +187,7 @@ public class ExamService extends UserDateAudit {
 			headers.setContentType(MediaType.APPLICATION_JSON);
 			headers.set("Authorization", token);
 			HttpEntity<Long> entity = new HttpEntity<Long>(questionId,headers);
-		 Application application = eurekaClient.getApplication(questionServiceServiceId);
+			Application application = eurekaClient.getApplication(questionServiceServiceId);
 			InstanceInfo instanceInfo = application.getInstances().get(0);
 			String url = "http://"+instanceInfo.getIPAddr()+ ":"+instanceInfo.getPort()+"/api/questions/"+questionId;
 			  //String json=restTemplate.postForObject(url,questionId, String.class);
@@ -325,6 +324,35 @@ public class ExamService extends UserDateAudit {
 			
 		}
 		
+	}
+
+	public ResponseEntity<?> updateExam(UserPrincipal currentUser, Long examId, @Valid ExamRequest updateExamRequest) {
+		if(examRepository.existsById(examId))
+		 {
+			Exam exam=examRepository.findById(examId)
+					 .orElseThrow(() -> new ResourceNotFoundException("Exam", "id", examId));
+			 exam.setExamName(updateExamRequest.getExamName());
+			 exam.setInstructions(updateExamRequest.getInstructions());
+			 Instant now = Instant.now();
+		        Instant expirationDateTime = now.plus(Duration.ofDays(updateExamRequest.getExamDuration().getHours()))
+		                .plus(Duration.ofHours(updateExamRequest.getExamDuration().getMinutes()));
+			 exam.setExpirationDateTime(expirationDateTime);
+			 exam.setTotalMarks(updateExamRequest.getTotalMarks());
+			 
+			 examRepository.save(exam);
+			 
+			 return new ResponseEntity<Exam>(exam,
+					 HttpStatus.OK);
+		 }
+		 return new ResponseEntity(new ApiResponse(false, "Exam Does not exist!"),
+                HttpStatus.BAD_REQUEST);
+	 }
+
+	public List<Exam> getAllExam() {
+		
+		return examRepository.findAll();
+		
+	}
 	}	
 
 		
@@ -347,6 +375,3 @@ public class ExamService extends UserDateAudit {
 		   return response;
 	}**/
 
-
-	
-}

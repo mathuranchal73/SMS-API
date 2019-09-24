@@ -1,6 +1,7 @@
 package com.sms.controller;
 
 import java.net.URI;
+import java.util.List;
 
 import javax.validation.Valid;
 
@@ -20,9 +21,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.netflix.appinfo.InstanceInfo;
@@ -54,6 +57,14 @@ public class ExamController {
 	
 	protected Logger logger = LoggerFactory.getLogger(ExamController.class);
 	
+	@GetMapping("/getAllExam")
+	@PreAuthorize("hasRole('ADMIN')")
+	@ApiOperation(value="Gets All the Exams", notes="Gets All the Exams", produces= "application/json", nickname="getAllExams")
+	public List<Exam> getAllExam()
+	{
+		return examService.getAllExam();
+	}
+	
 
 	@PostMapping("/createExam")
 	@PreAuthorize("hasRole('TEACHER')")
@@ -62,6 +73,14 @@ public class ExamController {
         
 		return examService.createExam(examRequest);    
     }
+	
+	@RequestMapping(value="/updateExam/{id}",method=RequestMethod.PUT)
+	@PreAuthorize("hasRole('TEACHER')")
+	@ApiOperation(value="Update", notes="Update Exam ", nickname="updateExam")
+	 public ResponseEntity<?> updateStudent(@CurrentUser UserPrincipal currentUser,@PathVariable(value="id") Long examId,@Valid @RequestBody ExamRequest updateExamRequest) throws Exception
+	 {
+		 return examService.updateExam(currentUser,examId,updateExamRequest);
+	 }
 	
 	
 	@PostMapping("/{examId}/addQuestions")
