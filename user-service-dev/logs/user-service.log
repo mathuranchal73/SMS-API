@@ -1,0 +1,795 @@
+2019-09-25 10:48:49.191  INFO 16536 --- [main] com.sms.UserServiceApplication           : The following profiles are active: development
+2019-09-25 10:48:50.906  INFO 16536 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-09-25 10:48:50.906  INFO 16536 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-09-25 10:48:50.978  INFO 16536 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 67ms. Found 4 repository interfaces.
+2019-09-25 10:48:50.986  INFO 16536 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-09-25 10:48:50.987  INFO 16536 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-09-25 10:48:51.006  INFO 16536 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.sms.repository.RoleRepository.
+2019-09-25 10:48:51.006  INFO 16536 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.sms.repository.TokenRepository.
+2019-09-25 10:48:51.007  INFO 16536 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.sms.repository.UserProfileRepository.
+2019-09-25 10:48:51.008  INFO 16536 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.sms.repository.UserRepository.
+2019-09-25 10:48:51.009  INFO 16536 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14ms. Found 0 repository interfaces.
+2019-09-25 10:48:51.106  WARN 16536 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-09-25 10:48:51.331  INFO 16536 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=010f0671-e3a5-3abe-b7d3-409c5a227469
+2019-09-25 10:48:51.383  INFO 16536 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$d7942bf8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-25 10:48:51.434  INFO 16536 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3e21a75] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-25 10:48:51.463  INFO 16536 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$9c8fe2af] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-25 10:48:51.467  INFO 16536 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-25 10:48:51.469  INFO 16536 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@10f477e2' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-25 10:48:51.471  INFO 16536 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$c1648561] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-25 10:48:51.477  INFO 16536 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.Jsr250MetadataSourceConfiguration' of type [org.springframework.security.config.annotation.method.configuration.Jsr250MetadataSourceConfiguration$$EnhancerBySpringCGLIB$$e6b99d77] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-25 10:48:51.479  INFO 16536 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'jsr250MethodSecurityMetadataSource' of type [org.springframework.security.access.annotation.Jsr250MethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-25 10:48:51.479  INFO 16536 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-25 10:48:51.495  INFO 16536 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$1ffc1d72] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-25 10:48:51.758  INFO 16536 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8181 (http)
+2019-09-25 10:48:51.776  INFO 16536 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-09-25 10:48:51.777  INFO 16536 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.14]
+2019-09-25 10:48:51.784  INFO 16536 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\java\jre1.8.0_212\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/java/jre1.8.0_212/bin/server;C:/java/jre1.8.0_212/bin;C:/java/jre1.8.0_212/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files\Google\Google Apps Sync\;C:\Program Files\Google\Google Apps Migration\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files (x86)\dotnet\;C:\java\bin;C:\Kafka\apache-zookeeper-3.5.5-bin\bin;C:\java\bin;C:\Program Files\nodejs\;C:\java\bin;C:\Users\anchal.mathur\AppData\Roaming\npm;C:\Users\anchal.mathur\AppData\Local\GitHubDesktop\bin;C:\Program Files\Docker Toolbox;C:\Users\anchal.mathur\Minishift;C:\Users\anchal.mathur\Downloads\spring-tool-suite-4-4.3.1.RELEASE-e4.12.0-win32.win32.x86_64\sts-4.3.1.RELEASE;;.]
+2019-09-25 10:48:51.938  INFO 16536 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-09-25 10:48:51.939  INFO 16536 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2739 ms
+2019-09-25 10:48:52.054  WARN 16536 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-09-25 10:48:52.054  INFO 16536 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-09-25 10:48:52.061  INFO 16536 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@20256a0b
+2019-09-25 10:48:52.898  INFO 16536 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-09-25 10:48:52.980  INFO 16536 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-09-25 10:48:53.024  INFO 16536 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-09-25 10:48:53.085  INFO 16536 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-09-25 10:48:53.088  INFO 16536 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-09-25 10:48:53.231  INFO 16536 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-09-25 10:48:53.464  INFO 16536 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-09-25 10:48:54.796  INFO 16536 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-09-25 10:48:55.077 DEBUG 16536 --- [main] c.sms.security.JwtAuthenticationFilter   : Filter 'jwtAuthenticationFilter' configured for use
+2019-09-25 10:48:55.550  INFO 16536 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-09-25 10:48:55.631  INFO 16536 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String com.sms.kafka.Producer.TOPIC
+2019-09-25 10:48:55.860  WARN 16536 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-09-25 10:48:55.993  INFO 16536 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 20 endpoint(s) beneath base path '/actuator'
+2019-09-25 10:48:56.170  INFO 16536 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/*/'], []
+2019-09-25 10:48:56.170  INFO 16536 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/eureka/**'], []
+2019-09-25 10:48:56.171  INFO 16536 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/v2/api-docs'], []
+2019-09-25 10:48:56.171  INFO 16536 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/configuration/ui'], []
+2019-09-25 10:48:56.171  INFO 16536 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/swagger-resources'], []
+2019-09-25 10:48:56.171  INFO 16536 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/configuration/security'], []
+2019-09-25 10:48:56.171  INFO 16536 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/swagger-ui.html'], []
+2019-09-25 10:48:56.171  INFO 16536 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-09-25 10:48:56.171  INFO 16536 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**', OPTIONS], []
+2019-09-25 10:48:56.244  INFO 16536 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5f1c406e, org.springframework.security.web.context.SecurityContextPersistenceFilter@41a3c6f5, org.springframework.security.web.header.HeaderWriterFilter@3cd89c72, org.springframework.web.filter.CorsFilter@5364b481, org.springframework.security.web.authentication.logout.LogoutFilter@1387bd84, com.sms.security.JwtAuthenticationFilter@3340ff7c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@37c762aa, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1a99692, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@62ec4146, org.springframework.security.web.session.SessionManagementFilter@34cb1310, org.springframework.security.web.access.ExceptionTranslationFilter@6258f9d1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@444ebefd]
+2019-09-25 10:48:56.265  WARN 16536 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-09-25 10:48:56.266  INFO 16536 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-09-25 10:48:56.333  INFO 16536 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-25 10:48:56.428  WARN 16536 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-09-25 10:48:57.318  INFO 16536 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-09-25 10:48:57.349  INFO 16536 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2019-09-25 10:48:57.385  INFO 16536 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2019-09-25 10:48:57.385  INFO 16536 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2019-09-25 10:48:57.472  INFO 16536 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2019-09-25 10:48:57.473  INFO 16536 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2019-09-25 10:48:57.599  INFO 16536 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 10:48:57.704  INFO 16536 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-09-25 10:48:57.704  INFO 16536 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-09-25 10:48:57.704  INFO 16536 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-09-25 10:48:57.704  INFO 16536 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-09-25 10:48:57.704  INFO 16536 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-09-25 10:48:57.704  INFO 16536 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2019-09-25 10:48:57.705  INFO 16536 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-09-25 10:48:57.769  INFO 16536 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2019-09-25 10:48:57.771  INFO 16536 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 5
+2019-09-25 10:48:57.773  INFO 16536 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-09-25 10:48:57.777  INFO 16536 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1569388737776 with initial instances count: 0
+2019-09-25 10:48:57.783  INFO 16536 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application USER-SERVICE with eureka with status UP
+2019-09-25 10:48:57.784  INFO 16536 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1569388737784, current=UP, previous=STARTING]
+2019-09-25 10:48:57.785  WARN 16536 --- [main] c.n.discovery.InstanceInfoReplicator     : Ignoring onDemand update due to rate limiter
+2019-09-25 10:48:57.799  INFO 16536 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-09-25 10:48:57.815  INFO 16536 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-09-25 10:48:57.820  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 10:48:57.825  INFO 16536 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-09-25 10:48:57.973  INFO 16536 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8181 (http) with context path ''
+2019-09-25 10:48:57.973  INFO 16536 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8181
+2019-09-25 10:48:57.975  INFO 16536 --- [main] com.sms.UserServiceApplication           : Started UserServiceApplication in 10.843 seconds (JVM running for 11.572)
+2019-09-25 10:48:59.029  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 10:48:59.033  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181: registering service...
+2019-09-25 10:48:59.064  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181 - registration status: 204
+2019-09-25 10:49:27.772  INFO 16536 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-09-25 10:49:27.773  INFO 16536 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-09-25 10:49:27.774  INFO 16536 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-09-25 10:49:27.774  INFO 16536 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-09-25 10:49:27.774  INFO 16536 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-09-25 10:49:27.774  INFO 16536 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2019-09-25 10:49:27.775  INFO 16536 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-09-25 10:49:27.833  INFO 16536 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2019-09-25 10:49:39.732  INFO 16536 --- [http-nio-8181-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-09-25 10:49:39.732  INFO 16536 --- [http-nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-09-25 10:49:39.743  INFO 16536 --- [http-nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2019-09-25 10:49:39.763  INFO 16536 --- [http-nio-8181-exec-1] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzODg3NzksImV4cCI6MTU2OTk5MzU3OX0.8fk59okUZGJ4fqBfTmFdMrKKV8Q9joWEKUpQq02F5SZB1aDwKiHv-Fed1goJXc4_egRdA03NX5r4k1sD9nNvaw
+2019-09-25 10:49:39.947  INFO 16536 --- [http-nio-8181-exec-1] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 10:49:39.949  INFO 16536 --- [http-nio-8181-exec-1] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 10:50:32.195  INFO 16536 --- [http-nio-8181-exec-2] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzODg3NzksImV4cCI6MTU2OTk5MzU3OX0.8fk59okUZGJ4fqBfTmFdMrKKV8Q9joWEKUpQq02F5SZB1aDwKiHv-Fed1goJXc4_egRdA03NX5r4k1sD9nNvaw
+2019-09-25 10:50:32.197  INFO 16536 --- [http-nio-8181-exec-2] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 10:50:32.199  INFO 16536 --- [http-nio-8181-exec-2] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 10:53:57.715  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 10:53:59.183  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 10:54:00.373  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 10:57:48.252  INFO 16536 --- [http-nio-8181-exec-5] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzODg3NzksImV4cCI6MTU2OTk5MzU3OX0.8fk59okUZGJ4fqBfTmFdMrKKV8Q9joWEKUpQq02F5SZB1aDwKiHv-Fed1goJXc4_egRdA03NX5r4k1sD9nNvaw
+2019-09-25 10:57:48.254  INFO 16536 --- [http-nio-8181-exec-5] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 10:57:48.258  INFO 16536 --- [http-nio-8181-exec-5] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 10:58:57.727  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 10:59:00.515  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 10:59:01.693  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 11:03:29.841  INFO 16536 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181 - Re-registering apps/USER-SERVICE
+2019-09-25 11:03:29.842  INFO 16536 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181: registering service...
+2019-09-25 11:03:29.862  INFO 16536 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181 - registration status: 204
+2019-09-25 11:03:57.736  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 11:04:01.796  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 11:04:03.013  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 11:04:29.989  INFO 16536 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181 - Re-registering apps/USER-SERVICE
+2019-09-25 11:04:29.990  INFO 16536 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181: registering service...
+2019-09-25 11:04:29.995  INFO 16536 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181 - registration status: 204
+2019-09-25 11:05:14.938  INFO 16536 --- [http-nio-8181-exec-7] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzODg3NzksImV4cCI6MTU2OTk5MzU3OX0.8fk59okUZGJ4fqBfTmFdMrKKV8Q9joWEKUpQq02F5SZB1aDwKiHv-Fed1goJXc4_egRdA03NX5r4k1sD9nNvaw
+2019-09-25 11:05:14.940  INFO 16536 --- [http-nio-8181-exec-7] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 11:05:14.942  INFO 16536 --- [http-nio-8181-exec-7] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 11:05:30.087  INFO 16536 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181 - Re-registering apps/USER-SERVICE
+2019-09-25 11:05:30.088  INFO 16536 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181: registering service...
+2019-09-25 11:05:30.100  INFO 16536 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181 - registration status: 204
+2019-09-25 11:06:30.196  INFO 16536 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181 - Re-registering apps/USER-SERVICE
+2019-09-25 11:06:30.198  INFO 16536 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181: registering service...
+2019-09-25 11:06:30.207  INFO 16536 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181 - registration status: 204
+2019-09-25 11:07:30.344  INFO 16536 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181 - Re-registering apps/USER-SERVICE
+2019-09-25 11:07:30.344  INFO 16536 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181: registering service...
+2019-09-25 11:07:30.349  INFO 16536 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181 - registration status: 204
+2019-09-25 11:08:30.466  INFO 16536 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181 - Re-registering apps/USER-SERVICE
+2019-09-25 11:08:30.467  INFO 16536 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181: registering service...
+2019-09-25 11:08:30.478  INFO 16536 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181 - registration status: 204
+2019-09-25 11:08:57.745  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 11:09:03.137  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 11:09:04.153  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 11:09:30.590  INFO 16536 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181 - Re-registering apps/USER-SERVICE
+2019-09-25 11:09:30.591  INFO 16536 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181: registering service...
+2019-09-25 11:09:30.604  INFO 16536 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181 - registration status: 204
+2019-09-25 11:10:07.693  INFO 16536 --- [http-nio-8181-exec-9] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzODg3NzksImV4cCI6MTU2OTk5MzU3OX0.8fk59okUZGJ4fqBfTmFdMrKKV8Q9joWEKUpQq02F5SZB1aDwKiHv-Fed1goJXc4_egRdA03NX5r4k1sD9nNvaw
+2019-09-25 11:10:07.696  INFO 16536 --- [http-nio-8181-exec-9] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 11:10:07.699  INFO 16536 --- [http-nio-8181-exec-9] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 11:10:30.733  INFO 16536 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181 - Re-registering apps/USER-SERVICE
+2019-09-25 11:10:30.734  INFO 16536 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181: registering service...
+2019-09-25 11:10:30.745  INFO 16536 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181 - registration status: 204
+2019-09-25 11:10:46.454  INFO 16536 --- [http-nio-8181-exec-8] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzODg3NzksImV4cCI6MTU2OTk5MzU3OX0.8fk59okUZGJ4fqBfTmFdMrKKV8Q9joWEKUpQq02F5SZB1aDwKiHv-Fed1goJXc4_egRdA03NX5r4k1sD9nNvaw
+2019-09-25 11:10:46.456  INFO 16536 --- [http-nio-8181-exec-8] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 11:10:46.459  INFO 16536 --- [http-nio-8181-exec-8] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 11:13:57.764  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 11:14:04.291  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 11:14:05.483  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 11:14:28.752  INFO 16536 --- [http-nio-8181-exec-1] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzODg3NzksImV4cCI6MTU2OTk5MzU3OX0.8fk59okUZGJ4fqBfTmFdMrKKV8Q9joWEKUpQq02F5SZB1aDwKiHv-Fed1goJXc4_egRdA03NX5r4k1sD9nNvaw
+2019-09-25 11:14:28.754  INFO 16536 --- [http-nio-8181-exec-1] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 11:14:28.756  INFO 16536 --- [http-nio-8181-exec-1] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 11:17:02.047  INFO 16536 --- [http-nio-8181-exec-3] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzODg3NzksImV4cCI6MTU2OTk5MzU3OX0.8fk59okUZGJ4fqBfTmFdMrKKV8Q9joWEKUpQq02F5SZB1aDwKiHv-Fed1goJXc4_egRdA03NX5r4k1sD9nNvaw
+2019-09-25 11:17:02.049  INFO 16536 --- [http-nio-8181-exec-3] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 11:17:02.051  INFO 16536 --- [http-nio-8181-exec-3] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 11:18:41.084  INFO 16536 --- [http-nio-8181-exec-4] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzODg3NzksImV4cCI6MTU2OTk5MzU3OX0.8fk59okUZGJ4fqBfTmFdMrKKV8Q9joWEKUpQq02F5SZB1aDwKiHv-Fed1goJXc4_egRdA03NX5r4k1sD9nNvaw
+2019-09-25 11:18:41.087  INFO 16536 --- [http-nio-8181-exec-4] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 11:18:41.089  INFO 16536 --- [http-nio-8181-exec-4] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 11:18:57.779  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 11:19:05.607  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 11:19:06.736  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 11:21:08.015  INFO 16536 --- [http-nio-8181-exec-6] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzODg3NzksImV4cCI6MTU2OTk5MzU3OX0.8fk59okUZGJ4fqBfTmFdMrKKV8Q9joWEKUpQq02F5SZB1aDwKiHv-Fed1goJXc4_egRdA03NX5r4k1sD9nNvaw
+2019-09-25 11:21:08.016  INFO 16536 --- [http-nio-8181-exec-6] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 11:21:08.018  INFO 16536 --- [http-nio-8181-exec-6] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 11:22:07.375  INFO 16536 --- [http-nio-8181-exec-9] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzODg3NzksImV4cCI6MTU2OTk5MzU3OX0.8fk59okUZGJ4fqBfTmFdMrKKV8Q9joWEKUpQq02F5SZB1aDwKiHv-Fed1goJXc4_egRdA03NX5r4k1sD9nNvaw
+2019-09-25 11:22:07.377  INFO 16536 --- [http-nio-8181-exec-9] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 11:22:07.379  INFO 16536 --- [http-nio-8181-exec-9] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 11:22:34.798  INFO 16536 --- [http-nio-8181-exec-8] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzODg3NzksImV4cCI6MTU2OTk5MzU3OX0.8fk59okUZGJ4fqBfTmFdMrKKV8Q9joWEKUpQq02F5SZB1aDwKiHv-Fed1goJXc4_egRdA03NX5r4k1sD9nNvaw
+2019-09-25 11:22:34.800  INFO 16536 --- [http-nio-8181-exec-8] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 11:22:34.801  INFO 16536 --- [http-nio-8181-exec-8] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 11:23:57.788  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 11:24:06.833  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 11:24:07.922  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 11:28:57.784  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 11:29:08.015  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 11:29:09.226  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 11:29:48.590  INFO 16536 --- [http-nio-8181-exec-1] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzODg3NzksImV4cCI6MTU2OTk5MzU3OX0.8fk59okUZGJ4fqBfTmFdMrKKV8Q9joWEKUpQq02F5SZB1aDwKiHv-Fed1goJXc4_egRdA03NX5r4k1sD9nNvaw
+2019-09-25 11:29:48.593  INFO 16536 --- [http-nio-8181-exec-1] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 11:29:48.594  INFO 16536 --- [http-nio-8181-exec-1] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 11:30:02.413  INFO 16536 --- [http-nio-8181-exec-2] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzODg3NzksImV4cCI6MTU2OTk5MzU3OX0.8fk59okUZGJ4fqBfTmFdMrKKV8Q9joWEKUpQq02F5SZB1aDwKiHv-Fed1goJXc4_egRdA03NX5r4k1sD9nNvaw
+2019-09-25 11:30:02.415  INFO 16536 --- [http-nio-8181-exec-2] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 11:30:02.417  INFO 16536 --- [http-nio-8181-exec-2] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 11:32:15.858  INFO 16536 --- [http-nio-8181-exec-5] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzODg3NzksImV4cCI6MTU2OTk5MzU3OX0.8fk59okUZGJ4fqBfTmFdMrKKV8Q9joWEKUpQq02F5SZB1aDwKiHv-Fed1goJXc4_egRdA03NX5r4k1sD9nNvaw
+2019-09-25 11:32:15.860  INFO 16536 --- [http-nio-8181-exec-5] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 11:32:15.862  INFO 16536 --- [http-nio-8181-exec-5] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 11:33:48.214  INFO 16536 --- [http-nio-8181-exec-7] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzODg3NzksImV4cCI6MTU2OTk5MzU3OX0.8fk59okUZGJ4fqBfTmFdMrKKV8Q9joWEKUpQq02F5SZB1aDwKiHv-Fed1goJXc4_egRdA03NX5r4k1sD9nNvaw
+2019-09-25 11:33:48.216  INFO 16536 --- [http-nio-8181-exec-7] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 11:33:48.218  INFO 16536 --- [http-nio-8181-exec-7] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 11:33:57.781  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 11:34:09.345  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 11:34:10.484  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 11:36:15.525  INFO 16536 --- [http-nio-8181-exec-9] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzODg3NzksImV4cCI6MTU2OTk5MzU3OX0.8fk59okUZGJ4fqBfTmFdMrKKV8Q9joWEKUpQq02F5SZB1aDwKiHv-Fed1goJXc4_egRdA03NX5r4k1sD9nNvaw
+2019-09-25 11:36:15.527  INFO 16536 --- [http-nio-8181-exec-9] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 11:36:15.529  INFO 16536 --- [http-nio-8181-exec-9] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 11:38:57.784  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 11:39:10.598  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 11:39:11.736  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 11:41:16.031  INFO 16536 --- [http-nio-8181-exec-10] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzODg3NzksImV4cCI6MTU2OTk5MzU3OX0.8fk59okUZGJ4fqBfTmFdMrKKV8Q9joWEKUpQq02F5SZB1aDwKiHv-Fed1goJXc4_egRdA03NX5r4k1sD9nNvaw
+2019-09-25 11:41:16.033  INFO 16536 --- [http-nio-8181-exec-10] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 11:41:16.035  INFO 16536 --- [http-nio-8181-exec-10] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 11:42:39.129  INFO 16536 --- [http-nio-8181-exec-2] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzODg3NzksImV4cCI6MTU2OTk5MzU3OX0.8fk59okUZGJ4fqBfTmFdMrKKV8Q9joWEKUpQq02F5SZB1aDwKiHv-Fed1goJXc4_egRdA03NX5r4k1sD9nNvaw
+2019-09-25 11:42:39.131  INFO 16536 --- [http-nio-8181-exec-2] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 11:42:39.132  INFO 16536 --- [http-nio-8181-exec-2] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 11:43:57.790  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 11:44:11.843  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 11:44:12.377  INFO 16536 --- [http-nio-8181-exec-5] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzODg3NzksImV4cCI6MTU2OTk5MzU3OX0.8fk59okUZGJ4fqBfTmFdMrKKV8Q9joWEKUpQq02F5SZB1aDwKiHv-Fed1goJXc4_egRdA03NX5r4k1sD9nNvaw
+2019-09-25 11:44:12.379  INFO 16536 --- [http-nio-8181-exec-5] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 11:44:12.381  INFO 16536 --- [http-nio-8181-exec-5] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 11:44:12.753  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 11:45:16.883  INFO 16536 --- [http-nio-8181-exec-7] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzODg3NzksImV4cCI6MTU2OTk5MzU3OX0.8fk59okUZGJ4fqBfTmFdMrKKV8Q9joWEKUpQq02F5SZB1aDwKiHv-Fed1goJXc4_egRdA03NX5r4k1sD9nNvaw
+2019-09-25 11:45:16.885  INFO 16536 --- [http-nio-8181-exec-7] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 11:45:16.887  INFO 16536 --- [http-nio-8181-exec-7] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 11:46:20.071  INFO 16536 --- [http-nio-8181-exec-9] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzODg3NzksImV4cCI6MTU2OTk5MzU3OX0.8fk59okUZGJ4fqBfTmFdMrKKV8Q9joWEKUpQq02F5SZB1aDwKiHv-Fed1goJXc4_egRdA03NX5r4k1sD9nNvaw
+2019-09-25 11:46:20.073  INFO 16536 --- [http-nio-8181-exec-9] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 11:46:20.074  INFO 16536 --- [http-nio-8181-exec-9] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 11:48:29.903  INFO 16536 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181 - Re-registering apps/USER-SERVICE
+2019-09-25 11:48:29.905  INFO 16536 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181: registering service...
+2019-09-25 11:48:29.919  INFO 16536 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181 - registration status: 204
+2019-09-25 11:48:57.795  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 11:49:12.852  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 11:49:14.113  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 11:53:57.801  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 11:54:14.200  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 11:54:15.095  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 11:55:59.201  INFO 16536 --- [http-nio-8181-exec-10] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzODg3NzksImV4cCI6MTU2OTk5MzU3OX0.8fk59okUZGJ4fqBfTmFdMrKKV8Q9joWEKUpQq02F5SZB1aDwKiHv-Fed1goJXc4_egRdA03NX5r4k1sD9nNvaw
+2019-09-25 11:55:59.204  INFO 16536 --- [http-nio-8181-exec-10] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 11:55:59.206  INFO 16536 --- [http-nio-8181-exec-10] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 11:58:57.806  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 11:59:15.221  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 11:59:16.382  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 12:03:57.814  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 12:04:16.459  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 12:04:17.338  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 12:08:32.027  WARN 16536 --- [DiscoveryClient-0] c.netflix.discovery.TimedSupervisorTask  : task supervisor timed out
+
+java.util.concurrent.TimeoutException: null
+	at java.util.concurrent.FutureTask.get(Unknown Source) [na:1.8.0_212]
+	at com.netflix.discovery.TimedSupervisorTask.run(TimedSupervisorTask.java:66) ~[eureka-client-1.9.8.jar:1.9.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_212]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_212]
+
+2019-09-25 12:08:57.819  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 12:09:17.436  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 12:09:18.334  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 12:13:57.825  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 12:14:18.452  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 12:14:19.683  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 12:18:57.837  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 12:19:19.780  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 12:19:20.867  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 12:23:57.852  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 12:24:22.413  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 12:24:23.297  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 12:28:57.862  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 12:29:23.379  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 12:29:24.471  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 12:33:57.871  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 12:34:24.568  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 12:34:25.705  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 12:38:57.878  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 12:39:25.794  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 12:39:26.825  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 12:43:57.883  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 12:44:26.955  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 12:44:27.898  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 12:48:57.889  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 12:49:28.041  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 12:49:29.227  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 12:53:57.903  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 12:54:29.337  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 12:54:30.407  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 12:58:48.166  WARN 16536 --- [DiscoveryClient-0] c.netflix.discovery.TimedSupervisorTask  : task supervisor timed out
+
+java.util.concurrent.TimeoutException: null
+	at java.util.concurrent.FutureTask.get(Unknown Source) [na:1.8.0_212]
+	at com.netflix.discovery.TimedSupervisorTask.run(TimedSupervisorTask.java:66) ~[eureka-client-1.9.8.jar:1.9.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_212]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_212]
+
+2019-09-25 12:58:57.915  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 12:59:30.520  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 12:59:31.460  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 13:03:00.341  INFO 16536 --- [http-nio-8181-exec-2] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzOTY3ODAsImV4cCI6MTU3MDAwMTU4MH0.8EJE0H-nlhRa9oEk0-7X6peFHiYMT9n87NBirLnpuPnjiwKjuidN0Fj4TAh50cKdBIcVdUUV6KHB-Dz0nVn56Q
+2019-09-25 13:03:00.342  INFO 16536 --- [http-nio-8181-exec-2] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 13:03:00.343  INFO 16536 --- [http-nio-8181-exec-2] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 13:03:32.975  INFO 16536 --- [http-nio-8181-exec-3] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzOTY3ODAsImV4cCI6MTU3MDAwMTU4MH0.8EJE0H-nlhRa9oEk0-7X6peFHiYMT9n87NBirLnpuPnjiwKjuidN0Fj4TAh50cKdBIcVdUUV6KHB-Dz0nVn56Q
+2019-09-25 13:03:32.976  INFO 16536 --- [http-nio-8181-exec-3] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 13:03:32.977  INFO 16536 --- [http-nio-8181-exec-3] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 13:03:57.922  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 13:04:31.891  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 13:04:32.979  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 13:08:57.929  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 13:09:33.256  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 13:09:34.350  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 13:13:57.935  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 13:14:34.454  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 13:14:35.380  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 13:16:01.954  INFO 16536 --- [http-nio-8181-exec-4] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzOTY3ODAsImV4cCI6MTU3MDAwMTU4MH0.8EJE0H-nlhRa9oEk0-7X6peFHiYMT9n87NBirLnpuPnjiwKjuidN0Fj4TAh50cKdBIcVdUUV6KHB-Dz0nVn56Q
+2019-09-25 13:16:01.956  INFO 16536 --- [http-nio-8181-exec-4] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 13:16:01.957  INFO 16536 --- [http-nio-8181-exec-4] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 13:18:57.940  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 13:19:35.502  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 13:19:36.571  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 13:23:57.945  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 13:24:36.646  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 13:24:37.750  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 13:26:56.310  INFO 16536 --- [http-nio-8181-exec-6] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzOTY3ODAsImV4cCI6MTU3MDAwMTU4MH0.8EJE0H-nlhRa9oEk0-7X6peFHiYMT9n87NBirLnpuPnjiwKjuidN0Fj4TAh50cKdBIcVdUUV6KHB-Dz0nVn56Q
+2019-09-25 13:26:56.312  INFO 16536 --- [http-nio-8181-exec-6] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 13:26:56.314  INFO 16536 --- [http-nio-8181-exec-6] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 13:28:57.965  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 13:29:37.859  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 13:29:39.030  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 13:32:32.656  INFO 16536 --- [http-nio-8181-exec-8] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzOTg1NTIsImV4cCI6MTU3MDAwMzM1Mn0.lsN50jrf2JXhJ6cSrUjf9y-zObv9N6Ra5eZO3tNEHJuCjuS4leqvL68IwAkzpphxWQ4-5cRIalsRBuo8tra30A
+2019-09-25 13:32:32.658  INFO 16536 --- [http-nio-8181-exec-8] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 13:32:32.660  INFO 16536 --- [http-nio-8181-exec-8] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 13:33:41.585  INFO 16536 --- [http-nio-8181-exec-1] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzOTg1NTIsImV4cCI6MTU3MDAwMzM1Mn0.lsN50jrf2JXhJ6cSrUjf9y-zObv9N6Ra5eZO3tNEHJuCjuS4leqvL68IwAkzpphxWQ4-5cRIalsRBuo8tra30A
+2019-09-25 13:33:41.587  INFO 16536 --- [http-nio-8181-exec-1] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 13:33:41.588  INFO 16536 --- [http-nio-8181-exec-1] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 13:33:57.980  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 13:34:39.136  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 13:34:40.466  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 13:35:06.353  INFO 16536 --- [http-nio-8181-exec-3] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzOTg1NTIsImV4cCI6MTU3MDAwMzM1Mn0.lsN50jrf2JXhJ6cSrUjf9y-zObv9N6Ra5eZO3tNEHJuCjuS4leqvL68IwAkzpphxWQ4-5cRIalsRBuo8tra30A
+2019-09-25 13:35:06.354  INFO 16536 --- [http-nio-8181-exec-3] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 13:35:06.355  INFO 16536 --- [http-nio-8181-exec-3] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 13:35:30.403  INFO 16536 --- [http-nio-8181-exec-5] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzOTg1NTIsImV4cCI6MTU3MDAwMzM1Mn0.lsN50jrf2JXhJ6cSrUjf9y-zObv9N6Ra5eZO3tNEHJuCjuS4leqvL68IwAkzpphxWQ4-5cRIalsRBuo8tra30A
+2019-09-25 13:35:30.405  INFO 16536 --- [http-nio-8181-exec-5] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 13:35:30.406  INFO 16536 --- [http-nio-8181-exec-5] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 13:38:57.989  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 13:39:40.569  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 13:39:41.496  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 13:41:54.166  INFO 16536 --- [http-nio-8181-exec-7] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzOTg1NTIsImV4cCI6MTU3MDAwMzM1Mn0.lsN50jrf2JXhJ6cSrUjf9y-zObv9N6Ra5eZO3tNEHJuCjuS4leqvL68IwAkzpphxWQ4-5cRIalsRBuo8tra30A
+2019-09-25 13:41:54.168  INFO 16536 --- [http-nio-8181-exec-7] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 13:41:54.169  INFO 16536 --- [http-nio-8181-exec-7] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 13:43:57.996  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 13:44:41.572  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 13:44:42.508  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 13:48:58.002  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 13:49:42.679  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 13:49:43.943  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 13:53:58.009  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 13:54:43.989  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 13:54:44.859  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 13:58:58.014  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 13:59:22.675  WARN 16536 --- [DiscoveryClient-0] c.netflix.discovery.TimedSupervisorTask  : task supervisor timed out
+
+java.util.concurrent.TimeoutException: null
+	at java.util.concurrent.FutureTask.get(Unknown Source) [na:1.8.0_212]
+	at com.netflix.discovery.TimedSupervisorTask.run(TimedSupervisorTask.java:66) ~[eureka-client-1.9.8.jar:1.9.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_212]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_212]
+
+2019-09-25 13:59:29.180 ERROR 16536 --- [DiscoveryClient-HeartbeatExecutor-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
+
+com.sun.jersey.api.client.ClientHandlerException: java.net.SocketTimeoutException: Read timed out
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.sun.jersey.api.client.Client.handle(Client.java:652) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource$Builder.put(WebResource.java:529) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.sendHeartBeat(AbstractJerseyEurekaHttpClient.java:102) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:89) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:846) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1405) [eureka-client-1.9.8.jar:1.9.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_212]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_212]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[na:1.8.0_212]
+	at java.net.SocketInputStream.socketRead(Unknown Source) ~[na:1.8.0_212]
+	at java.net.SocketInputStream.read(Unknown Source) ~[na:1.8.0_212]
+	at java.net.SocketInputStream.read(Unknown Source) ~[na:1.8.0_212]
+	at org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer(AbstractSessionInputBuffer.java:161) ~[httpcore-4.4.10.jar:4.4.10]
+	at org.apache.http.impl.io.SocketInputBuffer.fillBuffer(SocketInputBuffer.java:82) ~[httpcore-4.4.10.jar:4.4.10]
+	at org.apache.http.impl.io.AbstractSessionInputBuffer.readLine(AbstractSessionInputBuffer.java:278) ~[httpcore-4.4.10.jar:4.4.10]
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259) ~[httpcore-4.4.10.jar:4.4.10]
+	at org.apache.http.impl.AbstractHttpClientConnection.receiveResponseHeader(AbstractHttpClientConnection.java:286) ~[httpcore-4.4.10.jar:4.4.10]
+	at org.apache.http.impl.conn.DefaultClientConnection.receiveResponseHeader(DefaultClientConnection.java:257) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.conn.AbstractClientConnAdapter.receiveResponseHeader(AbstractClientConnAdapter.java:230) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273) ~[httpcore-4.4.10.jar:4.4.10]
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125) ~[httpcore-4.4.10.jar:4.4.10]
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:684) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:486) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.6.jar:4.5.6]
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	... 26 common frames omitted
+
+2019-09-25 13:59:29.234  WARN 16536 --- [DiscoveryClient-HeartbeatExecutor-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: java.net.SocketTimeoutException: Read timed out
+2019-09-25 13:59:30.976  INFO 16536 --- [DiscoveryClient-HeartbeatExecutor-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution succeeded on retry #1
+2019-09-25 13:59:51.371  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 14:01:29.571  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 14:03:58.027  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 14:05:24.517  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 14:06:11.254  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 14:08:58.399  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 14:10:20.950  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 14:10:22.151  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 14:13:58.406  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 14:15:22.253  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 14:15:23.311  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 14:18:58.412  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 14:20:23.473  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 14:20:24.863  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 14:23:58.457  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 14:25:25.190  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 14:25:26.314  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 14:28:58.464  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 14:30:26.406  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 14:30:27.556  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 14:33:58.470  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 14:35:27.659  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 14:35:28.837  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 14:38:58.475  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 14:39:52.299  INFO 16536 --- [http-nio-8181-exec-9] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzOTg1NTIsImV4cCI6MTU3MDAwMzM1Mn0.lsN50jrf2JXhJ6cSrUjf9y-zObv9N6Ra5eZO3tNEHJuCjuS4leqvL68IwAkzpphxWQ4-5cRIalsRBuo8tra30A
+2019-09-25 14:39:52.305  INFO 16536 --- [http-nio-8181-exec-9] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 14:39:52.306  INFO 16536 --- [http-nio-8181-exec-9] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 14:40:21.072  INFO 16536 --- [http-nio-8181-exec-8] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzOTg1NTIsImV4cCI6MTU3MDAwMzM1Mn0.lsN50jrf2JXhJ6cSrUjf9y-zObv9N6Ra5eZO3tNEHJuCjuS4leqvL68IwAkzpphxWQ4-5cRIalsRBuo8tra30A
+2019-09-25 14:40:21.073  INFO 16536 --- [http-nio-8181-exec-8] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 14:40:21.074  INFO 16536 --- [http-nio-8181-exec-8] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 14:40:28.938  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 14:40:30.141  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 14:40:50.711  INFO 16536 --- [http-nio-8181-exec-10] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzOTg1NTIsImV4cCI6MTU3MDAwMzM1Mn0.lsN50jrf2JXhJ6cSrUjf9y-zObv9N6Ra5eZO3tNEHJuCjuS4leqvL68IwAkzpphxWQ4-5cRIalsRBuo8tra30A
+2019-09-25 14:40:50.712  INFO 16536 --- [http-nio-8181-exec-10] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 14:40:50.713  INFO 16536 --- [http-nio-8181-exec-10] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 14:41:06.517  INFO 16536 --- [http-nio-8181-exec-1] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzOTg1NTIsImV4cCI6MTU3MDAwMzM1Mn0.lsN50jrf2JXhJ6cSrUjf9y-zObv9N6Ra5eZO3tNEHJuCjuS4leqvL68IwAkzpphxWQ4-5cRIalsRBuo8tra30A
+2019-09-25 14:41:06.518  INFO 16536 --- [http-nio-8181-exec-1] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 14:41:06.518  INFO 16536 --- [http-nio-8181-exec-1] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 14:41:48.644  INFO 16536 --- [http-nio-8181-exec-2] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzOTg1NTIsImV4cCI6MTU3MDAwMzM1Mn0.lsN50jrf2JXhJ6cSrUjf9y-zObv9N6Ra5eZO3tNEHJuCjuS4leqvL68IwAkzpphxWQ4-5cRIalsRBuo8tra30A
+2019-09-25 14:41:48.645  INFO 16536 --- [http-nio-8181-exec-2] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 14:41:48.646  INFO 16536 --- [http-nio-8181-exec-2] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 14:43:58.481  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 14:45:30.236  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 14:45:31.323  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 14:48:32.245  INFO 16536 --- [http-nio-8181-exec-5] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzOTg1NTIsImV4cCI6MTU3MDAwMzM1Mn0.lsN50jrf2JXhJ6cSrUjf9y-zObv9N6Ra5eZO3tNEHJuCjuS4leqvL68IwAkzpphxWQ4-5cRIalsRBuo8tra30A
+2019-09-25 14:48:32.246  INFO 16536 --- [http-nio-8181-exec-5] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 14:48:32.247  INFO 16536 --- [http-nio-8181-exec-5] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 14:48:58.486  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 14:49:12.058  INFO 16536 --- [http-nio-8181-exec-4] c.sms.security.JwtAuthenticationFilter   : Bearer Token Passed:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImNyZWRlbnRpYWxzTm9uRXhwaXJlZCI6dHJ1ZSwiYWNjb3VudE5vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1NjkzOTg1NTIsImV4cCI6MTU3MDAwMzM1Mn0.lsN50jrf2JXhJ6cSrUjf9y-zObv9N6Ra5eZO3tNEHJuCjuS4leqvL68IwAkzpphxWQ4-5cRIalsRBuo8tra30A
+2019-09-25 14:49:12.060  INFO 16536 --- [http-nio-8181-exec-4] com.sms.security.JwtTokenProvider        : Parsing UserId from Token
+2019-09-25 14:49:12.061  INFO 16536 --- [http-nio-8181-exec-4] com.sms.security.JwtTokenProvider        : Parsed UserId:2
+2019-09-25 14:50:31.398  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 14:50:32.587  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 14:53:58.492  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 14:55:32.667  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 14:55:33.822  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 14:58:58.496  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 15:00:36.346  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 15:00:37.523  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 15:03:58.502  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 15:05:37.630  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 15:05:38.640  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 15:07:22.183 ERROR 16536 --- [DiscoveryClient-CacheRefreshExecutor-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
+
+com.sun.jersey.api.client.ClientHandlerException: java.net.SocketTimeoutException: Read timed out
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.sun.jersey.api.client.Client.handle(Client.java:652) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource$Builder.get(WebResource.java:509) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getApplicationsInternal(AbstractJerseyEurekaHttpClient.java:194) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getDelta(AbstractJerseyEurekaHttpClient.java:170) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:89) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1085) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:967) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1479) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1446) [eureka-client-1.9.8.jar:1.9.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_212]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_212]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[na:1.8.0_212]
+	at java.net.SocketInputStream.socketRead(Unknown Source) ~[na:1.8.0_212]
+	at java.net.SocketInputStream.read(Unknown Source) ~[na:1.8.0_212]
+	at java.net.SocketInputStream.read(Unknown Source) ~[na:1.8.0_212]
+	at org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer(AbstractSessionInputBuffer.java:161) ~[httpcore-4.4.10.jar:4.4.10]
+	at org.apache.http.impl.io.SocketInputBuffer.fillBuffer(SocketInputBuffer.java:82) ~[httpcore-4.4.10.jar:4.4.10]
+	at org.apache.http.impl.io.AbstractSessionInputBuffer.readLine(AbstractSessionInputBuffer.java:278) ~[httpcore-4.4.10.jar:4.4.10]
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259) ~[httpcore-4.4.10.jar:4.4.10]
+	at org.apache.http.impl.AbstractHttpClientConnection.receiveResponseHeader(AbstractHttpClientConnection.java:286) ~[httpcore-4.4.10.jar:4.4.10]
+	at org.apache.http.impl.conn.DefaultClientConnection.receiveResponseHeader(DefaultClientConnection.java:257) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.conn.AbstractClientConnAdapter.receiveResponseHeader(AbstractClientConnAdapter.java:230) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273) ~[httpcore-4.4.10.jar:4.4.10]
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125) ~[httpcore-4.4.10.jar:4.4.10]
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:684) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:486) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.6.jar:4.5.6]
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	... 29 common frames omitted
+
+2019-09-25 15:07:25.213 ERROR 16536 --- [DiscoveryClient-HeartbeatExecutor-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
+
+com.sun.jersey.api.client.ClientHandlerException: java.net.SocketTimeoutException: Read timed out
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.sun.jersey.api.client.Client.handle(Client.java:652) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource$Builder.put(WebResource.java:529) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.sendHeartBeat(AbstractJerseyEurekaHttpClient.java:102) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:89) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:846) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1405) [eureka-client-1.9.8.jar:1.9.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_212]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_212]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[na:1.8.0_212]
+	at java.net.SocketInputStream.socketRead(Unknown Source) ~[na:1.8.0_212]
+	at java.net.SocketInputStream.read(Unknown Source) ~[na:1.8.0_212]
+	at java.net.SocketInputStream.read(Unknown Source) ~[na:1.8.0_212]
+	at org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer(AbstractSessionInputBuffer.java:161) ~[httpcore-4.4.10.jar:4.4.10]
+	at org.apache.http.impl.io.SocketInputBuffer.fillBuffer(SocketInputBuffer.java:82) ~[httpcore-4.4.10.jar:4.4.10]
+	at org.apache.http.impl.io.AbstractSessionInputBuffer.readLine(AbstractSessionInputBuffer.java:278) ~[httpcore-4.4.10.jar:4.4.10]
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259) ~[httpcore-4.4.10.jar:4.4.10]
+	at org.apache.http.impl.AbstractHttpClientConnection.receiveResponseHeader(AbstractHttpClientConnection.java:286) ~[httpcore-4.4.10.jar:4.4.10]
+	at org.apache.http.impl.conn.DefaultClientConnection.receiveResponseHeader(DefaultClientConnection.java:257) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.conn.AbstractClientConnAdapter.receiveResponseHeader(AbstractClientConnAdapter.java:230) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273) ~[httpcore-4.4.10.jar:4.4.10]
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125) ~[httpcore-4.4.10.jar:4.4.10]
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:684) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:486) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.6.jar:4.5.6]
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	... 26 common frames omitted
+
+2019-09-25 15:07:29.451  WARN 16536 --- [DiscoveryClient-HeartbeatExecutor-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: java.net.SocketTimeoutException: Read timed out
+2019-09-25 15:07:22.208  WARN 16536 --- [DiscoveryClient-0] c.netflix.discovery.TimedSupervisorTask  : task supervisor timed out
+
+java.util.concurrent.TimeoutException: null
+	at java.util.concurrent.FutureTask.get(Unknown Source) [na:1.8.0_212]
+	at com.netflix.discovery.TimedSupervisorTask.run(TimedSupervisorTask.java:66) ~[eureka-client-1.9.8.jar:1.9.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_212]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_212]
+
+2019-09-25 15:07:26.727  WARN 16536 --- [DiscoveryClient-CacheRefreshExecutor-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: java.net.SocketTimeoutException: Read timed out
+2019-09-25 15:07:33.200  INFO 16536 --- [DiscoveryClient-CacheRefreshExecutor-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution succeeded on retry #1
+2019-09-25 15:07:37.459 ERROR 16536 --- [DiscoveryClient-HeartbeatExecutor-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
+
+com.sun.jersey.api.client.ClientHandlerException: java.net.SocketTimeoutException: Read timed out
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.sun.jersey.api.client.Client.handle(Client.java:652) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource$Builder.put(WebResource.java:529) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.sendHeartBeat(AbstractJerseyEurekaHttpClient.java:102) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:846) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1405) [eureka-client-1.9.8.jar:1.9.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_212]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_212]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[na:1.8.0_212]
+	at java.net.SocketInputStream.socketRead(Unknown Source) ~[na:1.8.0_212]
+	at java.net.SocketInputStream.read(Unknown Source) ~[na:1.8.0_212]
+	at java.net.SocketInputStream.read(Unknown Source) ~[na:1.8.0_212]
+	at org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer(AbstractSessionInputBuffer.java:161) ~[httpcore-4.4.10.jar:4.4.10]
+	at org.apache.http.impl.io.SocketInputBuffer.fillBuffer(SocketInputBuffer.java:82) ~[httpcore-4.4.10.jar:4.4.10]
+	at org.apache.http.impl.io.AbstractSessionInputBuffer.readLine(AbstractSessionInputBuffer.java:278) ~[httpcore-4.4.10.jar:4.4.10]
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259) ~[httpcore-4.4.10.jar:4.4.10]
+	at org.apache.http.impl.AbstractHttpClientConnection.receiveResponseHeader(AbstractHttpClientConnection.java:286) ~[httpcore-4.4.10.jar:4.4.10]
+	at org.apache.http.impl.conn.DefaultClientConnection.receiveResponseHeader(DefaultClientConnection.java:257) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.conn.AbstractClientConnAdapter.receiveResponseHeader(AbstractClientConnAdapter.java:230) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273) ~[httpcore-4.4.10.jar:4.4.10]
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125) ~[httpcore-4.4.10.jar:4.4.10]
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:684) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:486) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.6.jar:4.5.6]
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	... 27 common frames omitted
+
+2019-09-25 15:07:41.911  WARN 16536 --- [DiscoveryClient-HeartbeatExecutor-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: java.net.SocketTimeoutException: Read timed out
+2019-09-25 15:07:46.798 ERROR 16536 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181 - was unable to send heartbeat!
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:846) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1405) [eureka-client-1.9.8.jar:1.9.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_212]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_212]
+
+2019-09-25 15:07:48.313  WARN 16536 --- [DiscoveryClient-0] c.netflix.discovery.TimedSupervisorTask  : task supervisor timed out
+
+java.util.concurrent.TimeoutException: null
+	at java.util.concurrent.FutureTask.get(Unknown Source) [na:1.8.0_212]
+	at com.netflix.discovery.TimedSupervisorTask.run(TimedSupervisorTask.java:66) ~[eureka-client-1.9.8.jar:1.9.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_212]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_212]
+
+2019-09-25 15:08:58.514  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 15:10:51.554  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 15:11:08.943  WARN 16536 --- [DiscoveryClient-0] c.netflix.discovery.TimedSupervisorTask  : task supervisor timed out
+
+java.util.concurrent.TimeoutException: null
+	at java.util.concurrent.FutureTask.get(Unknown Source) [na:1.8.0_212]
+	at com.netflix.discovery.TimedSupervisorTask.run(TimedSupervisorTask.java:66) ~[eureka-client-1.9.8.jar:1.9.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_212]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_212]
+
+2019-09-25 15:12:23.095  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 15:13:36.765  WARN 16536 --- [DiscoveryClient-0] c.netflix.discovery.TimedSupervisorTask  : task supervisor timed out
+
+java.util.concurrent.TimeoutException: null
+	at java.util.concurrent.FutureTask.get(Unknown Source) [na:1.8.0_212]
+	at com.netflix.discovery.TimedSupervisorTask.run(TimedSupervisorTask.java:66) ~[eureka-client-1.9.8.jar:1.9.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_212]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_212]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_212]
+
+2019-09-25 15:13:58.646  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 15:16:11.682  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 15:16:18.390  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 15:18:58.832  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 15:21:19.399  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 15:21:20.626  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 15:23:58.848  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 15:26:21.309  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 15:26:22.609  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 15:28:58.870  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 15:31:23.285  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 15:31:24.541  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 15:33:58.892  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 15:36:24.898  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 15:36:25.976  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 15:38:58.913  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 15:41:26.484  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 15:41:27.888  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 15:43:58.925  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 15:46:28.135  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 15:46:29.277  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 15:48:58.938  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 15:51:29.390  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 15:51:30.612  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 15:53:58.943  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 15:56:30.699  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 15:56:31.963  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 15:58:58.950  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 16:01:32.075  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 16:01:33.163  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 16:03:58.956  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 16:06:33.253  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 16:06:34.145  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 16:08:58.963  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 16:11:34.236  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 16:11:35.280  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 16:13:58.968  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 16:16:35.743  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 16:16:36.929  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 16:18:59.003  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 16:21:37.450  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-09-25 16:21:38.585  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=user-service, profiles=[development], label=null, version=b43485e79a32eecc57d23294c276c3e0ea9ceda0, state=null
+2019-09-25 16:23:59.031  INFO 16536 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-09-25 16:24:54.119  INFO 16536 --- [RMI TCP Connection(340)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-09-25 16:24:55.181  INFO 16536 --- [RMI TCP Connection(340)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application USER-SERVICE with eureka with status DOWN
+2019-09-25 16:24:55.200  WARN 16536 --- [RMI TCP Connection(340)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1569408895193, current=DOWN, previous=UP]
+2019-09-25 16:24:55.256  WARN 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1569408895256, current=UP, previous=DOWN]
+2019-09-25 16:24:55.263  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181: registering service...
+2019-09-25 16:24:55.883  INFO 16536 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181 - registration status: 204
+2019-09-25 16:25:05.695  INFO 16536 --- [RMI TCP Connection(340)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-25 16:25:07.138  INFO 16536 --- [RMI TCP Connection(340)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-09-25 16:25:08.913  INFO 16536 --- [RMI TCP Connection(340)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2019-09-25 16:25:11.956  INFO 16536 --- [RMI TCP Connection(340)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2019-09-25 16:25:12.177  INFO 16536 --- [RMI TCP Connection(340)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/BOLD-AnchalM.LCINDIA.LOCAL:user-service:8181 - deregister  status: 200
+2019-09-25 16:25:12.943  INFO 16536 --- [RMI TCP Connection(340)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2019-09-25 16:25:12.984  INFO 16536 --- [RMI TCP Connection(340)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-09-25 16:25:13.266  INFO 16536 --- [RMI TCP Connection(340)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-09-25 16:25:14.192  INFO 16536 --- [RMI TCP Connection(340)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-09-25 16:25:14.683  INFO 16536 --- [RMI TCP Connection(340)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'

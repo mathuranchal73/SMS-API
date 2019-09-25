@@ -78,7 +78,8 @@ public class StudentController {
 	        return studentRepository.findAll();
 	    }
 	 @GetMapping("/{studentId}")
-	 @PreAuthorize("hasRole('TEACHER')")
+	 @CrossOrigin(origins = "*")
+	 //@PreAuthorize("hasRole('TEACHER')")
 	 public Student getStudentById(@PathVariable Long studentId) {
 		 	return studentService.getStudentById(studentId);
 	 	}

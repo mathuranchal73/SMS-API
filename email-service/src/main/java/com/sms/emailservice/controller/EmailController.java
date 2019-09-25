@@ -38,11 +38,11 @@ public class EmailController {
     EmailServiceImpl emailService;    
     
     @RequestMapping(value = "/sendMail", method = RequestMethod.POST)
-    public ResponseEntity<?> createMailWithTemplate(@Valid @RequestBody MailObject mailObject)throws Exception  {
+    public ResponseEntity<?> createMailWithTemplate()throws Exception  {
       
-        emailService.sendSimpleMessageUsingTemplate(mailObject);
+        emailService.sendSimpleMessage();
 
-        return new ResponseEntity<>("Email Sent Successfully to"+mailObject.getUser_uuid(),HttpStatus.OK);
+        return new ResponseEntity<>("Email Sent Successfully to",HttpStatus.OK);
     }
     
    

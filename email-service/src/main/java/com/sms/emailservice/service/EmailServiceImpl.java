@@ -5,6 +5,12 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+
+import com.sendgrid.*;
+import com.sendgrid.helpers.mail.Mail;
+import com.sendgrid.helpers.mail.objects.Content;
+import com.sendgrid.helpers.mail.objects.Email;
+
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
@@ -27,7 +33,7 @@ import freemarker.template.TemplateException;
 import freemarker.template.TemplateNotFoundException;
 
 @Component
-public class EmailServiceImpl implements EmailService {
+public class EmailServiceImpl  {
 	
 	 @Autowired
 	 public JavaMailSender emailSender;
@@ -35,26 +41,33 @@ public class EmailServiceImpl implements EmailService {
 	 @Autowired
 	 private Configuration freemarkerConfig;
 
-	@Override
-	public void sendSimpleMessage(String to, String subject, String text) {
-		try {
-			System.out.println("Inside SendSimpleMessage");
-            SimpleMailMessage message = new SimpleMailMessage();
-            message.setFrom("mathuranchal90@gmail.com");
-            message.setTo(to);
-            message.setSubject(subject);
-            message.setText(text);
 
-           // emailSender.send(message);
-            
-            emailSender.send(message);
-        } catch (MailException exception) {
-            exception.printStackTrace();
+	public void sendSimpleMessage() throws IOException {
+		
+			System.out.println("Inside SendSimpleMessage");
+			 Email from = new Email("mathuranchal90@gmail.com");
+			 String subject = "Sending with SendGrid is Fun";
+			 Email to = new Email("mathuranchal73@gmail.com");
+			  Content content = new Content("text/plain", "and easy to do anywhere, even with Java");
+			  Mail mail = new Mail(from, subject, to, content);
+			  SendGrid sg = new SendGrid("******************");
+			  Request request = new Request();
+			  try {
+				  request.setMethod(Method.POST);
+			      request.setEndpoint("mail/send");
+			      request.setBody(mail.build());
+			      Response response = sg.api(request);
+			      System.out.println(response.getStatusCode());
+			      System.out.println(response.getBody());
+			      System.out.println(response.getHeaders());
+				  
+        } catch (IOException ex) {
+        	 throw ex;
         }
 		
 	}
 
-	public void sendSimpleMessageUsingTemplate(MailObject mailObject)
+	/**public void sendSimpleMessageUsingTemplate(MailObject mailObject)
 	{
 		MimeMessage message = emailSender.createMimeMessage();
 		MimeMessageHelper helper = new MimeMessageHelper(message);
@@ -119,7 +132,7 @@ public class EmailServiceImpl implements EmailService {
             e.printStackTrace();
         }
 		
-	}
+	}**/
 	
 
 }
