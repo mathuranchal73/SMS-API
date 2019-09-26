@@ -21,7 +21,7 @@ public class Producer {
 
 	
 	 @Value("${tpd.topic-name}")
-	 private static String TOPIC="Welcome_Email";
+	 private static String TOPIC="amazingTopic";
 
 	   
 	    

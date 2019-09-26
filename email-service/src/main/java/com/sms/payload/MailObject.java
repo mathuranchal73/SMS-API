@@ -1,4 +1,4 @@
-package com.sms.model;
+package com.sms.payload;
 
 import java.net.URI;
 import java.util.Date;
@@ -6,27 +6,20 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 @Entity
 public class MailObject {
 	
 	@Id
 	private Long id;
 	
-	@JsonProperty("name")
 	private String name;
 	
-	@JsonProperty("email")
 	private String email;
 	
-	@JsonProperty("verificationLink")
 	private URI verificationLink;
 	
-	@JsonProperty("expiryDate")
 	private Date expiryDate;
 	
-	@JsonProperty("user_uuid")
 	private String user_uuid;
     
 	 public MailObject() {

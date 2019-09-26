@@ -1,24 +1,74 @@
-server:
-  port: 8188  
-  
-eureka:        
-  instance:
-    leaseRenewalIntervalInSeconds: 5
-    leaseExpirationDurationInSeconds: 2
+app:
+  TOKEN_EXPIRATION: 10
+  jwtExpirationInMs: 604800000
+  jwtSecret: JWTSuperSecretKey
+  sendGrid_secret: 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
+eureka:
   client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-    healthcheck:
-      enabled: true
-    lease:
-      duration: 5
-  
-spring:   
-  application:
-    name: email-service  
-      
- 
-  
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    instance:
+      prefer-ip-address: true
+service:
+  student-service:
+    serviceId: student-service
+ribbon:
+    eureka:
+        enabled: true
+    ConnectTimeout: 60000
+    ReadTimeout: 60000
 logging:
-  level:
-    com.sms.emailservice: DEBUG
+  file: ${logging.path}/${spring.application.name}.log
+  path: ./logs
+management:
+  security:
+    enabled: true
+security:
+  basic:
+    enable: true
+server:
+  port: 8187
+spring:
+  application:
+    name: email-service
+  datasource:
+    initialization-mode: always
+    password: anchal29
+    url: jdbc:mysql://localhost:3306/oes?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+    username: root
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+    time-zone: UTC
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  kafka:
+    producer:
+      bootstrap-servers: 127.0.0.1:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+  redis:
+    host: localhost
+    password: password
+    port: 6379
+  mongodb:
+    database: sms
+    port: 27017
+    host: localhost
+    datasource:
+            driver-class-name: mongodb.jdbc.MongoDriver
+
+tpd:
+  messages-per-request: 10
+  topic-name: Welcome_Email1
+  kafka:
+    message: Attendance Marked
+  date:
+    pattern: dd/MM/yyyy
+    

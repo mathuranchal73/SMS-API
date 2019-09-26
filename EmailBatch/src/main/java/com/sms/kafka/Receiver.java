@@ -50,59 +50,57 @@ public class Receiver {
 	@Value("${service.email-service.serviceId}")
     private String emailServiceServiceId;
 	
-	
-	  
-
-	@KafkaListener(id = "batch-listener", topics = "${kafka.topic-name}")
-	  public ArrayList<MailObject> receive(List<String> data,
+	@KafkaListener(id = "batch-listener", topics = "amazingTopic")
+	  public ArrayList<MailObject> receive(String data,
 	      @Header(KafkaHeaders.RECEIVED_PARTITION_ID) List<Integer> partitions,
 	      @Header(KafkaHeaders.OFFSET) List<Long> offsets) {
 		  
+		 LOGGER.info("start of batch receive");
+		 
 	      ArrayList<MailObject> mailObjectList=new ArrayList<>();
-	    LOGGER.info("start of batch receive");
-	    for (int i = 0; i < data.size(); i++) {
+	      
+	  /**  for (int i = 0; i < data.size(); i++) {
 	      LOGGER.info("received message='{}' with partition-offset='{}'", data.get(i),
 	          partitions.get(i) + "-" + offsets.get(i));
-	      
+	      **/
 	
 	      // handle message
 	      try {
-			MailObject mailObject= this.objectMapper.readValue(data.get(i), MailObject.class);
+			MailObject mailObject= this.objectMapper.readValue(data, MailObject.class);
 			mailObjectList.add(mailObject);
 		} catch (JsonParseException e) {
-			LOGGER.error(data.get(i),e);
+			LOGGER.error(data,e);
 			e.printStackTrace();
 		} catch (JsonMappingException e) {
-			LOGGER.error(data.get(i),e);
+			LOGGER.error(data,e);
 			e.printStackTrace();
 		} catch (IOException e) {
-			LOGGER.error(data.get(i),e);
+			LOGGER.error(data,e);
 			e.printStackTrace();
 		}	     
-	    }
-	    LOGGER.info("end of batch receive");
-	    
-	   sendMailToList(mailObjectList);
+	  
+
+	    String token="eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImFjY291bnROb25FeHBpcmVkIjp0cnVlLCJjcmVkZW50aWFsc05vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1Njk0ODE3MzksImV4cCI6MTU3MDA4NjUzOX0.KgExm7c1X6nGALbJaqO4eyN89jXsTrcMfzEW7QLo09AFy0JnhQDvhIP_OkgIhYWU3COdd82d2rEi5gzZ-2LYag";
+		  
+
+	    sendMailToList(token,mailObjectList);
 	   
 	   return mailObjectList;
 	  
 	  }
 	  
-	  public void sendMailToList(ArrayList<MailObject> mailObjectList) {
-		  
+	  public void sendMailToList(String token,ArrayList<MailObject> mailObjectList) {
 		  	Application application = eurekaClient.getApplication(emailServiceServiceId);
 			InstanceInfo instanceInfo = application.getInstances().get(0);
-			String url = "http://"+instanceInfo.getIPAddr()+ ":"+instanceInfo.getPort()+"/sendMail";
+			String url = "http://"+instanceInfo.getIPAddr()+ ":"+instanceInfo.getPort()+"/v1/email/sendVerificationMail";
 			
 			System.out.println(url);
-			
-			 //set up the basic authentication header 
-	       String authorizationHeader = "Basic ";
+
 	        //setting up the request headers
 	        HttpHeaders requestHeaders = new HttpHeaders();
 	        requestHeaders.setContentType(MediaType.APPLICATION_JSON);
 	        requestHeaders.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-	        requestHeaders.add("Authorization", authorizationHeader);
+	        requestHeaders.add("Authorization", token);
 			
 	        for(MailObject i:mailObjectList)
 	        {
@@ -119,7 +117,7 @@ public class Receiver {
 	        }
 	        
 	        LOGGER.info("Email sent to Complete EmailObject list");
-
+	        System.exit(0);
 }
 	  
 	  
