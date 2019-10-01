@@ -8,6 +8,7 @@ import java.util.Locale;
 import java.util.Optional;
 import java.util.UUID;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -32,6 +33,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -55,6 +57,9 @@ import com.sms.payload.UserSummary;
 import com.netflix.appinfo.InstanceInfo;
 import com.netflix.discovery.EurekaClient;
 import com.netflix.discovery.shared.Application;
+import com.opencsv.CSVWriter;
+import com.opencsv.bean.StatefulBeanToCsv;
+import com.opencsv.bean.StatefulBeanToCsvBuilder;
 import com.sms.event.OnRegistrationSuccessEvent;
 import com.sms.exception.AppException;
 import com.sms.model.Role;
@@ -171,10 +176,10 @@ public class UserController {
 		                .orElseThrow(() -> new AppException("User Role not set."));
 
 		        user.setRoles(Collections.singleton(userRole));
-		        user.setActive(1);
+		        user.setActive(0);
 		        user.setLocked(false);
 		        user.setExpired(false);
-		        user.setEnabled(true);
+		        user.setEnabled(false);
 		        try {
 		        	
 		        	User result = userRepository.save(user);
@@ -197,8 +202,8 @@ public class UserController {
 	    }
 	    
 		
-		@GetMapping("/confirmRegistration")
-		public ResponseEntity<?> confirmRegistration(WebRequest request,@RequestParam("token") String token) {
+		@GetMapping("/confirmRegistration/{token}")
+		public ResponseEntity<?> confirmRegistration(WebRequest request,@PathVariable String token) {
 			VerificationToken verificationToken = userService.getVerificationToken(token);
 			if(verificationToken == null) {
 				
@@ -372,6 +377,16 @@ public class UserController {
 				}
 		      
 		    }
+	    
+	    @GetMapping("/export-users")
+	    @ApiOperation(value="export Users", notes="Export Users in a file", nickname="exportUser")
+	    public void exportCSV(@RequestHeader(value="Authorization") String token,HttpServletResponse response){
+	    	
+	    	 userService.exportUser(response);
+	    }
+	    	
+	    	
+	    	
 	    
 	    @GetMapping("/UserProfile/download/{username}")
 	    @PreAuthorize("hasRole('TEACHER')")

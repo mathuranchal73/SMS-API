@@ -31,6 +31,8 @@ import com.netflix.appinfo.InstanceInfo;
 import com.netflix.discovery.EurekaClient;
 import com.netflix.discovery.shared.Application;
 import com.sms.model.MailObject;
+import com.sms.payload.LoginRequest;
+import com.sms.payload.AuthResponse;
 
 @Service
 public class Receiver {
@@ -47,8 +49,17 @@ public class Receiver {
 	  @Autowired
 	 private EurekaClient eurekaClient;
 	
+	@Value("${app.system.username}")
+	private String username;
+	  
+	@Value("${app.system.password}")
+	private String password;
+	    
 	@Value("${service.email-service.serviceId}")
     private String emailServiceServiceId;
+	
+	@Value("${service.zuul.serviceId}")
+    private String zuulServiceId;
 	
 	@KafkaListener(id = "batch-listener", topics = "amazingTopic")
 	  public ArrayList<MailObject> receive(String data,
@@ -78,18 +89,34 @@ public class Receiver {
 			LOGGER.error(data,e);
 			e.printStackTrace();
 		}	     
-	  
 
-	    String token="eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiYXV0aCI6eyJpZCI6MiwibmFtZSI6Ik5lZWxhbSBNYXRodXIiLCJ1c2VybmFtZSI6Im5lZWxhbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1RFQUNIRVIifV0sImVuYWJsZWQiOnRydWUsImFjY291bnROb25FeHBpcmVkIjp0cnVlLCJjcmVkZW50aWFsc05vbkV4cGlyZWQiOnRydWUsImFjY291bnROb25Mb2NrZWQiOnRydWV9LCJpYXQiOjE1Njk0ODE3MzksImV4cCI6MTU3MDA4NjUzOX0.KgExm7c1X6nGALbJaqO4eyN89jXsTrcMfzEW7QLo09AFy0JnhQDvhIP_OkgIhYWU3COdd82d2rEi5gzZ-2LYag";
-		  
-
+	    String token= getAuthToken(username,password);
 	    sendMailToList(token,mailObjectList);
 	   
 	   return mailObjectList;
 	  
 	  }
 	  
-	  public void sendMailToList(String token,ArrayList<MailObject> mailObjectList) {
+	  private synchronized String getAuthToken(String usernameOrEmail, String password2) {
+		  
+		  LoginRequest systemLogin= new LoginRequest(usernameOrEmail,password2);
+		  
+		  	Application application = eurekaClient.getApplication(zuulServiceId);
+			InstanceInfo instanceInfo = application.getInstances().get(0);
+			 HttpHeaders requestHeaders = new HttpHeaders();
+		     requestHeaders.setContentType(MediaType.APPLICATION_JSON);
+		     requestHeaders.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+			
+			HttpEntity<LoginRequest> requestEntity = new HttpEntity<>(systemLogin,requestHeaders);
+			
+			String url = "http://"+instanceInfo.getIPAddr()+ ":"+instanceInfo.getPort()+"/api/signin";
+
+			ResponseEntity<AuthResponse> response= restTemplate.exchange(url, HttpMethod.POST, requestEntity, AuthResponse.class);
+			System.out.println("Auth Token: "+response.getBody().getAccessToken());
+			return response.getBody().getAccessToken();
+	}
+
+	public void sendMailToList(String token,ArrayList<MailObject> mailObjectList) {
 		  	Application application = eurekaClient.getApplication(emailServiceServiceId);
 			InstanceInfo instanceInfo = application.getInstances().get(0);
 			String url = "http://"+instanceInfo.getIPAddr()+ ":"+instanceInfo.getPort()+"/v1/email/sendVerificationMail";
@@ -106,7 +133,8 @@ public class Receiver {
 	        {
 	        	HttpEntity<MailObject> requestEntity = new HttpEntity<>(i, requestHeaders);
 	        	try {
-	    			LOGGER.info("Hitting email-service for User-"+i.getUser_uuid());
+	    			LOGGER.info("Hitting email-service for User-"+i.getUser().getUuid());
+	    			LOGGER.info(requestEntity.getBody().toString());
 	    			ResponseEntity<?> response= restTemplate.exchange(url, HttpMethod.POST, requestEntity, MailObject.class);
 	    			LOGGER.info("Email Sent"+response.getStatusCodeValue());
 	        	} catch (Exception e) {

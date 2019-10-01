@@ -1,5 +1,6 @@
 package com.sms.model;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -37,7 +38,7 @@ import io.swagger.annotations.ApiModelProperty;
             })
 })
 @ApiModel
-public class User extends DateAudit {
+public class User  extends DateAudit implements Serializable {
 	
 	/**
 	 * 
@@ -95,6 +96,8 @@ public class User extends DateAudit {
 		this.enabled = enabled;
 		this.uuid=uuid;
 	}
+	
+	
 
 	public Long getId() {
 		return id;
@@ -184,5 +187,14 @@ public class User extends DateAudit {
 	public void setExpired(boolean isExpired) {
 		this.isExpired = isExpired;
 	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", username=" + username + ", email=" + email + ", password="
+				+ password + ", active=" + active + ", isLocked=" + isLocked + ", isExpired=" + isExpired + ", enabled="
+				+ enabled + ", uuid=" + uuid + ", roles=" + roles + "]";
+	}
+	
+	
 	 
 }

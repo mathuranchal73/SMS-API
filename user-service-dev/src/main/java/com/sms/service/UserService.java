@@ -1,5 +1,7 @@
 package com.sms.service;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.ComponentScan;
@@ -27,5 +29,7 @@ public interface UserService {
 	public VerificationToken getVerificationToken(String verificationToken);
 
 	public void enableRegisteredUser(User user);
+
+	public void exportUser(HttpServletResponse response);
 
 }
