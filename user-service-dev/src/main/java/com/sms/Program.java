@@ -3,6 +3,8 @@ package com.sms;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import com.opencsv.CSVReader;
@@ -121,11 +123,6 @@ public class Program {
 			IND_female_income_avg=(IND_female_income/IND_female)*IND_conversion_rate;
 		}
 		
-		
-		
-		
-		
-		
 	
 		List<Person> person_list= new ArrayList<>();
 		
@@ -135,6 +132,15 @@ public class Program {
 		person_list.add(new Person("Female","Indian",IND_female_income_avg,"USD"));
 		person_list.add(new Person("Male","US",US_male_income_avg,"USD"));
 		person_list.add(new Person("Female","US",US_female_income_avg,"USD"));
+		//Collections.reverse(person_list);
+		//Collections.sort(person_list, new Person());
+		person_list.sort(Comparator.comparing(Person::getGender).thenComparing(Person::getIncome).reversed());
+				
+		person_list.forEach(person->{
+			System.out.println(person);
+		});
+		
+		person_list.forEach(System.out::println);
 		
 		 FileWriter writer = new 
                  FileWriter("demo1.csv"); 

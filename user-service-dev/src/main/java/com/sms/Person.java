@@ -1,6 +1,8 @@
 package com.sms;
 
-public class Person
+import java.util.Comparator;
+
+public class Person implements Comparator<Person>
 {
 	private String gender;
 	private String nationality;
@@ -53,6 +55,22 @@ public class Person
 	public String toString() {
 		return "Person [gender=" + gender + ", nationality=" + nationality + ", income=" + income + ", currency="
 				+ currency + "]";
+	}
+
+	/**@Override
+	public int compareTo(Person person) {
+		
+		return nationality.compareTo(person.nationality);
+	}**/
+
+	@Override
+	public int compare(Person arg0, Person arg1) {
+		if(arg0.income>arg1.income)
+			return 1;
+		else if(arg0.income==arg1.income)
+			return 0;
+		else
+			return -1;
 	}
 	
 }
