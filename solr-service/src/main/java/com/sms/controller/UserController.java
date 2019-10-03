@@ -21,7 +21,7 @@ public class UserController {
 	 @Autowired
 	 SolrUserRepository solrUserRepository;
 	 
-	 @GetMapping("/{name}")
+	 @GetMapping("/select/{name}")
 	 public List<User> getUser(@PathVariable String name) {
 	  return solrUserRepository.findByNameStartsWith(name);
 	 }
