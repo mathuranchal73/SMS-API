@@ -33,7 +33,7 @@ public class EmailServiceImpl implements IEmailService {
 		 Email to = new Email(emailRequest.getTo_email());
 		 Content content = new Content("text/plain", emailRequest.getBody());
 		 Mail mail = new Mail(from, subject, to, content);
-		  SendGrid sg = new SendGrid("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");
+		  SendGrid sg = new SendGrid("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");
 		  Request request = new Request();
 		  try {
 			  request.setMethod(Method.POST);
@@ -57,7 +57,7 @@ public class EmailServiceImpl implements IEmailService {
 		 Email to = new Email(mailObject.getEmail());
 		 Content content = new Content("text/plain", mailObject.getVerificationLink().toString());
 		 Mail mail = new Mail(from, subject, to, content);
-		  SendGrid sg = new SendGrid("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");
+		  SendGrid sg = new SendGrid("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");
 		  Request request = new Request();
 		  try {
 			  request.setMethod(Method.POST);
