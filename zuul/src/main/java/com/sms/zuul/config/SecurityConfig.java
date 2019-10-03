@@ -92,8 +92,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         .permitAll()  
                         // Entry points
                         .antMatchers("/**/signin/**").permitAll()
-                        .antMatchers("/user-api/v1/user/signup").permitAll()
-                        .antMatchers("/**").permitAll()
+                        .antMatchers("/user-api/v1/user/signup")
+                        .permitAll()
+                        .antMatchers(HttpMethod.GET,"/user-api/v1/user/confirmRegistration/**")
+                        .permitAll()
+                        //.antMatchers("/**").permitAll()
                      // Disallow everything else..
                         .anyRequest()
                         .authenticated();

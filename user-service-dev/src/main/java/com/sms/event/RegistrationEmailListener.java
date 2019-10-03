@@ -15,6 +15,7 @@ import com.sms.kafka.Producer;
 import com.sms.model.User;
 import com.sms.model.VerificationToken;
 import com.sms.payload.MailObject;
+import com.sms.repository.MailObjectRepository;
 import com.sms.service.UserServiceImpl;
 
 @Component
@@ -30,6 +31,9 @@ public class RegistrationEmailListener implements ApplicationListener<OnRegistra
 	 
 	 @Autowired
 	 private ObjectMapper objectMapper;
+	 
+	 @Autowired
+	 MailObjectRepository mailObjectRepository;
 
 	@Override
 	public void onApplicationEvent(OnRegistrationSuccessEvent event) {
@@ -50,19 +54,20 @@ public class RegistrationEmailListener implements ApplicationListener<OnRegistra
                 .buildAndExpand(token).toUri();**/
 		
 		URI url = ServletUriComponentsBuilder
-                .fromCurrentContextPath().path("/v1/user/confirmRegistration?token={token}")
+                .fromCurrentContextPath().path("/v1/user/confirmRegistration/token/{token}")
                 .buildAndExpand(token).toUri();
 		
-		MailObject userMailObject= new MailObject(user.getName(),user.getEmail(),url,verificationToken.getExpiryDate(),user.getUuid());
+		MailObject userMailObject= new MailObject(user.getName(),user.getEmail(),url,verificationToken.getExpiryDate(),user);
 		
+		mailObjectRepository.save(userMailObject);
 		
 		
 		try {
 			String jsonString=objectMapper.writeValueAsString(userMailObject);
 			producer.sendMessage(jsonString);
-			logger.info("Message sent to Kafka for User"+userMailObject.getUser_uuid());
+			logger.info("Message sent to Kafka for User :"+userMailObject.getUser().getUuid());
 		} catch (Exception e) {
-			logger.error("Encountered Exception for User-"+userMailObject.getUser_uuid(),e);
+			logger.error("Encountered Exception for User :"+userMailObject.getUser().getUuid(),e);
 			e.printStackTrace();
 		}
 		

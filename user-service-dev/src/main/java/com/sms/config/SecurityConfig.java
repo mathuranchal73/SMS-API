@@ -86,12 +86,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                         "/**/*.css",
                         "/**/*.js")
 		.permitAll()
-		.antMatchers("/v1/user/signup","/v1/user/confirmRegistration")
+		.antMatchers("/v1/user/signup")
 		.permitAll()
-        .antMatchers("/v1/user/checkUsernameAvailability", "/v1/user/checkEmailAvailability")
-            .permitAll()
+        .antMatchers(HttpMethod.GET,"/v1/user/confirmRegistration/**")
+        .permitAll()
+		.antMatchers("/v1/user/checkUsernameAvailability", "/v1/user/checkEmailAvailability")
+        .permitAll()
         .anyRequest()
-            .authenticated();
+        .authenticated();
 
 //Add our custom JWT security filter
 http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);

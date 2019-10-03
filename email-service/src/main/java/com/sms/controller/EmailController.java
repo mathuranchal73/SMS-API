@@ -41,9 +41,11 @@ public class EmailController {
     }
 	
 	@PostMapping("/sendVerificationMail")
-	@PreAuthorize("hasRole('TEACHER')")
+	@PreAuthorize("hasAnyRole('TEACHER','SYSTEM')")
     public ResponseEntity<?> sendVerificationMail(@RequestHeader("Authorization") String token,@CurrentUser UserPrincipal currentUser,
             @Valid @RequestBody MailObject mailObject)throws Exception  {
+		
+		System.out.println("Inside Email Service Controller for /sendVerificationMail");
       
         return emailService.sendVerificationMail(token,currentUser,mailObject);
        

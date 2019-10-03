@@ -4,12 +4,33 @@ import java.net.URI;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
+import com.sms.model.User;
 
 @Entity
+@Table(name = "mail_object",uniqueConstraints = {
+        @UniqueConstraint(columnNames = {
+                "verificationLink"
+            }),
+            @UniqueConstraint(columnNames = {
+                "email"
+            }),
+            @UniqueConstraint(columnNames = {
+                    "user_uuid"
+                })
+    })
 public class MailObject {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	private String name;
@@ -20,32 +41,24 @@ public class MailObject {
 	
 	private Date expiryDate;
 	
-	private String user_uuid;
+	@OneToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "user_uuid", nullable = false)
+    private User user;
     
-	 public MailObject() {
-	    	
-	    }
-	 
-	 
-	
-	public MailObject(String name, String email, URI verificationLink, Date expiryDate, String user_uuid) {
+
+
+	public MailObject(String name, String email, URI verificationLink, Date expiryDate, User user) {
 		super();
 		this.name = name;
 		this.email = email;
 		this.verificationLink = verificationLink;
 		this.expiryDate = expiryDate;
-		this.user_uuid = user_uuid;
+		this.user = user;
 	}
 
 
 
-	public Long getId() {
-		return id;
-	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public String getName() {
 		return name;
@@ -79,13 +92,31 @@ public class MailObject {
 		this.expiryDate = expiryDate;
 	}
 
-	public String getUser_uuid() {
-		return user_uuid;
+
+
+	public Long getId() {
+		return id;
 	}
 
-	public void setUser_uuid(String user_uuid) {
-		this.user_uuid = user_uuid;
+
+
+	public void setId(Long id) {
+		this.id = id;
 	}
+
+
+
+	public User getUser() {
+		return user;
+	}
+
+
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	
 
    
 	
