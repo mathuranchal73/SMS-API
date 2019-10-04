@@ -163,12 +163,12 @@ public class UserController {
 		      
 			 
 			 if(userRepository.existsByUsername(user.getUsername())) {
-		            return new ResponseEntity(new ApiResponse(false, "Username is already taken!"),
+		            return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Username is already taken!"),
 		                    HttpStatus.BAD_REQUEST);
 		        }
 
 		        if(userRepository.existsByEmail(user.getEmail())) {
-		            return new ResponseEntity(new ApiResponse(false, "Email Address already in use!"),
+		            return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Email Address already in use!"),
 		                    HttpStatus.BAD_REQUEST);
 		        }
 
@@ -324,7 +324,8 @@ public class UserController {
 
 	        UserProfile userProfile = new UserProfile(user,userProfileRequest.getDisplayPic(),userProfileRequest.getAddress(),userProfileRequest.getCity(),userProfileRequest.getPhoneNo());
 	        
-	        UserProfile result = userProfileRepository.save(userProfile);
+	        @SuppressWarnings("unused")
+			UserProfile result = userProfileRepository.save(userProfile);
 			URI location = ServletUriComponentsBuilder
 	                .fromCurrentContextPath().path("/v1/user/UserProfile/{username}")
 	                .buildAndExpand(username).toUri();
@@ -404,7 +405,8 @@ public class UserController {
 				        Application application = eurekaClient.getApplication(uploadServiceServiceId);
 						InstanceInfo instanceInfo = application.getInstances().get(0);
 						String url = "http://"+instanceInfo.getIPAddr()+ ":"+instanceInfo.getPort()+"/"+"downloadFile"+"/"+userProfile.getDisplayPic();
-				        ResponseEntity<?> response = restTemplate.exchange(url,
+				        @SuppressWarnings("unused")
+						ResponseEntity<?> response = restTemplate.exchange(url,
 				                HttpMethod.GET, null, Resource.class);
 		
 				        return ResponseEntity.ok()
