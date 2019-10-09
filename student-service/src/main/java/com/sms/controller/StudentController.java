@@ -81,6 +81,8 @@ public class StudentController {
 	 @CrossOrigin(origins = "*")
 	 //@PreAuthorize("hasRole('TEACHER')")
 	 public Student getStudentById(@PathVariable Long studentId) {
+		 
+		 System.out.println("Searching by ID  : " + studentId);
 		 	return studentService.getStudentById(studentId);
 	 	}
 	 

@@ -19,10 +19,14 @@ import java.util.Random;
 import java.util.UUID;
 import java.util.stream.DoubleStream;
 
+
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -88,7 +92,19 @@ public class StudentServiceImpl implements IStudentService {
 	        }
 	    }
 	    
+	 @Cacheable("Student")   
 	 public Student getStudentById(Long studentId) {
+		 
+		 try
+	        {
+	            System.out.println("Going to sleep for 5 Secs.. to simulate backend call.");
+	            Thread.sleep(1000*5);
+	        }
+	        catch (InterruptedException e)
+	        {
+	            e.printStackTrace();
+	        }
+		 
 	        return studentRepository.findById(studentId).orElseThrow(
 	                () -> new ResourceNotFoundException("Student", "id", studentId));
 	 }
@@ -109,6 +125,7 @@ public class StudentServiceImpl implements IStudentService {
 		 return studentRepository.getTotalActiveStudentCountByDoa(doa);
 	 }
 	 
+	 @CacheEvict
 	 public ResponseEntity deleteStudentById(Long studentId) {
 		 if(studentRepository.existsById(studentId))
 		 {
@@ -134,6 +151,7 @@ public class StudentServiceImpl implements IStudentService {
 	                () -> new ResourceNotFoundException("Student", "firstName", firstName));
 	 }
 	 
+	 @CacheEvict
 	 public ResponseEntity updateStudent(UserPrincipal currentUser,Long studentId,UpdateStudentRequest updateStudentRequest){
 		 
 		 if(studentRepository.existsById(studentId))
