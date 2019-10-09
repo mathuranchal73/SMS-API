@@ -34,6 +34,8 @@ public class UserController {
 	  return solrUserRepository.findByNameStartsWith(name);
 	 }
 	 
+	 
+	 
 	 @PostMapping("/save")
 	 @PreAuthorize("hasAnyRole('ADMIN','SYSTEM')")
 	 public String saveAllUsers(@RequestBody List<User> userList) {

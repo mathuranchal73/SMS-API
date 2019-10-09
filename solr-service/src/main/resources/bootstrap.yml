@@ -4,7 +4,7 @@ management:
       exposure:
         include: '*'
 server:
-  port: 8521
+  port: 8257
 spring:
   application:
     name: solr-service
@@ -13,6 +13,7 @@ spring:
       uri: http://localhost:8888
   profiles:
     active: development
+    
 
 eureka:        
   instance:
@@ -25,3 +26,11 @@ eureka:
       enabled: true
     lease:
       duration: 5
+      
+      management:
+  security:
+    enabled: false 
+  
+logging:
+  level:
+    com.sms: DEBUG
