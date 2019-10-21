@@ -23,6 +23,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -181,7 +182,7 @@ public class ExamService extends UserDateAudit {
 	        return ModelMapper.mapPollToPollResponse(poll, choiceVotesMap, creator, vote.getChoice().getId());  **/
 	}
 
-		
+	@Async
 	private Question getQuestion(String token,Long questionId) {
 			HttpHeaders headers = new HttpHeaders();
 			headers.setContentType(MediaType.APPLICATION_JSON);
@@ -200,12 +201,9 @@ public class ExamService extends UserDateAudit {
 			//Question response = new Gson().fromJson(json, Question.class);
 			
 			ResponseEntity<Question> json = restTemplate.exchange(url,
-	                HttpMethod.GET, entity, Question.class);
-			
-			
+	                HttpMethod.GET, entity, Question.class);			
 			  
-			  return json.getBody();
-		
+			  return json.getBody();	
 	}
 
 		
@@ -224,8 +222,7 @@ public class ExamService extends UserDateAudit {
 		 
 		 examQuestionMap.setQuestionList(temp);
 		 
-		 return new ResponseEntity<>(new ExamResponse(examQuestionMap,true,"Found Exam Record"),HttpStatus.FOUND);
-	 
+		 return new ResponseEntity<>(new ExamResponse(examQuestionMap,true,"Found Exam Record"),HttpStatus.FOUND); 
 		
 	}
 

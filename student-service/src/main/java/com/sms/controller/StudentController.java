@@ -74,15 +74,12 @@ public class StudentController {
 	 @GetMapping("/")
 	 @PreAuthorize("hasRole('TEACHER')")
 	 public ArrayList<Student> getAllStudents() {
-
 	        return studentRepository.findAll();
 	    }
 	 @GetMapping("/{studentId}")
 	 @CrossOrigin(origins = "*")
 	 //@PreAuthorize("hasRole('TEACHER')")
 	 public Student getStudentById(@PathVariable Long studentId) {
-		 
-		 System.out.println("Searching by ID  : " + studentId);
 		 	return studentService.getStudentById(studentId);
 	 	}
 	 

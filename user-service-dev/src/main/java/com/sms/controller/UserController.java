@@ -1,5 +1,8 @@
 package com.sms.controller;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+
 import java.io.IOException;
 import java.net.URI;
 import java.util.Calendar;
@@ -367,7 +370,7 @@ public class UserController {
 						System.out.println("URL" + url);
 				        ResponseEntity<UploadFileResponse> response = restTemplate.exchange(url,
 				                HttpMethod.POST, requestEntity, UploadFileResponse.class);
-		
+				        assertThat(response.getStatusCode(), is(HttpStatus.OK));
 						userProfile.setDisplayPic(response.getBody().getFileName());
 						userProfileRepository.save(userProfile);
 						return new ResponseEntity<>(response.getBody().getFileDownloadUri(),HttpStatus.OK);
@@ -386,6 +389,8 @@ public class UserController {
 	    	 userService.exportUser(response);
 	    }
 	    	
+	    
+	    
 	    	
 	    	
 	    
